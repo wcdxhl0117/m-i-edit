@@ -16,7 +16,7 @@
 <body>
 
 <div id="root"></div>
-
+<div id="btn">button</div>
 <script src="lib/i18n.js"></script>
 <script src="lib/icu-slim.js"></script>
 <script src="lib/katex/katex.js"></script>
@@ -25,6 +25,11 @@
 <script src="lib/browser.js"></script>
 <script src="build/deps.js"></script>
 <script src="build/app.js"></script>
-
+<script>
+    $("#btn").on("click",function() {
+        // window.localStorage.getItem('toLatex')
+        
+    })
+</script>
 </body>
 </html>

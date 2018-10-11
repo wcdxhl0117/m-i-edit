@@ -193,6 +193,8 @@ class MathInput extends React.Component {
     }
 
     componentDidUpdate() {
+        // wangchao
+        window.localStorage.setItem('toLatex', this.mathField.getContent());
         if (this.mathField.getContent() !== this.props.value) {
             this.mathField.setContent(this.props.value);
         }
