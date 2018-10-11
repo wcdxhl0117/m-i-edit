@@ -10,15 +10,22 @@ class App extends React.Component {
         keypadElement: null,
         value: "",
     };
-
+    componentDidMount() {
+      this.state.keypadElement.activate()
+    }
     render() {
         return <View>
             <div
                 style={{
+                    width: '100%',
                     marginTop: 10,
                     marginLeft: 20,
                     marginRight: 20,
-                    marginBottom: 40,
+                    marginBottom: 300,
+                    position: 'fixed',
+                    bottom: '0',
+                    left: '0',
+                    right: '0'
                 }}
             >
                 <KeypadInput
