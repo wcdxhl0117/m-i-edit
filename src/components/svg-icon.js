@@ -14,7 +14,6 @@ class SvgIcon extends React.Component {
 
     render() {
         const {color, name} = this.props;
-
         const SvgForName = Iconography[name];
         return <SvgForName color={color} />;
     }
