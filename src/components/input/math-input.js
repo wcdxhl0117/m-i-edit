@@ -56,6 +56,14 @@ class MathInput extends React.Component {
     };
 
     componentDidMount() {
+        // wangchaoxiugai
+        let _this = this;
+        setTimeout(function() {
+          console.log(1)
+          _this.focus();
+        }, 1000)
+        // wangchaoxiugai-jieshu
+        
         this._isMounted = true;
 
         this.mathField = new MathWrapper(this._mathContainer, {}, {
@@ -265,6 +273,7 @@ class MathInput extends React.Component {
     };
 
     focus = () => {
+      console.log(this.props.keypadElement)
         // Pass this component's handleKey method to the keypad so it can call
         // it whenever it needs to trigger a keypress action.
         this.props.keypadElement.setKeyHandler(key => {

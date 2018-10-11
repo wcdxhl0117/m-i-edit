@@ -11,16 +11,16 @@ class App extends React.Component {
         value: "",
     };
     componentDidMount() {
-      this.state.keypadElement.activate()
+
     }
     render() {
         return <View>
             <div
                 style={{
-                    width: '100%',
                     marginTop: 10,
                     marginLeft: 20,
                     marginRight: 20,
+                    // wangchaoxiugai
                     marginBottom: 300,
                     position: 'fixed',
                     bottom: '0',
