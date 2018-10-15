@@ -32,7 +32,7 @@ class Icon extends React.PureComponent {
             focused ? styles.focused : styles.unfocused,
             ...(Array.isArray(style) ? style : [style]),
         ];
-        console.log(icon)
+
         switch (icon.type) {
             // 右下角4个选项
             case IconTypes.MATH:

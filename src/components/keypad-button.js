@@ -189,7 +189,7 @@ class KeypadButton extends React.PureComponent {
             style,
             type,
         } = this.props;
-
+        // console.log(icon)
         // We render in the focus state if the key is focused, or if it's an
         // echo.
         const renderFocused = !disabled && focused || popoverEnabled ||
@@ -238,6 +238,7 @@ class KeypadButton extends React.PureComponent {
                 role: 'button',
                 ariaLabel: ariaLabel,
             };
+            // console.log(icon)
             // 这是所有数学符号位置
             return <View style={buttonStyle} {...eventHandlers} {...a11yMarkup}>
                 {maybeFocusBox}
