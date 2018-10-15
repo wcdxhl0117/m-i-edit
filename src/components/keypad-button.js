@@ -54,7 +54,6 @@ class KeypadButton extends React.PureComponent {
         // with borders and such.
         widthPx: React.PropTypes.number.isRequired,
     };
-
     static defaultProps = {
         borders: BorderStyles.ALL,
         childKeys: [],
@@ -72,6 +71,7 @@ class KeypadButton extends React.PureComponent {
 
     componentDidMount() {
         this._preInjectStyles();
+        // console.log(this.props.icon)
     }
 
     componentWillUpdate(newProps, newState) {
@@ -174,6 +174,7 @@ class KeypadButton extends React.PureComponent {
     };
 
     render() {
+        // console.log(this.props.icon)
         const {
             ariaLabel,
             borders,
