@@ -67,6 +67,7 @@ class MultiSymbolGrid extends React.Component {
                     </View>
                 </View>;
             } else if (icons.length >= 3) {
+                // 这是左下角的4个选项
                 return <View style={[column, styles.size]}>
                     <View style={row}>
                         <View style={[centered, fullWidth, styles.topLeft]}>

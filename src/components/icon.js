@@ -34,12 +34,14 @@ class Icon extends React.PureComponent {
         ];
 
         switch (icon.type) {
+            // 右下角4个选项
             case IconTypes.MATH:
                 return <MathIcon
                     math={icon.data}
                     style={styleWithFocus}
                 />;
-
+            
+            // 数学公式，包括加减乘除
             case IconTypes.SVG:
                 // TODO(charlie): Support passing style objects to `SvgIcon`.
                 // This will require migrating the individual icons to use
@@ -50,6 +52,7 @@ class Icon extends React.PureComponent {
                     color={focused ? focusedColor : unfocusedColor}
                 />;
 
+            // 数字键盘内容
             case IconTypes.TEXT:
                 return <TextIcon
                     character={icon.data}

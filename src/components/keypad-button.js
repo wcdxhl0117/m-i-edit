@@ -228,6 +228,7 @@ class KeypadButton extends React.PureComponent {
             >
                 {maybeFocusBox}
                 <View style={iconWrapperStyle}>
+                    {/* 右下角的4个选项 */}
                     <MultiSymbolGrid icons={icons} focused={renderFocused} />
                 </View>
                 {maybeCornerDecal}
@@ -237,7 +238,7 @@ class KeypadButton extends React.PureComponent {
                 role: 'button',
                 ariaLabel: ariaLabel,
             };
-
+            // 这是所有数学符号位置
             return <View style={buttonStyle} {...eventHandlers} {...a11yMarkup}>
                 {maybeFocusBox}
                 <View style={iconWrapperStyle}>
