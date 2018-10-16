@@ -40,7 +40,7 @@ class Icon extends React.PureComponent {
                     math={icon.data}
                     style={styleWithFocus}
                 />;
-            
+
             // 数学公式，包括加减乘除
             case IconTypes.SVG:
                 // TODO(charlie): Support passing style objects to `SvgIcon`.
