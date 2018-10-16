@@ -57,11 +57,11 @@ class MathInput extends React.Component {
 
     componentDidMount() {
         // wangchaoxiugai,进入便聚焦
-        // let _this = this;
-        // setTimeout(function() {
-        //   console.log(1)
-        //   _this.focus();
-        // }, 1000)
+        let _this = this;
+        setTimeout(function() {
+          console.log(1)
+          _this.focus();
+        }, 500)
         // wangchaoxiugai-jieshu
 
         this._isMounted = true;
@@ -201,8 +201,10 @@ class MathInput extends React.Component {
     }
 
     componentDidUpdate() {
-        // wangchao
+        // wangchaogai
+        // console.log(this.mathField.getContent())
         window.localStorage.setItem('toLatex', this.mathField.getContent());
+        // wangchaogai-jieshu
         if (this.mathField.getContent() !== this.props.value) {
             this.mathField.setContent(this.props.value);
         }
