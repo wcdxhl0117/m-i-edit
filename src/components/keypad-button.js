@@ -190,6 +190,13 @@ class KeypadButton extends React.PureComponent {
             style,
             type,
         } = this.props;
+        /* 
+            Mounting: componentWillMount(挂在前)，render(渲染)，componentDidMount（挂在后）
+            Update: 
+                    props: componentWillReceiveProps, sshouldComponentUpdate, componentWillUpdate,render,componentDidUpdate
+                    state: shouldComponentWillUpdate, componentWillUpdate，render componentDidupdate
+            Unmounting: componentWillUnmount
+        */ 
         // console.log(icon)
         // We render in the focus state if the key is focused, or if it's an
         // echo.
