@@ -184,6 +184,7 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.LEFT}
                 />
             </View>
+            
         </View>;
 
         const leftPageStyle = [

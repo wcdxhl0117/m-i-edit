@@ -58,7 +58,7 @@ d. 修改文件：src/components/input/math-wrapper.js
 
 说明：所有的符号都需要注册
 
-e. 修改文件： src/data/key-configs.js
+e. 修改文件：src/components/expression-keypad.js
  修改：        
  
  ```javascript
