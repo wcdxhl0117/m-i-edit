@@ -38,6 +38,7 @@ const KeyActions = {
     [Keys.NEQ]: {str: '\\neq', fn: WRITE},
     [Keys.CDOT]: {str: '\\cdot', fn: WRITE},
     [Keys.PERCENT]: {str: '%', fn: WRITE},
+    [Keys.EQUIV]:{str:'\\equiv',fn:WRITE},
     [Keys.LEFT_PAREN]: {str: '(', fn: CMD},
     [Keys.RIGHT_PAREN]: {str: ')', fn: CMD},
     [Keys.SQRT]: {str: 'sqrt', fn: CMD},

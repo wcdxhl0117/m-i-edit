@@ -262,6 +262,7 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.LEFT_PAREN}
                     borders={BorderStyles.LEFT}
                 />
+                
             </View>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
@@ -270,6 +271,10 @@ class ExpressionKeypad extends React.Component {
                 />
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.NEQ}
+                    borders={BorderStyles.NONE}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton

@@ -155,9 +155,9 @@ const KeyConfigs = {
         type: KeyTypes.OPERATOR,
         ariaLabel: i18n._('Cosine'),
     },
-    [Keys.COS1]: {
+    [Keys.EQUIV]: {
         type: KeyTypes.OPERATOR,
-        ariaLabel: i18n._('Cosine'),
+        ariaLabel: i18n._('Always-equal sign'),
     },
     [Keys.TAN]: {
         type: KeyTypes.OPERATOR,
