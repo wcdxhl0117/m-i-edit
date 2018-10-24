@@ -21,7 +21,7 @@ class App extends React.Component {
                     marginLeft: 20,
                     marginRight: 20,
                     // wangchaoxiugai
-                    marginBottom: 300,
+                    marginBottom: 360,
                     position: 'fixed',
                     bottom: '0',
                     left: '0',
