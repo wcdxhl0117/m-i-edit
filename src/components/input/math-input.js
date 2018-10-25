@@ -59,7 +59,6 @@ class MathInput extends React.Component {
         // wangchaoxiugai,进入便聚焦
         let _this = this;
         setTimeout(function() {
-          console.log(1)
           _this.focus();
         }, 500)
         // wangchaoxiugai-jieshu
@@ -740,8 +739,13 @@ class MathInput extends React.Component {
                 onTouchCancel={this.onCursorHandleTouchCancel}
             />}
             {/* wangchaogai */}
-            <p onClick={this.toZfuchuan}>按钮</p>
+            <p onClick={this.toZfuchuan.bind(this)}>按钮</p>
         </View>;
+    }
+    // wangchaogai 新增按钮
+    toZfuchuan() {
+        this.mathField.focus();
+        this.mathField.setContent('666')
     }
 }
 
