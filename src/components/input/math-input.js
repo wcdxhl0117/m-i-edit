@@ -739,6 +739,8 @@ class MathInput extends React.Component {
                 onTouchEnd={this.onCursorHandleTouchEnd}
                 onTouchCancel={this.onCursorHandleTouchCancel}
             />}
+            {/* wangchaogai */}
+            <p onClick={this.toZfuchuan}>按钮</p>
         </View>;
     }
 }
