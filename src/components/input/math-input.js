@@ -743,9 +743,10 @@ class MathInput extends React.Component {
         </View>;
     }
     // wangchaogai 新增按钮
-    toZfuchuan() {
-        this.mathField.focus();
-        this.mathField.setContent('666')
+    toZfuchuan = () => {
+        alert(1)
+        let aaa = this.mathField.getContent()
+        this.mathField.setContent(aaa + '666');
     }
 }
 
