@@ -731,7 +731,11 @@ class MathInput extends React.Component {
                     style={innerStyle}
                 />
                 {/* wangchaogai */}
-                <p onClick={this.toZfuchuan}>按钮</p>
+                <p>111</p>
+                <p>111</p>
+                <p>111</p>
+                <p>111</p>
+                <p onClick={this.addStr}>按钮</p>
             </div>
             {focused && handle.visible && <CursorHandle
                 {...handle}
@@ -742,11 +746,12 @@ class MathInput extends React.Component {
             />}
             
         </View>;
-    }
+    };
     // wangchaogai 新增按钮
-    toZfuchuan = () => {
-        let aaa = this.mathField.getContent()
-        this.mathField.setContent(aaa + '666');
+    addStr = () => {
+        let aaa = this.mathField.getContent();
+        // this.focus();
+        this.mathField.setContent('666');
         // this.mathField.writeContent('11');
     }
 }
