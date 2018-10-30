@@ -56,6 +56,10 @@
     }
 ```
 
+* 新增tab的尝试
+    首先在expression-keypad.js中发现已有rightPage和leftPage,需要再添加一个page，在two-page-keypad.js中增加这个page（two-page-keypad.js一些样式引入至styles.js，如column），然后在 view-page.js中添加一个chrild[2],
+
+
 
 
 # license
