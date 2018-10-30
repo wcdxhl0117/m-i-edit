@@ -88,6 +88,10 @@ class ViewPager extends React.Component {
             <View style={styles.rightPage} dynamicStyle={dynamicPageStyle}>
                 {children[1]}
             </View>
+            {/* 新增第三个tab */}
+            <View dynamicStyle={dynamicPageStyle}>
+                {children[2]}
+            </View>
         </View>;
     }
 }

@@ -33,15 +33,18 @@ class TwoPageKeypad extends React.Component {
 
         if (paginationEnabled) {
             return <Keypad style={[column, styles.keypad]}>
-                <PagerIndicator numPages={2} currentPage={currentPage} />
+                {/* 小点点个数 */}
+                <PagerIndicator numPages={3} currentPage={currentPage} />
                 <View style={styles.borderTop}>
                     <ViewPager>
                         {leftPage}
+                        {rightPage}
                         {rightPage}
                     </ViewPager>
                 </View>
             </Keypad>;
         } else {
+            // 全屏展示
             return <Keypad style={styles.keypad}>
                 <View style={row}>
                     <View style={fullWidth}>
