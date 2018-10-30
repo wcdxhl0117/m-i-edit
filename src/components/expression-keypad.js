@@ -114,6 +114,11 @@ class ExpressionKeypad extends React.Component {
                     keys={extraKeys}
                     borders={BorderStyles.NONE}
                 />
+                {/* 新增一行 */}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
+                    borders={BorderStyles.NONE}
+                />
             </View>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
@@ -131,6 +136,11 @@ class ExpressionKeypad extends React.Component {
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.NUM_0}
                     borders={BorderStyles.LEFT}
+                />
+                {/* 新增一行 */}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
+                    borders={BorderStyles.NONE}
                 />
             </View>
             <View style={[column, oneColumn]}>
@@ -150,6 +160,11 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.DECIMAL}
                     borders={BorderStyles.LEFT}
                 />
+                {/* 新增一行 */}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
+                    borders={BorderStyles.NONE}
+                />
             </View>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
@@ -168,6 +183,11 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.PLUS}
                     borders={BorderStyles.LEFT}
                 />
+                {/* 新增一行 */}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
+                    borders={BorderStyles.NONE}
+                />
             </View>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
@@ -183,8 +203,40 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={dismissOrJumpOutKey}
                     borders={BorderStyles.LEFT}
                 />
+                {/* 新增一行 */}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
+                    borders={BorderStyles.NONE}
+                />
             </View>
-            
+            {/* 新增一列 */}
+            <View style={[column, oneColumn]}>
+                {/* 新增一行 */}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
+                    borders={BorderStyles.NONE}
+                />
+                {/* 新增一行 */}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
+                    borders={BorderStyles.NONE}
+                />
+                {/* 新增一行 */}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
+                    borders={BorderStyles.NONE}
+                />
+                {/* 新增一行 */}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
+                    borders={BorderStyles.NONE}
+                />
+                {/* 新增一行 */}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
+                    borders={BorderStyles.NONE}
+                />
+            </View>
         </View>;
 
         const leftPageStyle = [
@@ -212,6 +264,11 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.SIN}
                     borders={BorderStyles.NONE}
                 />
+                {/* 新增一行 */}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
+                    borders={BorderStyles.NONE}
+                />
             </View>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
@@ -228,6 +285,11 @@ class ExpressionKeypad extends React.Component {
                 />
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.COS}
+                    borders={BorderStyles.NONE}
+                />
+                {/* 新增一行 */}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
                     borders={BorderStyles.NONE}
                 />
             </View>
@@ -248,6 +310,11 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.TAN}
                     borders={BorderStyles.NONE}
                 />
+                {/* 新增一行 */}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
+                    borders={BorderStyles.NONE}
+                />
             </View>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
@@ -263,7 +330,11 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.LEFT_PAREN}
                     borders={BorderStyles.LEFT}
                 />
-                
+                {/* 新增一行 */}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
+                    borders={BorderStyles.NONE}
+                />
             </View>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
@@ -274,10 +345,10 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.NEQ}
                     borders={BorderStyles.NONE}
                 />
-                <TouchableKeypadButton
+                {/* <TouchableKeypadButton
                     keyConfig={KeyConfigs.EQUIV}
                     borders={BorderStyles.NONE}
-                />
+                /> */}
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.LT}
                     borders={BorderStyles.BOTTOM}
@@ -286,9 +357,42 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.RIGHT_PAREN}
                     borders={BorderStyles.NONE}
                 />
+                {/* 新增一行 */}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
+                    borders={BorderStyles.NONE}
+                />
             </View>
+            {/* 新增一列，不要再多了，不然格子宽度不够 最多容下6列*/}
+            <View style={[column, oneColumn]}>
+                {/* 新增一行 */}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
+                    borders={BorderStyles.NONE}
+                />
+                {/* 新增一行 */}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
+                    borders={BorderStyles.NONE}
+                />
+                {/* 新增一行 */}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
+                    borders={BorderStyles.NONE}
+                />
+                {/* 新增一行 */}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
+                    borders={BorderStyles.NONE}
+                />
+                {/* 新增一行 */}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUIV}
+                    borders={BorderStyles.NONE}
+                />
+            </View>
+            
         </View>;
-
         return <TwoPageKeypad
             currentPage={currentPage}
             rightPage={rightPage}

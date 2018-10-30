@@ -90,9 +90,9 @@ class ViewPager extends React.Component {
             </View>
             
             {/* 新增第三个tab */}
-            <View dynamicStyle={dynamicPageStyle}>
+            {/* <View dynamicStyle={dynamicPageStyle}>
                 {children[2]}
-            </View>
+            </View> */}
         </View>;
     }
 }

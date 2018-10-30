@@ -38,8 +38,8 @@ class TwoPageKeypad extends React.Component {
                 <View style={styles.borderTop}>
                     <ViewPager>
                         {leftPage}
-                        {leftPage}
                         {rightPage}
+                        {/* {rightPage} */}
                     </ViewPager>
                 </View>
             </Keypad>;
