@@ -372,7 +372,7 @@ class ExpressionKeypad extends React.Component {
                 />
                 {/* 新增一行 */}
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.EQUIV}
+                    keyConfig={KeyConfigs.COS1}
                     borders={BorderStyles.NONE}
                 />
                 {/* 新增一行 */}

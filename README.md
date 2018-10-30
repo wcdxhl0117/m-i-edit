@@ -20,7 +20,6 @@
         ```
             EQUIV:'EQUIV',
         ```
-        注意：key-configs.js不知道是否有用，据查里面是一些符号规范，可能不影响
     4. 定义新符号的属性。修改文件： src/data/key-configs.js
         ```
         [Keys.EQUIV]: {
