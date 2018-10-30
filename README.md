@@ -2,13 +2,19 @@
 # 修改方法总结
 * 右下角的符号修改方法
     src/store/index.js
+    注意：如果是特殊符号需要按下面按钮的方式去添加编码
     ```
     const initialKeypadState = {
-            extraKeys: ['x', 'y', Keys.THETA, Keys.PI], 
+            extraKeys: ['x', 'y', 'z', Keys.THETA, Keys.PI], 
             keypadType: defaultKeypadType,
             active: false,
         };
     ```
+* 修改其他按钮的方法
+    1. 新建一个svg组件： 位置在src/components/iconography/equiv.js，说明： Vector 恒等图像用于显示
+    2. 修改iconography文件的index： src/components/iconography/index.js, iconography下方的所有公式的svg组件，index是做统一导出
+    3. 
+
 
 * 添加按钮点击，往输入框增加内容。 修改文件为math-input.js, 聚焦方法this.mathField.focus(); 增加内容方法this.mathField.setContent('666')，获取内容方法this.mathField.getContent() 注：athquill初始化是在math-wraper.js
 ```
