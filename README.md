@@ -21,11 +21,26 @@
             EQUIV:'EQUIV',
         ```
         注意：key-configs.js不知道是否有用，据查里面是一些符号规范，可能不影响
-    4. 修改文件：src/components/input/math-wrapper.js，math-wrapper.js里面包含了几乎所有符号的LaTeX编码
+    4. 定义新符号的属性。修改文件： src/data/key-configs.js
+        ```
+        [Keys.EQUIV]: {
+                type: KeyTypes.OPERATOR,
+                ariaLabel: i18n._('Always-equal sign'),
+            },
+        ```
+    5. 修改文件：src/components/input/math-wrapper.js，math-wrapper.js里面包含了几乎所有符号的LaTeX编码
         ```
         [Keys.EQUIV]:{str:'\\equiv',fn:WRITE},
         ```
-    5. 
+    6. 以上步骤已将将新加的公式符号svg,Latex编码都准备好了，现在需要引入到页面, 渲染公式键盘位置：src/components/expression-keypad.js, expression-keypad.js修改能替换和添加公式
+        ```
+            <TouchableKeypadButton
+                keyConfig={KeyConfigs.EQUIV}
+                borders={BorderStyles.NONE}
+            />
+        ```
+        注意：如果在某一列添加一个图标，那么整个tab页布局都会变化：如目前是5*4的结构，如果在公式的某一行添加一个公式，那么键盘布局会变为5*5的结构，所以会交错，建议添加一个最好是整体都添加公式，最好还是添加个tab页去添加公式，这样不影响布局（tab添加方式后期研究）
+    
 
 * 添加按钮点击，往输入框增加内容。 修改文件为math-input.js, 聚焦方法this.mathField.focus(); 增加内容方法this.mathField.setContent('666')，获取内容方法this.mathField.getContent() 注：athquill初始化是在math-wraper.js
 ```
