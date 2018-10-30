@@ -17,8 +17,15 @@
         EQUIV:require('./equiv'),
         ```
     3. 修改符号注册文件： src/data/keys.js
-        
-
+        ```
+            EQUIV:'EQUIV',
+        ```
+        注意：key-configs.js不知道是否有用，据查里面是一些符号规范，可能不影响
+    4. 修改文件：src/components/input/math-wrapper.js，math-wrapper.js里面包含了几乎所有符号的LaTeX编码
+        ```
+        [Keys.EQUIV]:{str:'\\equiv',fn:WRITE},
+        ```
+    5. 
 
 * 添加按钮点击，往输入框增加内容。 修改文件为math-input.js, 聚焦方法this.mathField.focus(); 增加内容方法this.mathField.setContent('666')，获取内容方法this.mathField.getContent() 注：athquill初始化是在math-wraper.js
 ```
