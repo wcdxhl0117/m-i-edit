@@ -17,7 +17,7 @@ const {
 
 class TwoPageKeypad extends React.Component {
     static propTypes = {
-        currentPage: React.PropTypes.oneOf([0, 1]).isRequired,
+        currentPage: React.PropTypes.oneOf([0, 1, 2]).isRequired,
         leftPage: React.PropTypes.node.isRequired,
         paginationEnabled: React.PropTypes.bool.isRequired,
         rightPage: React.PropTypes.node.isRequired,

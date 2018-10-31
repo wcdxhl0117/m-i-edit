@@ -60,6 +60,14 @@
     1. 首先要修改的是expression-keypad.js，已有rightPage和leftPage,需要再添加一个middlPpage，具体结构和leftPage和rightPage保持一致，同时将numPages = 3
     2. 在two-page-keypad.js（当然也可以重新建一个在there-page-keypad.js），引入middlePage，使用middlepage
     ```
+        // 修改默认节点数量
+        static propTypes = {
+            // currentPage: React.PropTypes.oneOf([0, 1]).isRequired,
+            currentPage: React.PropTypes.oneOf([0, 1, 2]).isRequired,
+            leftPage: React.PropTypes.node.isRequired,
+            paginationEnabled: React.PropTypes.bool.isRequired,
+            rightPage: React.PropTypes.node.isRequired,
+        };
         // 引入
         const {
             currentPage,
