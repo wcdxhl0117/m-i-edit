@@ -1,6 +1,6 @@
 
 # 修改方法总结
-* 右下角的符号修改方法
+#### 右下角的符号修改方法
     src/store/index.js
     注意：如果是特殊符号需要按下面按钮的方式去添加编码
     ```
@@ -10,7 +10,7 @@
             active: false,
         };
     ```
-* 修改其他按钮的方法
+#### 修改其他按钮的方法
     1. 新建一个svg组件： 位置在src/components/iconography/equiv.js，说明： Vector 恒等图像用于显示
     2. 修改iconography文件的index： src/components/iconography/index.js, iconography下方的所有公式的svg组件，index是做统一导出
         ```
@@ -41,7 +41,8 @@
         注意：如果在某一列添加一个图标，那么整个tab页布局都会变化：如目前是5*4的结构，如果在公式的某一行添加一个公式，那么键盘布局会变为5*5的结构，所以会交错，建议添加一个最好是整体都添加公式，最好还是添加个tab页去添加公式，这样不影响布局（tab添加方式后期研究）
     
 
-* 添加按钮点击，往输入框增加内容。 修改文件为math-input.js, 聚焦方法this.mathField.focus(); 增加内容方法this.mathField.setContent('666')，获取内容方法this.mathField.getContent() 注：athquill初始化是在math-wraper.js
+#### 添加按钮点击，往输入框增加内容。 
+修改文件为math-input.js, 聚焦方法this.mathField.focus(); 增加内容方法this.mathField.setContent('666')，获取内容方法this.mathField.getContent() 注：athquill初始化是在math-wraper.js
 ```
   />}
             {/* wangchaogai */}
@@ -55,7 +56,7 @@
     }
 ```
 
-* 新增tab的尝试
+####新增tab的尝试
     首先在expression-keypad.js中发现已有rightPage和leftPage,需要再添加一个page，在two-page-keypad.js中增加这个page（two-page-keypad.js一些样式引入至styles.js，如column），然后在 view-page.js中添加一个chrild[2],
     1. 首先要修改的是expression-keypad.js，已有rightPage和leftPage,需要再添加一个middlPpage，具体结构和leftPage和rightPage保持一致，同时将numPages = 3
     2. 在two-page-keypad.js（当然也可以重新建一个在there-page-keypad.js），引入middlePage，使用middlepage
@@ -133,7 +134,7 @@
             maxWidth: '400%'
         }
     ```
-* 其他注意点：
+#### 其他注意点：
     1. expression-keypad.js的36行，可能是定义行列数的位置
         ```
             // 发现重要线索，实践证明这个变动，按钮大小会改变，可以更据实际情况调整行列以及调整view-pager.js的百分比来适应屏幕宽度
@@ -142,10 +143,11 @@
         ```
     2. math-wrapper里面的方法应该就是输入框的对应方法，里面定义了mathquill的一些API
     3. 按钮点击执行事件文件定位: gesture-manager.js（54: click）
-        >gesture-state-machine.js(230: onTouchEnd，注释：253）
-        >popover-state-machine.js(130: ontouchend, 注释：133，158), 触发onTrigger，点击事件
-        >根据上面分析，特别是gesture-manager.js（54: click），定位node-manager.js里的事件layoutPropsForId(只是确定位置信息，没啥用)
-        >实在没找到hander.onClick在哪定义，最后猜测会不会放在了store，果然：store/index.js(257)
+        * gesture-state-machine.js(230: onTouchEnd，注释：253）
+        * popover-state-machine.js(130: ontouchend, 注释：133，158), 触发onTrigger，点击事件
+        * 根据上面分析，特别是gesture-manager.js（54: click），定位node-manager.js里的事件layoutPropsForId(只是确定位置信息，没啥用)
+        * 实在没找到hander.onClick在哪定义，最后猜测会不会放在了store，果然：store/index.js(257: onClick的dispath)，
+         所以332找到对应reducer:'PressKey'，
 
 
 # license

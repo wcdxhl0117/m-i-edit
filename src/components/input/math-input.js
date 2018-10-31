@@ -747,7 +747,7 @@ class MathInput extends React.Component {
     };
     // wangchaogai 新增按钮
     addStr = () => {
-        let aaa = this.mathField.getContent();
+        // let aaa = this.mathField.getContent();
         // this.focus();
         // this.mathField.setContent(aaa + '666');
         this.mathField.writeContent(`777`);

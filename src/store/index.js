@@ -255,7 +255,6 @@ const createStore = () => {
                 });
             },
             onClick: (key, layoutProps, inPopover) => {
-                console.log(111)
                 store.dispatch({
                     type: 'PressKey',
                     key,
@@ -332,11 +331,9 @@ const createStore = () => {
         switch (action.type) {
             case 'PressKey':
                 const keyConfig = KeyConfigs[action.key];
-
                 // Add in the echo animation if the user performs a math
                 // operation.
-                if (keyConfig.type === KeyTypes.VALUE ||
-                        keyConfig.type === KeyTypes.OPERATOR) {
+                if (keyConfig.type === KeyTypes.VALUE || keyConfig.type === KeyTypes.OPERATOR) {
                     return {
                         ...state,
                         echoes: [
