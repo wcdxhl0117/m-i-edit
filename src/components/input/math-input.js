@@ -749,8 +749,8 @@ class MathInput extends React.Component {
     addStr = () => {
         let aaa = this.mathField.getContent();
         // this.focus();
-        this.mathField.setContent('666');
-        // this.mathField.writeContent('11');
+        // this.mathField.setContent(aaa + '666');
+        this.mathField.writeContent(`777`);
     }
 }
 

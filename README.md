@@ -140,7 +140,7 @@
             static rows = 4;
             static columns = 5;
         ```
- 
+    2. math-wrapper里面的方法应该就是输入框的对应方法，里面定义了mathquill的一些API
 
 
 # license

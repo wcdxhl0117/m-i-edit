@@ -265,6 +265,10 @@ class MathWrapper {
         this.mathField.latex(latex);
     }
 
+    writeContent(latex) {
+        this.mathField.write(latex);
+    }
+
     isEmpty() {
         const cursor = this.getCursor();
         return cursor.parent.id === 1 && cursor[1] === 0 && cursor[-1] === 0;
