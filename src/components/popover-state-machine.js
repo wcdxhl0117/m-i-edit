@@ -130,6 +130,7 @@ class PopoverStateMachine {
     onTouchEnd(id) {
         const inPopover = !!this.activePopover;
         if (inPopover) {
+            // 右下角点击事件会触发
             // If we have a popover that is currently active, we trigger a
             // click on this node if and only if it's in the popover, with the
             // exception that, if the node passed back _is_ the active popover,
@@ -146,6 +147,7 @@ class PopoverStateMachine {
                 this.handlers.onClick(keyId, keyId, inPopover);
             }
         } else if (this.popovers[id]) {
+            console.log(111)
             // Otherwise, if the node is itself a popover revealer, trigger the
             // clicking of its default node, but pass back the popover node ID
             // for layout purposes.
@@ -153,6 +155,7 @@ class PopoverStateMachine {
             const domNodeId = id;
             this.handlers.onClick(keyId, domNodeId, inPopover);
         } else if (id != null) {
+            // 按钮点击会触发
             // Finally, if we have no active popover, and we touched up over a
             // valid key, trigger a click.
             this.onTrigger(id);

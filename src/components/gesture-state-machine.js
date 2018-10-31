@@ -241,7 +241,6 @@ class GestureStateMachine {
             const {
                 activeNodeId, pressAndHoldIntervalId,
             } = this.touchState[touchId];
-
             this._cleanupTouchEvent(touchId);
 
             const didPressAndHold = !!pressAndHoldIntervalId;
@@ -251,6 +250,7 @@ class GestureStateMachine {
                 // the onTouchEnd handler would add an extra trigger.
                 this.handlers.onBlur();
             } else {
+                // 这里执行按钮的事件，将activeNodeId传入，activeNodeId为keys-config标记
                 // Trigger a touch-end. There's no need to notify clients of a
                 // blur as clients are responsible for handling any cleanup in
                 // their touch-end handlers.

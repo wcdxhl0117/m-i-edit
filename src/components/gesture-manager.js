@@ -15,7 +15,6 @@ const coordsForEvent = (evt) => {
 class GestureManager {
     constructor(options, handlers, disabledSwipeKeys, multiPressableKeys) {
         const {swipeEnabled} = options;
-
         this.swipeEnabled = swipeEnabled;
 
         // Events aren't tracked until event tracking is enabled.
