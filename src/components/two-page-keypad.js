@@ -27,6 +27,7 @@ class TwoPageKeypad extends React.Component {
         const {
             currentPage,
             leftPage,
+            middlepage,
             paginationEnabled,
             rightPage,
         } = this.props;
@@ -38,8 +39,8 @@ class TwoPageKeypad extends React.Component {
                 <View style={styles.borderTop}>
                     <ViewPager>
                         {leftPage}
+                        {middlepage}
                         {rightPage}
-                        {/* {rightPage} */}
                     </ViewPager>
                 </View>
             </Keypad>;
