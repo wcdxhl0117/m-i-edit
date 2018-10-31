@@ -33,7 +33,7 @@ class ExpressionKeypad extends React.Component {
         roundTopLeft: React.PropTypes.bool,
         roundTopRight: React.PropTypes.bool,
     };
-    // 发现重要线索，这是定义行列的位置吗？？？？
+    // 发现重要线索，实践证明这个变动，按钮大小会改变，可以更据实际情况调整行列以及调整view-pager.js的百分比来适应屏幕宽度
     static rows = 4;
     static columns = 5;
 
