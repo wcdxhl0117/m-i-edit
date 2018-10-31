@@ -57,8 +57,82 @@
 
 * 新增tab的尝试
     首先在expression-keypad.js中发现已有rightPage和leftPage,需要再添加一个page，在two-page-keypad.js中增加这个page（two-page-keypad.js一些样式引入至styles.js，如column），然后在 view-page.js中添加一个chrild[2],
+    1. 首先要修改的是expression-keypad.js，已有rightPage和leftPage,需要再添加一个middlPpage，具体结构和leftPage和rightPage保持一致，同时将numPages = 3
+    2. 在two-page-keypad.js（当然也可以重新建一个在there-page-keypad.js），引入middlePage，使用middlepage
+    ```
+        // 引入
+        const {
+            currentPage,
+            leftPage,
+            paginationEnabled,
+            rightPage,
+            middlePage,
+        } = this.props;
+        // 使用
+        if (paginationEnabled) {
+            return <Keypad style={[column, styles.keypad]}>
+                <PagerIndicator numPages={3} currentPage={currentPage} />
+                <View style={styles.borderTop}>
+                    <ViewPager>
+                        {leftPage}
+                        {middlePage}
+                        {rightPage}
+                    </ViewPager>
+                </View>
+            </Keypad>;
+        } else {
+            return <Keypad style={styles.keypad}>
+                <View style={row}>
+                    <View style={fullWidth}>
+                        {leftPage}
+                    </View>
+                    <View style={fullWidth}>
+                        {middlePage}
+                    </View>
+                    <View style={[styles.borderLeft, fullWidth]}>
+                        {rightPage}
+                    </View>
+                </View>
+            </Keypad>;
+        }
+    ```
 
-
+    3. 修改view-pager.js，新增tab。
+    ```
+        return <View style={pagerStyle} dynamicStyle={dynamicPagerStyle}>
+            <View dynamicStyle={dynamicPageStyle}>
+                {children[0]}
+            </View>
+            <View style={styles.rightPage} dynamicStyle={dynamicPageStyle}>
+                {children[1]}
+            </View>
+            {/* 新增tab */}
+            <View style={styles.rightPage} dynamicStyle={dynamicPageStyle}>
+                {children[2]}
+            </View>
+        </View>;
+        // 修改样式
+        twoPagePager: {
+            alignSelf: 'flex-start',
+            // Note: By default, <View> sets a `maxWidth` of 100% to fix some
+            // Flexbox bugs. We have to override it to accommodate for our two
+            // pages. The exact value here isn't super important, as long as it's
+            // large enough to accommodate for two pages (so, 200%) and some
+            // separators.
+            // 2tab用,这是我没发现的关键点，美国大拿帮助下踩发现
+            // maxWidth: '250%',
+            // 3tab用
+            maxWidth: '400%'
+        }
+    ```
+* 其他注意点：
+    1. expression-keypad.js的36行，可能是定义行列数的位置
+        ```
+            // 发现重要线索，这是定义行列的位置吗？？？？
+            static rows = 4;
+            static columns = 5;
+        ```
+ 
 
 
 # license

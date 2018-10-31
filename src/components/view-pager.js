@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
         // 2tab用,这是我没发现的关键点，美国大拿帮助下踩发现
         // maxWidth: '250%',
         // 3tab用
-        maxWidth: '400%'
+        maxWidth: '300%'
     },
 
     rightPage: {

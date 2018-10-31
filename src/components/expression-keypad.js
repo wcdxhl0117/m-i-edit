@@ -33,7 +33,7 @@ class ExpressionKeypad extends React.Component {
         roundTopLeft: React.PropTypes.bool,
         roundTopRight: React.PropTypes.bool,
     };
-
+    // 发现重要线索，这是定义行列的位置吗？？？？
     static rows = 4;
     static columns = 5;
 
