@@ -141,8 +141,11 @@
             static columns = 5;
         ```
     2. math-wrapper里面的方法应该就是输入框的对应方法，里面定义了mathquill的一些API
-    3. 按钮点击执行事件文件定位: gesture-manager.js（54: click）, gesture-state-machine.js(230: onTouchEnd，注释：253）, popover-state-machine.js(130: ontouchend, 注释：133，158), 触发onTrigger，点击事件
-    根据上面分析，特别是gesture-manager.js（54: click），定位node-manager.js里的事件layoutPropsForId(只是确定位置信息，没啥用)
+    3. 按钮点击执行事件文件定位: gesture-manager.js（54: click）
+        >gesture-state-machine.js(230: onTouchEnd，注释：253）
+        >popover-state-machine.js(130: ontouchend, 注释：133，158), 触发onTrigger，点击事件
+        >根据上面分析，特别是gesture-manager.js（54: click），定位node-manager.js里的事件layoutPropsForId(只是确定位置信息，没啥用)
+        >实在没找到hander.onClick在哪定义，最后猜测会不会放在了store，果然：store/index.js(257)
 
 
 # license

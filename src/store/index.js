@@ -255,6 +255,7 @@ const createStore = () => {
                 });
             },
             onClick: (key, layoutProps, inPopover) => {
+                console.log(111)
                 store.dispatch({
                     type: 'PressKey',
                     key,
