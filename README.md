@@ -56,7 +56,7 @@
     }
 ```
 
-####新增tab的尝试
+#### 新增tab的尝试
     首先在expression-keypad.js中发现已有rightPage和leftPage,需要再添加一个page，在two-page-keypad.js中增加这个page（two-page-keypad.js一些样式引入至styles.js，如column），然后在 view-page.js中添加一个chrild[2],
     1. 首先要修改的是expression-keypad.js，已有rightPage和leftPage,需要再添加一个middlPpage，具体结构和leftPage和rightPage保持一致，同时将numPages = 3
     2. 在two-page-keypad.js（当然也可以重新建一个在there-page-keypad.js），引入middlePage，使用middlepage
@@ -135,18 +135,18 @@
         }
     ```
 #### 其他注意点：
-    1. expression-keypad.js的36行，可能是定义行列数的位置
+    * expression-keypad.js的36行，可能是定义行列数的位置
         ```
             // 发现重要线索，实践证明这个变动，按钮大小会改变，可以更据实际情况调整行列以及调整view-pager.js的百分比来适应屏幕宽度
             static rows = 4;
             static columns = 5;
         ```
-    2. math-wrapper里面的方法应该就是输入框的对应方法，里面定义了mathquill的一些API
-    3. 按钮点击执行事件文件定位: gesture-manager.js（54: click）
-        * gesture-state-machine.js(230: onTouchEnd，注释：253）
-        * popover-state-machine.js(130: ontouchend, 注释：133，158), 触发onTrigger，点击事件
-        * 根据上面分析，特别是gesture-manager.js（54: click），定位node-manager.js里的事件layoutPropsForId(只是确定位置信息，没啥用)
-        * 实在没找到hander.onClick在哪定义，最后猜测会不会放在了store，果然：store/index.js(257: onClick的dispath)，
+    * math-wrapper里面的方法应该就是输入框的对应方法，里面定义了mathquill的一些API
+    * 按钮点击执行事件文件定位: gesture-manager.js（54: click）
+        1. gesture-state-machine.js(230: onTouchEnd，注释：253）
+        2. popover-state-machine.js(130: ontouchend, 注释：133，158), 触发onTrigger，点击事件
+        3. 根据上面分析，特别是gesture-manager.js（54: click），定位node-manager.js里的事件layoutPropsForId(只是确定位置信息，没啥用)
+        4. 实在没找到hander.onClick在哪定义，最后猜测会不会放在了store，果然：store/index.js(257: onClick的dispath)，
          所以332找到对应reducer:'PressKey'，
 
 
