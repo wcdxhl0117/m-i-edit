@@ -57,7 +57,8 @@
 ```
 
 #### 新增tab的尝试
-    1. 首先要修改的是expression-keypad.js，已有rightPage和leftPage,需要再添加一个middlPpage，具体结构和leftPage和rightPage保持一致，同时将numPages = 3
+    1. 首先要修改的是expression-keypad.js，已有rightPage和leftPage,需要再添加一个middlPpage，
+    具体结构和leftPage和rightPage保持一致，同时将numPages = 3
     2. 在two-page-keypad.js（当然也可以重新建一个在there-page-keypad.js），引入middlePage，使用middlepage
 
 ```
@@ -147,7 +148,7 @@
     2. popover-state-machine.js(130: ontouchend, 注释：133，158), 触发onTrigger，点击事件
     3. 根据上面分析，特别是gesture-manager.js（54: click），定位node-manager.js里的事件layoutPropsForId(只是确定位置信息，没啥用)
     4. 实在没找到hander.onClick在哪定义，最后猜测会不会放在了store，果然：store/index.js(257: onClick的dispath)，
-    所以332找到对应reducer:'PressKey'，
+    所以找到对应reducer:'PressKey'(多个)，
 
 
 # license
