@@ -733,8 +733,6 @@ class MathInput extends React.Component {
                 {/* wangchaogai */}
                 <p>111</p>
                 <p>111</p>
-                <p>111</p>
-                <p>111</p>
                 <p onClick={this.addStr}>按钮</p>
             </div>
             {focused && handle.visible && <CursorHandle
