@@ -32,7 +32,8 @@
         ```
         [Keys.EQUIV]:{str:'\\equiv',fn:WRITE},
         ```
-    6. 以上步骤已将将新加的公式符号svg,Latex编码都准备好了，现在需要引入到页面, 渲染公式键盘位置：src/components/expression-keypad.js, expression-keypad.js修改能替换和添加公式
+    6. 以上步骤已将将新加的公式符号svg,Latex编码都准备好了，现在需要引入到页面, 
+    渲染公式键盘位置：src/components/expression-keypad.js, expression-keypad.js修改能替换和添加公式
         ```
             <TouchableKeypadButton
                 keyConfig={KeyConfigs.EQUIV}
