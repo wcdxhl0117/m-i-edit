@@ -277,10 +277,12 @@ class MathInput extends React.Component {
         // Pass this component's handleKey method to the keypad so it can call
         // it whenever it needs to trigger a keypress action.
         this.props.keypadElement.setKeyHandler(key => {
+            // 这里调用了pressKey方法在math-wrapper中
             const cursor = this.mathField.pressKey(key);
-            // 这里可以判断按钮点击的是谁
+            // 这里可以判断按钮点击的是谁，比如可以加一个确认按钮，事件就能触发到了
             if (key === 'COS') {
-                console.log('chenggongle!!!')
+                console.log('点击了cos');
+                console.log(localStorage.getItem('toLatex'));
             }
 
             // Trigger an `onChange` if the value in the input changed, and hide

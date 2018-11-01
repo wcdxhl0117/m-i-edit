@@ -155,9 +155,10 @@
     所以找到对应reducer:'PressKey'(多个)，43->对应inputReducer,通过打印state.keyHandler，发现keyHander在math-input
     中被使用（279），这可以在这里判断按钮类型：
     ```
-    // 这里可以判断按钮点击的是谁
+    // 这里可以判断按钮点击的是谁，比如可以加一个确认按钮，事件就能触发到了
     if (key === 'COS') {
-        console.log('chenggongle!!!')
+        console.log('点击了cos');
+        console.log(localStorage.getItem('toLatex'));
     }
     ```
 
