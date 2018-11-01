@@ -278,6 +278,10 @@ class MathInput extends React.Component {
         // it whenever it needs to trigger a keypress action.
         this.props.keypadElement.setKeyHandler(key => {
             const cursor = this.mathField.pressKey(key);
+            // 这里可以判断按钮点击的是谁
+            if (key === 'COS') {
+                console.log('chenggongle!!!')
+            }
 
             // Trigger an `onChange` if the value in the input changed, and hide
             // the cursor handle whenever the user types a key. If the value

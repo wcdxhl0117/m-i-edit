@@ -42,6 +42,7 @@ const createStore = () => {
 
             case 'PressKey':
                 const keyConfig = KeyConfigs[action.key];
+                console.log(state.keyHandler)
                 if (keyConfig.type !== KeyTypes.KEYPAD_NAVIGATION) {
                     // This is probably an anti-pattern but it works for the
                     // case where we don't actually control the state but we
