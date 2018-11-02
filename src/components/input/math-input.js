@@ -280,8 +280,8 @@ class MathInput extends React.Component {
             // 这里调用了pressKey方法在math-wrapper中
             const cursor = this.mathField.pressKey(key);
             // 这里可以判断按钮点击的是谁，比如可以加一个确认按钮，事件就能触发到了
-            if (key === 'COS') {
-                console.log('点击了cos');
+            if (key === 'SURE') {
+                console.log('点击了SURE');
                 console.log(localStorage.getItem('toLatex'));
             }
 
