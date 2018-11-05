@@ -3,43 +3,43 @@
 #### 右下角的符号修改方法
     src/store/index.js
     注意：如果是特殊符号需要按下面按钮的方式去添加编码
-    ```
+```
     const initialKeypadState = {
             extraKeys: ['x', 'y', 'z', Keys.THETA, Keys.PI], 
             keypadType: defaultKeypadType,
             active: false,
         };
-    ```
+```
 #### 修改其他按钮的方法
     1. 新建一个svg组件： 位置在src/components/iconography/equiv.js，说明： Vector 恒等图像用于显示
     2. 修改iconography文件的index： src/components/iconography/index.js, iconography下方的所有公式的svg组件，
     index是做统一导出
-        ```
+```
         EQUIV:require('./equiv'),
-        ```
+```
     3. 修改符号注册文件： src/data/keys.js
-        ```
-            EQUIV:'EQUIV',
-        ```
+```
+        EQUIV:'EQUIV',
+```
     4. 定义新符号的属性。修改文件： src/data/key-configs.js
-        ```
+```
         [Keys.EQUIV]: {
                 type: KeyTypes.OPERATOR,
                 ariaLabel: i18n._('Always-equal sign'),
             },
-        ```
+```
     5. 修改文件：src/components/input/math-wrapper.js，math-wrapper.js里面包含了几乎所有符号的LaTeX编码
-        ```
+```
         [Keys.EQUIV]:{str:'\\equiv',fn:WRITE},
-        ```
+```
     6. 以上步骤已将将新加的公式符号svg,Latex编码都准备好了，现在需要引入到页面, 
     渲染公式键盘位置：src/components/expression-keypad.js, expression-keypad.js修改能替换和添加公式
-        ```
+```
             <TouchableKeypadButton
                 keyConfig={KeyConfigs.EQUIV}
                 borders={BorderStyles.NONE}
             />
-        ```
+```
         注意：如果在某一列添加一个图标，那么整个tab页布局都会变化：如目前是5*4的结构，如果在公式的某一行添加一个公式，
         那么键盘布局会变为5*5的结构，所以会交错，建议添加一个最好是整体都添加公式，最好还是添加个tab页去添加公式，
         这样不影响布局（tab添加方式后期研究）
@@ -154,13 +154,13 @@
     4. 实在没找到hander.onClick在哪定义，最后猜测会不会放在了store，果然：store/index.js(257: onClick的dispath)，
     所以找到对应reducer:'PressKey'(多个)，43->对应inputReducer,通过打印state.keyHandler，发现keyHander在math-input
     中被使用（279），这可以在这里判断按钮类型：
-    ```
+```
     // 这里可以判断按钮点击的是谁，比如可以加一个确认按钮，事件就能触发到了
     if (key === 'COS') {
         console.log('点击了cos');
         console.log(localStorage.getItem('toLatex'));
     }
-    ```
+```
 
 # license
 
