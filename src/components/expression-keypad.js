@@ -304,7 +304,7 @@ class ExpressionKeypad extends React.Component {
                 {/* 新增一行 */}
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.EQUIV}
-                    borders={BorderStyles.NONE}
+                    borders={BorderStyles.BOTTOM}
                 />
                 {/* 新增一行 */}
                 <TouchableKeypadButton
@@ -429,7 +429,7 @@ class ExpressionKeypad extends React.Component {
                 {/* 新增一行 */}
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.EQUIV}
-                    borders={BorderStyles.NONE}
+                    borders={BorderStyles.BOTTOM}
                 />
                 {/* 新增一行 */}
                 <TouchableKeypadButton
