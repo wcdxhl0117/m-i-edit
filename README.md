@@ -134,7 +134,7 @@
             // pages. The exact value here isn't super important, as long as it's
             // large enough to accommodate for two pages (so, 200%) and some
             // separators.
-            // 2tab用,这是我没发现的关键点，美国大拿帮助下踩发现
+            // 2tab用,这是我没发现的关键点，美国那边帮助下发现的关键，如果2个tab需要>200%,3个>300%
             // maxWidth: '250%',
             // 3tab用
             maxWidth: '400%'

@@ -713,6 +713,8 @@ class MathInput extends React.Component {
             ...padding,
             ...(focused ? {borderColor: brightGreen} : {}),
             ...style,
+            width: '100%',
+            overflow: 'auto',
         };
 
         return <View
@@ -726,7 +728,9 @@ class MathInput extends React.Component {
         >
             {/* NOTE(charlie): This is used purely to namespace the styles in
                 overrides.css. */}
-            <div className='keypad-input'>
+            <div className='keypad-input'
+                style={{width: '100%', overflow: 'auto',}}
+            >
                 {/* NOTE(charlie): This element must be styled with inline
                     styles rather than with Aphrodite classes, as MathQuill
                     modifies the class names on the DOM node. */}
@@ -756,6 +760,7 @@ class MathInput extends React.Component {
         // let aaa = this.mathField.getContent();
         // this.focus();
         // this.mathField.setContent(aaa + '666');
+        this.mathField.getCursor();
         this.mathField.writeContent(`777`);
     }
 }
@@ -778,6 +783,8 @@ const styles = StyleSheet.create({
         position: 'relative',
         display: 'inline-block',
         verticalAlign: 'middle',
+        // 输入框变为100%宽度
+        width: '100%',
     },
 });
 

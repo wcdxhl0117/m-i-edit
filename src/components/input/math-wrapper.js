@@ -268,6 +268,7 @@ class MathWrapper {
 
     writeContent(latex) {
         this.mathField.write(latex);
+        // this.mathField.keystroke('Right');
     }
 
     isEmpty() {
