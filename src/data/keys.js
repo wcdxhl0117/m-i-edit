@@ -37,7 +37,7 @@ const Keys = {
     LOG_N: 'LOG_N',
     SIN: 'SIN',
     COS: 'COS',
-    COS1: 'COS1',
+    SUREBTN: 'SUREBTN',
     EQUIV:'EQUIV',
     TAN: 'TAN',
 

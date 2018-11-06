@@ -155,7 +155,7 @@ const KeyConfigs = {
         type: KeyTypes.OPERATOR,
         ariaLabel: i18n._('Cosine'),
     },
-    [Keys.COS1]: {
+    [Keys.SUREBTN]: {
         type: KeyTypes.OPERATOR,
         ariaLabel: i18n._('Cosine'),
     },

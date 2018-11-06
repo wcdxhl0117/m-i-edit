@@ -4,7 +4,7 @@
 
 module.exports = {
     COS: require('./cos'),
-    COS1: require('./cos1'),
+    SUREBTN: require('./surebtn'),
     EQUIV:require('./equiv'),
     LOG: require('./log'),
     EQUAL: require('./equal'),
