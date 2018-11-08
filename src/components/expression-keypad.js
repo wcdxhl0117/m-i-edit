@@ -293,7 +293,7 @@ class ExpressionKeypad extends React.Component {
             <View style={[column, oneColumn]}>
                 {/* 新增一行 */}
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.EQUIV}
+                    keyConfig={KeyConfigs.COS}
                     borders={BorderStyles.NONE}
                 />
                 {/* 新增一行 */}
@@ -303,12 +303,12 @@ class ExpressionKeypad extends React.Component {
                 />
                 {/* 新增一行 */}
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.EQUIV}
+                    keyConfig={KeyConfigs.COS}
                     borders={BorderStyles.BOTTOM}
                 />
                 {/* 新增一行 */}
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.EQUIV}
+                    keyConfig={KeyConfigs.COS}
                     borders={BorderStyles.NONE}
                 />
             </View>
@@ -418,7 +418,7 @@ class ExpressionKeypad extends React.Component {
             <View style={[column, oneColumn]}>
                 {/* 新增一行 */}
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.EQUIV}
+                    keyConfig={KeyConfigs.COS}
                     borders={BorderStyles.NONE}
                 />
                 {/* 新增一行 */}
@@ -428,12 +428,12 @@ class ExpressionKeypad extends React.Component {
                 />
                 {/* 新增一行 */}
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.EQUIV}
+                    keyConfig={KeyConfigs.COS}
                     borders={BorderStyles.BOTTOM}
                 />
                 {/* 新增一行 */}
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.EQUIV}
+                    keyConfig={KeyConfigs.COS}
                     borders={BorderStyles.NONE}
                 />
             </View>

@@ -60,7 +60,7 @@ class MathInput extends React.Component {
         let _this = this;
         setTimeout(function() {
           _this.focus();
-        }, 500)
+        }, 50)
         // wangchaoxiugai-jieshu
 
         this._isMounted = true;
