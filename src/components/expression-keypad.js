@@ -112,9 +112,10 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.NUM_1}
                     borders={BorderStyles.BOTTOM}
                 />
+                {/* 左下集合按钮位置 */}
                 <ManyKeypadButton
                     keys={extraKeys}
-                    borders={BorderStyles.NONE}
+                    borders={BorderStyles.TOP}
                 />
             </View>
             <View style={[column, oneColumn]}>
