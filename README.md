@@ -147,6 +147,73 @@
             maxWidth: '400%'
         }
 ```
+
+#### 与native通讯，将外部字符串放入输入框的方法（感谢宋霖前辈）
+    我一直的思路是在math-input.js组件里面去改，在math-wrapper组件组去写对应的方法，一直有问题。
+    宋霖老师的做法：在component/app.js
+```
+    const React = require('react');
+    const {View} = require('../fake-react-native-web');
+    const {components} = require('../index');
+    const {Keypad, KeypadInput} = components;
+    class App extends React.Component {
+        constructor(props){
+            super(props);
+            this.state ={
+                    keypadElement: null,
+                    // 这个是输入框的默认值，考虑在这里去替换
+                    value:'',
+            };
+        }
+
+        /*componentWillMount(){
+            realAnswer.callback = (data) => {
+                // `this` refers to our react component
+                this.setState({value:realAnswer});
+            };
+        }
+    */
+        render() {
+            return <View>
+                <div
+                    style={{
+                        marginTop: 10,
+                        marginLeft: 20,
+                        marginRight: 20,
+                        marginBottom: 40,
+                    }}
+                >
+                    <KeypadInput
+                        value={this.state.value}
+                        keypadElement={this.state.keypadElement}
+                        {/* 在change事件去将输入框变化后的内容传出去，这样能在index.html里设置函数接收值，可以传给native */}
+                        onChange={(value, cb) => {
+                                this.setState({value}, cb);
+                                try{
+                                    sendAnswer(value);
+                                }catch (e){
+                                    console.log('cannot send answer' + e.toString());
+                                }
+                            }
+                        }
+                        onFocus={() => this.state.keypadElement.activate()}
+                        onBlur={() => this.state.keypadElement.dismiss()}
+                    />
+                </div>
+                <Keypad
+                    onElementMounted={node => {
+                        if (node && !this.state.keypadElement) {
+                            this.setState({keypadElement: node});
+                        }
+                    }}
+                />
+            </View>;
+        }
+    }
+    module.exports = App;
+```
+在src/app.js中将整个app的render结果传给myComponent，在index.html中直接使用myComponent去接受字符串通过store流程放入输入框（厉害了）
+
 #### 其他注意点：
 * expression-keypad.js的36行，可能是定义行列数的位置
 ```
@@ -169,7 +236,10 @@
         console.log(localStorage.getItem('toLatex'));
     }
 ```
-* 在math-input
+* 在math-input.js输入框的光标拖动改动：
+    通过onCursorHandleTouchMove方法（619），进而找到_constrainToBound方法（594），这个方法是控制光标移动时位置的，在左右极值
+    源代码并没有作限制，这里我改为不能移除左右边框
+
 
 # license
 
