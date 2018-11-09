@@ -270,6 +270,13 @@ class MathWrapper {
         this.mathField.write(latex);
         // this.mathField.keystroke('Right');
     }
+    MoveContent(num) {
+        if (num === 1) {
+            this.mathField.keystroke('Left');
+        } else {
+            this.mathField.keystroke('Right');
+        }
+    }
 
     isEmpty() {
         const cursor = this.getCursor();

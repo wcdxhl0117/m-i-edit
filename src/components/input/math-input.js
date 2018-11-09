@@ -19,6 +19,7 @@ const {brightGreen, gray17} = require('../common-style');
 
 const constrainingFrictionFactor = 0.8;
 
+
 class MathInput extends React.Component {
     static propTypes = {
         // The React element node associated with the keypad that will send
@@ -592,10 +593,17 @@ class MathInput extends React.Component {
 
     _constrainToBound = (value, min, max, friction) => {
         if (value < min) {
-            return min + (value - min) * friction;
+            // 左出，不让光标出左右边框
+            this.mathField.MoveContent(1)
+            // return min + (value - min) * friction;
+            return min;
         } else if (value > max) {
-            return max + (value - max) * friction;
+            // 右出，不让光标出左右边框
+            this.mathField.MoveContent(2)
+            // return max + (value - max) * friction;
+            return max;
         } else {
+            // 正常
             return value;
         }
     };
@@ -608,11 +616,11 @@ class MathInput extends React.Component {
      */
     onCursorHandleTouchMove = (e) => {
         e.stopPropagation();
-
         const x = e.changedTouches[0].clientX;
         const y = e.changedTouches[0].clientY;
-
+        // console.log(x)
         const relativeX = x - this._containerBounds.left;
+        // console.log(relativeX)
         const relativeY =
             y - 2 * cursorHandleRadiusPx * cursorHandleDistanceMultiplier
                 - this._containerBounds.top;
