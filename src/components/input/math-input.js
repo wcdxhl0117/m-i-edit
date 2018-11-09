@@ -594,12 +594,14 @@ class MathInput extends React.Component {
     _constrainToBound = (value, min, max, friction) => {
         if (value < min) {
             // 左出，不让光标出左右边框
-            this.mathField.MoveContent(1)
+            // 到最左最有时调用一动光标事件
+            // this.mathField.MoveContent(1)
             // return min + (value - min) * friction;
             return min;
         } else if (value > max) {
             // 右出，不让光标出左右边框
-            this.mathField.MoveContent(2)
+            // 到最左最有时调用一动光标事件
+            // this.mathField.MoveContent(2)
             // return max + (value - max) * friction;
             return max;
         } else {

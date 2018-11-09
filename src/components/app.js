@@ -6,13 +6,22 @@ const {components} = require('../index');
 const {Keypad, KeypadInput} = components;
 
 class App extends React.Component {
-    state = {
-        keypadElement: null,
-        value: "",
-    };
-    componentDidMount() {
-
+    constructor(props){
+        super(props);
+        this.state ={
+                keypadElement: null,
+                value:'',
+        };
     }
+
+
+    /*componentWillMount(){
+        realAnswer.callback = (data) => {
+            // `this` refers to our react component
+            this.setState({value:realAnswer});
+        };
+    }
+*/
     render() {
         return <View>
             <div
@@ -20,19 +29,21 @@ class App extends React.Component {
                     marginTop: 10,
                     marginLeft: 20,
                     marginRight: 20,
-                    // wangchaoxiugai
-                    marginBottom: 360,
-                    position: 'fixed',
-                    bottom: '0',
-                    left: '0',
-                    right: '0'
-                    // wangchaoxiugai-jieshu
+                    marginBottom: 40,
                 }}
             >
                 <KeypadInput
                     value={this.state.value}
                     keypadElement={this.state.keypadElement}
-                    onChange={(value, cb) => this.setState({value}, cb)}
+                    onChange={(value, cb) => {
+                            this.setState({value}, cb);
+                            try{
+                                sendAnswer(value);
+                            }catch (e){
+                                console.log('cannot send answer' + e.toString());
+                            }
+                        }
+                    }
                     onFocus={() => this.state.keypadElement.activate()}
                     onBlur={() => this.state.keypadElement.dismiss()}
                 />
