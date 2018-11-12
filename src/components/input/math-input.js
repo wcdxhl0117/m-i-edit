@@ -287,7 +287,6 @@ class MathInput extends React.Component {
                 let allStr = localStorage.getItem('toLatex');
                 getRealAnswer(allStr);
             }
-
             // Trigger an `onChange` if the value in the input changed, and hide
             // the cursor handle whenever the user types a key. If the value
             // changed as a result of a keypress, we need to be careful not to
