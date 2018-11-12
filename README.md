@@ -66,7 +66,7 @@
         this.mathField.setContent('666')
     }
 ```
-注：这一块还是有问题的，应该是没走整个事件流程导致的，有难度，暂时搁置
+注：这一块还是有问题的，应该是没走整个事件流程导致的，暂时搁置
 
 #### 新增tab的尝试
     1. 首先要修改的是expression-keypad.js，已有rightPage和leftPage,需要再添加一个middlPpage，
@@ -133,7 +133,7 @@
                 {children[2]}
             </View>
         </View>;
-        // 修改样式
+        // 修改样式(宋霖)
         twoPagePager: {
             alignSelf: 'flex-start',
             // Note: By default, <View> sets a `maxWidth` of 100% to fix some
@@ -148,7 +148,7 @@
         }
 ```
 
-#### 与native通讯，将外部字符串放入输入框的方法（感谢宋霖前辈）
+#### 与native通讯，将外部字符串放入输入框的方法（感谢宋霖）
     我一直的思路是在math-input.js组件里面去改，在math-wrapper组件组去写对应的方法，一直有问题。
     宋霖老师的做法：在component/app.js
 ```
@@ -212,7 +212,8 @@
     }
     module.exports = App;
 ```
-在src/app.js中将整个app的render结果传给myComponent，在index.html中直接使用myComponent去接受字符串通过store流程放入输入框（厉害了）
+在src/app.js中将整个app的render结果传给myComponent，在index.html中直接使用myComponent去接受字符串通过setState放入输入框
+
 
 #### 其他注意点：
 * expression-keypad.js的36行，可能是定义行列数的位置
@@ -238,7 +239,10 @@
 ```
 * 在math-input.js输入框的光标拖动改动：
     通过onCursorHandleTouchMove方法（619），进而找到_constrainToBound方法（594），这个方法是控制光标移动时位置的，在左右极值
-    源代码并没有作限制，这里我改为不能移除左右边框
+    源代码并没有作限制，这里我改为不能移除左右边框,同时改样式（去掉overflow:hidden）,让输入框内容能够拖动
+
+* 新增确认按钮
+    通过store流程，找到点击按钮时input的出发的是focus，所以在focus中添加判断，调用全局函数，与native通讯
 
 
 # license

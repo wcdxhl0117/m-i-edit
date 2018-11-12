@@ -284,6 +284,8 @@ class MathInput extends React.Component {
             if (key === 'SUREBTN') {
                 alert('点击了SURE，需要和Native交互，将LaTeX编码传给Native！LaTeX编码为：' + localStorage.getItem('toLatex'));
                 // console.log(localStorage.getItem('toLatex'));
+                let allStr = localStorage.getItem('toLatex');
+                getRealAnswer(allStr);
             }
 
             // Trigger an `onChange` if the value in the input changed, and hide
