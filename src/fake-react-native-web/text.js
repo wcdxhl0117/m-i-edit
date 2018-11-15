@@ -25,7 +25,9 @@ class Text extends React.Component {
             numberOfLines === 1 && styles.singleLineStyle
         );
 
-        return <span className={className} style={this.props.dynamicStyle}>
+        // return <span className={className} style={this.props.dynamicStyle}>
+        // return <span className={className} style={this.props.dynamicStyle} onClick={()=>this.props.onPress()}>
+        return <span className={className} style={this.props.dynamicStyle} onClick={()=>this.props.onPress?this.props.onPress():null}>
             {this.props.children}
         </span>;
     }

@@ -12,21 +12,65 @@
             margin: 0;
         }
     </style>
+    <style>
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 25px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+        }
+         .button:hover {
+            background-color: green;
+        }
+    </style>
 </head>
 <body>
 
 <script type="text/javascript">
     var realAnswer = '';
-    var myComponent;
+    // var myComponent;
+
+    // math-input --> native
     function sendAnswer(answer) {
         console.log('answer: ' + answer);
-        Android.sendAnswer(answer);
+        try{
+            Android.sendAnswer(answer);
+        }catch(e){
+            console.log('没有设备');
+        }
     }
+
+    // 显示安卓键盘
+    function showKeyboard(){
+        console.log('show keyboard');
+        try {
+            Android.showKeyboard();
+        }catch(e){
+            console.log('没有设备');
+        }
+    }
+
+    // native --> math-input
     function getRealAnswer(realAnswer){
         console.log('real answer received: ' + realAnswer);
-        myComponent.setState({value:realAnswer});
+        // myComponent.setState({value:realAnswer});
+        window.appComponent.setState({value:realAnswer});
+        window.inputComponent.mathField.setContent(realAnswer);
+    }
+
+    // 添加字符串到输入框
+    function appendText(text){
+        // myComponent.appendText(text);
+        window.inputComponent.mathField.pressKey(text);
+        console.log("new content: " + window.inputComponent.mathField.getContent());
+        window.appComponent.setState({value:window.inputComponent.mathField.getContent()});
     }
 </script>
+
+<button  class="button" type="button" onclick="appendText('5')">5</button>
 
 <div id="root"></div>
 

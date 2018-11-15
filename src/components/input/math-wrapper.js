@@ -185,6 +185,9 @@ class MathWrapper {
             this.mathField[WRITE](key);
         } else if (/^NUM_\d/.test(key)) {
             this.mathField[WRITE](key[4]);
+        } else { // added by SongLin.  放入字符串到输入框
+            console.log('add chinese:  ', key);
+            this.mathField[WRITE](key);
         }
 
         if (!cursor.selection) {  // don't show the cursor for selections

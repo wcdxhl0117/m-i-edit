@@ -6,7 +6,7 @@
 const React = require('react');
 const {StyleSheet} = require('aphrodite');
 
-const {View} = require('../fake-react-native-web');
+const {View, Text} = require('../fake-react-native-web');
 const {pageIndicatorHeightPx, gray68, gray85} = require('./common-style');
 
 class PagerIcon extends React.Component {
@@ -70,6 +70,9 @@ class PagerIndicator extends React.Component {
         return <View style={styles.indicatorStrip}>
             <View style={styles.iconStrip} dynamicStyle={iconStripSize}>
                 {indicators}
+            </View>
+            <View>
+                <Text onPress={()=>{console.log('pager-indicator:切换中文键盘'); showKeyboard()}}>{'  CH'}</Text>
             </View>
         </View>;
     }

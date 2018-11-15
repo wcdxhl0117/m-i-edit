@@ -22,6 +22,12 @@ class App extends React.Component {
         };
     }
 */
+
+    appendText(text) {
+        console.log('appendText in app', text);
+        this.setState({value: (this.state.value + text)});
+    }
+
     render() {
         return <View>
             <div
@@ -33,12 +39,14 @@ class App extends React.Component {
                 }}
             >
                 <KeypadInput
+                    ref={(inputComponent) => {window.inputComponent = inputComponent}}
                     value={this.state.value}
                     keypadElement={this.state.keypadElement}
                     onChange={(value, cb) => {
                             this.setState({value}, cb);
                             try{
                                 sendAnswer(value);
+                                this.setState({value}, cb);
                             }catch (e){
                                 console.log('cannot send answer' + e.toString());
                             }
