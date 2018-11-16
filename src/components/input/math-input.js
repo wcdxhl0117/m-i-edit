@@ -751,10 +751,6 @@ class MathInput extends React.Component {
                     }}
                     style={innerStyle}
                 />
-                {/* wangchaogai */}
-                <p>111</p>
-                <p>111</p>
-                <p onClick={this.addStr}>按钮</p>
             </div>
             {focused && handle.visible && <CursorHandle
                 {...handle}
@@ -766,14 +762,6 @@ class MathInput extends React.Component {
             
         </View>;
     };
-    // wangchaogai 新增按钮
-    addStr = () => {
-        // let aaa = this.mathField.getContent();
-        // this.focus();
-        // this.mathField.setContent(aaa + '666');
-        this.mathField.getCursor();
-        this.mathField.writeContent(`777`);
-    }
 }
 
 const fontSizePt = 18;
