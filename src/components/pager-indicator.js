@@ -6,6 +6,8 @@
 const React = require('react');
 const {StyleSheet} = require('aphrodite');
 
+const {connect} = require('react-redux');
+
 const {View, Text} = require('../fake-react-native-web');
 const {pageIndicatorHeightPx, gray68, gray85} = require('./common-style');
 
@@ -25,14 +27,18 @@ class PagerIcon extends React.Component {
 
         const fillColor = active ? gray68 : gray85;
 
-        return <svg width={2 * radiusPx} height={2 * radiusPx}>
+        // return <svg width={2 * radiusPx} height={2 * radiusPx}>
+        // ()=>console.log('click',this.props.page)
+        
+        return <View onClick={()=> this.props.changeTab(this.props.page)}><svg width={2 * radiusPx} height={2 * radiusPx}>
             <circle
                 cx={radiusPx}
                 cy={radiusPx}
                 r={radiusPx}
                 fill={fillColor}
             />
-        </svg>;
+        {/* </svg>; */}
+        </svg></View>;
     }
 }
 
@@ -53,6 +59,8 @@ class PagerIndicator extends React.Component {
             indicators.push(
                 <PagerIcon
                     key={i}
+                    page={i}
+                    changeTab={this.props.changeCurrentPage}
                     active={i === currentPage}
                     radiusPx={pagerIconRadiusPx}
                 />
@@ -92,4 +100,23 @@ const styles = StyleSheet.create({
     },
 });
 
-module.exports = PagerIndicator;
+const mapStateToProps = (state) => {
+    return {
+        paginationEnabled: state.layout.paginationEnabled,
+    };
+};
+
+const mapDispatchProps = (dispatch) => {
+	return {
+		changeCurrentPage(i) {
+			const action = {
+				type: 'changeCurrentPage',
+				value: i
+			}
+			dispatch(action);
+		}
+	}
+}
+
+// module.exports = PagerIndicator;
+module.exports = connect(mapStateToProps, mapDispatchProps)(PagerIndicator);

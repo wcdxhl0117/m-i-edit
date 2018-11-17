@@ -134,6 +134,13 @@ const createStore = () => {
 
     const pagerReducer = function(state = initialPagerState, action) {
         switch (action.type) {
+            // 新增改变currentPage的reducer
+            case 'changeCurrentPage':
+                return {
+                    ...state,
+                    animateToPosition: false,
+                    currentPage: action.value
+                };
             case 'ConfigureKeypad':
                 const {keypadType} = action.configuration;
                 const {numPages} = keypadForType[keypadType];
