@@ -269,9 +269,9 @@ class MathInput extends React.Component {
     };
 
     blur = () => {
-        this.mathField.blur();
-        this.props.onBlur && this.props.onBlur();
-        this.setState({focused: false, handle: {visible: false}});
+        // this.mathField.blur();
+        // this.props.onBlur && this.props.onBlur();
+        // this.setState({focused: false, handle: {visible: false}});
     };
 
     focus = () => {
