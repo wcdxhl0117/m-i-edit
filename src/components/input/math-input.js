@@ -269,6 +269,7 @@ class MathInput extends React.Component {
     };
 
     blur = () => {
+        // 项目不需要失焦，展示注释相关处理
         // this.mathField.blur();
         // this.props.onBlur && this.props.onBlur();
         // this.setState({focused: false, handle: {visible: false}});
