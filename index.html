@@ -25,19 +25,36 @@
          .button:hover {
             background-color: green;
         }
+        #root{
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 500px;
+        }
     </style>
 </head>
 <body>
 
 <script type="text/javascript">
     var realAnswer = '';
-    // var myComponent;
 
-    // math-input --> native
+    // 确认按钮点击将latex传给Native
     function sendAnswer(answer) {
-        console.log('answer: ' + answer);
+        let allStr = localStorage.getItem('toLatex');
+        console.log('answer: ' + allStr);
         try{
-            Android.sendAnswer(answer);
+            Android.sendAnswer(allStr);
+        }catch(e){
+            console.log('没有设备');
+        }
+    }
+
+    // 调用手写板
+    function showCanvas() {
+        // Android.Handwrite(); // 安卓定义一个调用native手写板的方法
+        try{
+            Android.Handwrite();
         }catch(e){
             console.log('没有设备');
         }
@@ -53,17 +70,15 @@
         }
     }
 
-    // native --> math-input（全部替换的方法）
+    // 输入框内容全部替换的方法
     function getRealAnswer(realAnswer){
         console.log('real answer received: ' + realAnswer);
-        // myComponent.setState({value:realAnswer});
         window.appComponent.setState({value:realAnswer});
         window.inputComponent.mathField.setContent(realAnswer);
     }
 
-    // 添加字符串到输入框
+    // 添加字符串到输入框光标处
     function appendText(text){
-        // myComponent.appendText(text);
         window.inputComponent.mathField.pressKey(text);
         console.log("new content: " + window.inputComponent.mathField.getContent());
         window.appComponent.setState({value:window.inputComponent.mathField.getContent()});

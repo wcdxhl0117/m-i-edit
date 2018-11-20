@@ -45,7 +45,8 @@ class App extends React.Component {
                     onChange={(value, cb) => {
                             this.setState({value}, cb);
                             try{
-                                sendAnswer(value);
+                                // 不需要每次输入都传答案给native
+                                // sendAnswer(value);
                                 this.setState({value}, cb);
                             }catch (e){
                                 console.log('cannot send answer' + e.toString());

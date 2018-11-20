@@ -79,8 +79,14 @@ class PagerIndicator extends React.Component {
             <View style={styles.iconStrip} dynamicStyle={iconStripSize}>
                 {indicators}
             </View>
-            <View>
-                <Text onPress={()=>{console.log('pager-indicator:切换中文键盘'); showKeyboard()}}>{'  CH'}</Text>
+            <View style={styles.btnMargin}>
+                <Text onPress={()=>{console.log('pager-indicator:切换中文键盘'); showKeyboard()}}>{'中文'}</Text>
+            </View>
+            <View style={styles.btnMargin}>
+                <Text onPress={()=>{console.log('pager-indicator:切换画板'); showCanvas()}}>{'手写'}</Text>
+            </View>
+            <View style={styles.btnMargin}>
+                <Text onPress={()=>{console.log('pager-indicator:确认按钮'); sendAnswer()}}>{'确认'}</Text> 
             </View>
         </View>;
     }
@@ -93,11 +99,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         height: pageIndicatorHeightPx,
+        height: '50px',
+        lineHeight: '50px'
     },
     iconStrip: {
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
+    btnMargin: {
+        marginLeft: '16px',
+    }
 });
 
 const mapStateToProps = (state) => {

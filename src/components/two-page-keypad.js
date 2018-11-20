@@ -34,8 +34,6 @@ class TwoPageKeypad extends React.Component {
 
         if (paginationEnabled) {
             return <Keypad style={[column, styles.keypad]}>
-                {/* 小点点个数 */}
-                <PagerIndicator numPages={3} currentPage={currentPage} />
                 <View style={styles.borderTop}>
                     <ViewPager>
                         {leftPage}
@@ -43,6 +41,8 @@ class TwoPageKeypad extends React.Component {
                         {rightPage}
                     </ViewPager>
                 </View>
+                {/* 小点点个数 */}
+                <PagerIndicator numPages={3} currentPage={currentPage} />
             </Keypad>;
         } else {
             // 全屏展示
@@ -50,6 +50,9 @@ class TwoPageKeypad extends React.Component {
                 <View style={row}>
                     <View style={fullWidth}>
                         {leftPage}
+                    </View>
+                    <View style={fullWidth}>
+                        {middlepage}
                     </View>
                     <View style={[styles.borderLeft, fullWidth]}>
                         {rightPage}
@@ -75,7 +78,7 @@ const styles = StyleSheet.create({
         borderLeft: `${innerBorderWidthPx}px ${innerBorderStyle} `
             + `${innerBorderColor}`,
         boxSizing: 'content-box',
-    },
+    }
 });
 
 const mapStateToProps = (state) => {
