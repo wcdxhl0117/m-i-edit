@@ -25,20 +25,28 @@ class PagerIcon extends React.Component {
     render() {
         const {active, radiusPx} = this.props;
 
-        const fillColor = active ? gray68 : gray85;
+        const fillColor = active ? 'blue' : gray85;
 
         // return <svg width={2 * radiusPx} height={2 * radiusPx}>
         // ()=>console.log('click',this.props.page)
         
-        return <View onClick={()=> this.props.changeTab(this.props.page)}><svg width={2 * radiusPx} height={2 * radiusPx}>
-            <circle
+        return <View 
+                onClick={()=> this.props.changeTab(this.props.page)}
+                style={styles.btnMargin}
+            >
+            {/* <svg width={2 * radiusPx} height={2 * radiusPx}> */}
+            {/* <circle
                 cx={radiusPx}
                 cy={radiusPx}
                 r={radiusPx}
                 fill={fillColor}
-            />
-        {/* </svg>; */}
-        </svg></View>;
+            /> */}
+                <div style={{width: '100%', height: '100%',backgroundColor: fillColor, borderRadius: '6px',}}>
+                    tab{this.props.page + 1}
+                </div>
+            {/* </svg>; */}
+        
+        </View>;
     }
 }
 
@@ -100,14 +108,26 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         height: pageIndicatorHeightPx,
         height: '50px',
-        lineHeight: '50px'
+        lineHeight: '40px',
     },
     iconStrip: {
         flexDirection: 'row',
         justifyContent: 'space-between',
+        width: 'auto'
+    },
+    // new
+    indicators: {
+        
     },
     btnMargin: {
-        marginLeft: '16px',
+        width: '60px',
+        height: '40px',
+        borderRadius: '6px',
+        textAlign: 'center',
+        backgroundColor: '#ccc',
+        marginLeft: '6px !important',
+        marginRight: '6px !important',
+        color: '#fff'
     }
 });
 
