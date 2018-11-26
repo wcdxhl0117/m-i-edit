@@ -83,6 +83,16 @@
         console.log("new content: " + window.inputComponent.mathField.getContent());
         window.appComponent.setState({value:window.inputComponent.mathField.getContent()});
     }
+
+    // 通知native点击了输入框或者光标
+    function clickBlink() {
+        try {
+            // Android.showKeyboard();
+        }catch(e){
+            console.log('没有设备');
+        }
+    }
+
 </script>
 
 <!-- <button  class="button" type="button" onclick="appendText('5')">5</button> -->

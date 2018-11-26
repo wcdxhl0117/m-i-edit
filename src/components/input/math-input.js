@@ -519,7 +519,8 @@ class MathInput extends React.Component {
     };
 
     handleTouchStart = (e) => {
-        console.log('通知native，点击了输入框')
+        console.log('通知native，点击了输入框');
+        clickBlink();
         e.stopPropagation();
 
         // Hide the cursor handle on touch start, if the handle itself isn't
@@ -579,7 +580,8 @@ class MathInput extends React.Component {
      * @param {TouchEvent} e - the raw touch event from the browser
      */
     onCursorHandleTouchStart = (e) => {
-        console.log('通知native，点击了光标')
+        console.log('通知native，点击了光标');
+        clickBlink();
         // NOTE(charlie): The cursor handle is a child of this view, so whenever
         // it receives a touch event, that event would also typically be bubbled
         // up to our own handlers. However, we want the cursor to handle its own
