@@ -107,7 +107,9 @@ const createStore = () => {
                 // dismissal here rather than dispatching a dismiss action in
                 // the first place.
                 if (keyConfig.id === Keys.DISMISS) {
-                    return keypadReducer(state, {type: 'DismissKeypad'});
+                    // return keypadReducer(state, {type: 'DismissKeypad'});
+                    closePaid();
+                    return keypadReducer(state, {type: 'ActivateKeypad'});
                 }
                 return state;
 

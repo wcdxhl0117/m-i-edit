@@ -182,15 +182,15 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.BACKSPACE}
                     borders={BorderStyles.LEFT}
                 />
-                {/* 将收起键盘按钮换成确认按钮 */}
-                {/* <TouchableKeypadButton
+                <TouchableKeypadButton
                     keyConfig={dismissOrJumpOutKey}
                     borders={BorderStyles.LEFT}
-                /> */}
-                <TouchableKeypadButton
+                />
+                {/* 将收起键盘按钮换成确认按钮 */}
+                {/* <TouchableKeypadButton
                     keyConfig={KeyConfigs.SUREBTN}
                     borders={BorderStyles.LEFT}
-                />
+                /> */}
             </View>
             
         </View>;

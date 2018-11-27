@@ -244,6 +244,9 @@
 * 新增确认按钮
     通过store流程，找到点击按钮时input的出发的是focus，所以在focus中添加判断，调用全局函数，与native通讯
 
+* 在math-input原项目下，http://khan.github.io/math-input/custom.html可设置键盘结构，设置好的参数直接放到index.html后面，能实现不同功能的键盘
+
+* 在store （110）改动，让其不能收起键盘
 
 # license
 

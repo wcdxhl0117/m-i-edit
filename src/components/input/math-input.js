@@ -282,12 +282,12 @@ class MathInput extends React.Component {
             // 这里调用了pressKey方法在math-wrapper中
             const cursor = this.mathField.pressKey(key);
             // 这里可以判断按钮点击的是谁，比如可以加一个确认按钮，事件就能触发到了
-            if (key === 'SUREBTN') {
-                alert('点击了SURE，需要和Native交互，将LaTeX编码传给Native！LaTeX编码为：' + localStorage.getItem('toLatex'));
-                // console.log(localStorage.getItem('toLatex'));
-                let allStr = localStorage.getItem('toLatex');
-                getRealAnswer(allStr);
-            }
+            // if (key === 'SUREBTN') {
+            //     alert('点击了SURE，需要和Native交互，将LaTeX编码传给Native！LaTeX编码为：' + localStorage.getItem('toLatex'));
+            //     // console.log(localStorage.getItem('toLatex'));
+            //     let allStr = localStorage.getItem('toLatex');
+            //     getRealAnswer(allStr);
+            // }
             // Trigger an `onChange` if the value in the input changed, and hide
             // the cursor handle whenever the user types a key. If the value
             // changed as a result of a keypress, we need to be careful not to

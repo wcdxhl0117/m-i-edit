@@ -35,7 +35,12 @@
     </style>
 </head>
 <body>
+<!-- 
 
+    index.html?keypad_type=expression&jump_out_type=dynamic&echo_animation=fade_only&icon_style=fancy&hold_interval_ms=250
+    后边的参数决定键盘样式，可以在http://khan.github.io/math-input/custom.html去设置
+
+ -->
 <script type="text/javascript">
     var realAnswer = '';
 
@@ -91,6 +96,11 @@
         }catch(e){
             console.log('没有设备');
         }
+    }
+
+    // 和确认按钮一致的功能
+    function closePaid() {
+        console.log('隐藏webview')
     }
 
 </script>
