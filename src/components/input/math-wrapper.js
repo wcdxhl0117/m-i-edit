@@ -280,6 +280,10 @@ class MathWrapper {
             this.mathField.keystroke('Right');
         }
     }
+    // 新增删除
+    delContent() {
+        this.mathField.keystroke('Backspace');
+    }
 
     isEmpty() {
         const cursor = this.getCursor();
