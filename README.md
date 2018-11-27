@@ -248,6 +248,8 @@
 
 * 在store （110）改动，让其不能收起键盘
 
+* 目前添加操作输入框的相关操作，首先考虑在input-wrapper上去定义新方法
+
 # license
 
 This project is for research and personal interest only and is not intended to be included in any commerical software. Please use Khan's originial project as the base for any commercial release. 
