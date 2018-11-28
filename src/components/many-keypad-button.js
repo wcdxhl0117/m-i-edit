@@ -20,7 +20,6 @@ class ManyKeypadButton extends React.Component {
 
     render() {
         const {keys, ...rest} = this.props;
-
         // If we have no extra symbols, render an empty button. If we have just
         // one, render a standard button. Otherwise, capture them all in a
         // single button.

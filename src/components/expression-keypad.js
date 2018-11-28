@@ -108,9 +108,13 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.NUM_4}
                     borders={BorderStyles.NONE}
                 />
-                <TouchableKeypadButton
+                {/* <TouchableKeypadButton
                     keyConfig={KeyConfigs.NUM_1}
                     borders={BorderStyles.BOTTOM}
+                /> */}
+                <ManyKeypadButton
+                    keys={['a', 'b']}
+                    borders={BorderStyles.TOP}
                 />
                 {/* 左下集合按钮位置 */}
                 <ManyKeypadButton
@@ -178,19 +182,19 @@ class ExpressionKeypad extends React.Component {
                     style={roundTopRight && roundedTopRight}
                 />
                 <TouchableKeypadButton keyConfig={KeyConfigs.CDOT} />
-                {/* <TouchableKeypadButton
+                <TouchableKeypadButton
                     keyConfig={KeyConfigs.BACKSPACE}
                     borders={BorderStyles.LEFT}
-                /> */}
+                />
                 <TouchableKeypadButton
                     keyConfig={dismissOrJumpOutKey}
                     borders={BorderStyles.LEFT}
                 />
                 {/* 将收起键盘按钮换成确认按钮 */}
-                <TouchableKeypadButton
+                {/* <TouchableKeypadButton
                     keyConfig={KeyConfigs.SUREBTN}
                     borders={BorderStyles.LEFT}
-                />
+                /> */}
             </View>
             
         </View>;

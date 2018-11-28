@@ -147,7 +147,6 @@ class PopoverStateMachine {
                 this.handlers.onClick(keyId, keyId, inPopover);
             }
         } else if (this.popovers[id]) {
-            console.log(111)
             // Otherwise, if the node is itself a popover revealer, trigger the
             // clicking of its default node, but pass back the popover node ID
             // for layout purposes.

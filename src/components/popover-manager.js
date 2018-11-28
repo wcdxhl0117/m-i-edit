@@ -48,7 +48,6 @@ class PopoverManager extends React.Component {
 
     render() {
         const {popover} = this.props;
-
         return <ReactCSSTransitionGroup
             transitionName={animationTransitionName}
             transitionEnter={true}
