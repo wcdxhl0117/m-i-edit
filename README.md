@@ -13,7 +13,8 @@
 
 #### 添加多个MANY公式的方法
 ```
-ssss
+    具体修改的文件见：
+    https://github.com/wangchao117/m-i-edit/commit/eae546cf1cc6612a6e462b71ae09681233c8e4d5
 ```
 
 #### 进入页面聚焦修改
