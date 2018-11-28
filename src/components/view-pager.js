@@ -41,7 +41,7 @@ class ViewPager extends React.Component {
 
             // We animate at a rate of 1 pixel per millisecond, and thus we can
             // use the displacement as the animation duration.
-            animationDurationMs = Math.abs(finalTranslateX - prevTranslateX);
+            animationDurationMs = Math.abs(finalTranslateX - prevTranslateX) / 6;
         } else {
             animationDurationMs = 0;
         }
