@@ -28,26 +28,26 @@ class ViewPager extends React.Component {
     };
 
     state = {
-        animationDurationMs: 0,
+        animationDurationMs: 200,
     };
 
     componentWillReceiveProps(newProps) {
         // Compute the appropriate animation length, if the pager should
         // animate to its next position.
-        let animationDurationMs;
-        if (newProps.animateToPosition) {
-            const finalTranslateX = newProps.translateX;
-            const prevTranslateX = this.props.translateX;
+        // let animationDurationMs;
+        // if (newProps.animateToPosition) {
+        //     const finalTranslateX = newProps.translateX;
+        //     const prevTranslateX = this.props.translateX;
 
-            // We animate at a rate of 1 pixel per millisecond, and thus we can
-            // use the displacement as the animation duration.
-            animationDurationMs = Math.abs(finalTranslateX - prevTranslateX) / 6;
-        } else {
-            animationDurationMs = 0;
-        }
-        this.setState({
-            animationDurationMs,
-        });
+        //     // We animate at a rate of 1 pixel per millisecond, and thus we can
+        //     // use the displacement as the animation duration.
+        //     animationDurationMs = Math.abs(finalTranslateX - prevTranslateX) / 6;
+        // } else {
+        //     animationDurationMs = 0;
+        // }
+        // this.setState({
+        //     animationDurationMs,
+        // });
     }
 
     render() {

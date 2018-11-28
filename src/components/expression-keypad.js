@@ -47,7 +47,7 @@ class ExpressionKeypad extends React.Component {
     static maxVisibleRows = 4;
 
     // static numPages = 2;
-    // 变为4个tab
+    // 变为5个tab
     static numPages = 5;
 
     render() {
