@@ -39,7 +39,7 @@ class ExpressionKeypad extends React.Component {
     };
     // 发现重要线索，实践证明这个变动，按钮大小会改变，可以更据实际情况调整行列以及调整view-pager.js的百分比来适应屏幕宽度
     static rows = 4;
-    static columns = 6;
+    static columns = 5;
 
     // Though we include an infinite-key popover in the bottom-left, it's
     // assumed that we don't need to accommodate cases in which that key
@@ -97,13 +97,13 @@ class ExpressionKeypad extends React.Component {
             dismissOrJumpOutKey = KeyConfigs.DISMISS;
         }
 
-        const rightPageStyle = [
+        const onePageStyle = [
             row,
             fullWidth,
             styles.rightPage,
             roundTopRight && roundedTopRight,
         ];
-        const rightPage = <View style={rightPageStyle}>
+        const onePage = <View style={onePageStyle}>
             {/* 新增一列 */}
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
@@ -111,32 +111,32 @@ class ExpressionKeypad extends React.Component {
                     style={roundTopRight && roundedTopRight}
                 />
                 <TouchableKeypadButton keyConfig={KeyConfigs.CDOT} />
-                <TouchableKeypadButton
+                {/* <TouchableKeypadButton
                     keyConfig={KeyConfigs.RIGHT}
                     borders={BorderStyles.LEFT}
-                />
+                /> */}
                 <TouchableKeypadButton
                     keyConfig={dismissOrJumpOutKey}
                     borders={BorderStyles.LEFT}
                 />
                 {/* 将收起键盘按钮换成确认按钮 */}
-                {/* <TouchableKeypadButton
+                <TouchableKeypadButton
                     keyConfig={KeyConfigs.SUREBTN}
                     borders={BorderStyles.LEFT}
-                /> */}
+                />
             </View>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.NUM_7}
-                    borders={BorderStyles.NONE}
+                    borders={BorderStyles.LEFT}
                 />
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.NUM_4}
-                    borders={BorderStyles.NONE}
+                    borders={BorderStyles.LEFT}
                 />
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.NUM_1}
-                    borders={BorderStyles.BOTTOM}
+                    borders={BorderStyles.ALL}
                 />
                 {/* <ManyKeypadButton
                     keys={extraKeys1}
@@ -149,7 +149,7 @@ class ExpressionKeypad extends React.Component {
                     keys={extraKeys}
                     manyId={Keys.MANY}
                     manyType={KeyTypes.MANY}
-                    borders={BorderStyles.NONE}
+                    borders={BorderStyles.ALL}
                 />
             </View>
             <View style={[column, oneColumn]}>
@@ -190,14 +190,6 @@ class ExpressionKeypad extends React.Component {
             </View>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.DIVIDE}
-                    borders={BorderStyles.LEFT}
-                />
-                <TouchableKeypadButton
-                    keyConfig={KeyConfigs.TIMES}
-                    borders={BorderStyles.LEFT}
-                />
-                <TouchableKeypadButton
                     keyConfig={KeyConfigs.MINUS}
                     borders={BorderStyles.LEFT}
                 />
@@ -205,17 +197,30 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.PLUS}
                     borders={BorderStyles.LEFT}
                 />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.DIVIDE}
+                    borders={BorderStyles.LEFT}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.TIMES}
+                    borders={BorderStyles.LEFT}
+                />
+                
             </View>
             <View style={[column, oneColumn]}>
-                <TouchableKeypadButton
-                    keyConfig={KeyConfigs.FRAC_INCLUSIVE}
-                    style={roundTopRight && roundedTopRight}
-                />
-                <TouchableKeypadButton keyConfig={KeyConfigs.CDOT} />
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.BACKSPACE}
                     borders={BorderStyles.LEFT}
                 />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.LEFT}
+                    borders={BorderStyles.LEFT}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.RIGHT}
+                    borders={BorderStyles.LEFT}
+                />
+                {/* <TouchableKeypadButton keyConfig={KeyConfigs.CDOT} /> */}
                 <TouchableKeypadButton
                     keyConfig={dismissOrJumpOutKey}
                     borders={BorderStyles.LEFT}
@@ -229,13 +234,13 @@ class ExpressionKeypad extends React.Component {
             
         </View>;
 
-        const middlePageStyle = [
+        const twoPageStyle = [
             row,
             fullWidth,
             styles.leftPage,
             roundTopLeft && roundedTopLeft,
         ];
-        const middlepage = <View style={middlePageStyle}>
+        const twoPage = <View style={twoPageStyle}>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.EXP_2}
@@ -350,13 +355,13 @@ class ExpressionKeypad extends React.Component {
 
         </View>;      
 
-        const leftPageStyle = [
+        const threePageStyle = [
             row,
             fullWidth,
             styles.leftPage,
             roundTopLeft && roundedTopLeft,
         ];
-        const leftPage = <View style={leftPageStyle}>
+        const threePage = <View style={threePageStyle}>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.EXP_2}
@@ -476,9 +481,9 @@ class ExpressionKeypad extends React.Component {
         </View>;
         return <TwoPageKeypad
             currentPage={currentPage}
-            rightPage={rightPage}
-            middlepage={middlepage}
-            leftPage={leftPage}
+            onePage={onePage}
+            twoPage={twoPage}
+            threePage={threePage}
         />;
     }
 }

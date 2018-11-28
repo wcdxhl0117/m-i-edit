@@ -17,28 +17,29 @@ const {
 
 class TwoPageKeypad extends React.Component {
     static propTypes = {
-        currentPage: React.PropTypes.oneOf([0, 1, 2]).isRequired,
-        leftPage: React.PropTypes.node.isRequired,
+        currentPage: React.PropTypes.oneOf([0, 1, 2, 3, 4]).isRequired,
+        threePage: React.PropTypes.node.isRequired,
         paginationEnabled: React.PropTypes.bool.isRequired,
-        rightPage: React.PropTypes.node.isRequired,
+        twoPage: React.PropTypes.node.isRequired,
+        onePage: React.PropTypes.node.isRequired,
     };
 
     render() {
         const {
             currentPage,
-            leftPage,
-            middlepage,
+            threePage,
+            twoPage,
             paginationEnabled,
-            rightPage,
+            onePage,
         } = this.props;
 
         if (paginationEnabled) {
             return <Keypad style={[column, styles.keypad]}>
                 <View style={styles.borderTop}>
                     <ViewPager>
-                        {leftPage}
-                        {middlepage}
-                        {rightPage}
+                        {threePage}
+                        {twoPage}
+                        {onePage}
                     </ViewPager>
                 </View>
                 {/* 小点点个数 */}
@@ -49,13 +50,13 @@ class TwoPageKeypad extends React.Component {
             return <Keypad style={styles.keypad}>
                 <View style={row}>
                     <View style={fullWidth}>
-                        {leftPage}
+                        {threePage}
                     </View>
                     <View style={fullWidth}>
-                        {middlepage}
+                        {twoPage}
                     </View>
                     <View style={[styles.borderLeft, fullWidth]}>
-                        {rightPage}
+                        {onePage}
                     </View>
                 </View>
             </Keypad>;
