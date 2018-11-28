@@ -39,7 +39,7 @@ class ExpressionKeypad extends React.Component {
     };
     // 发现重要线索，实践证明这个变动，按钮大小会改变，可以更据实际情况调整行列以及调整view-pager.js的百分比来适应屏幕宽度
     static rows = 4;
-    static columns = 5;
+    static columns = 6;
 
     // Though we include an infinite-key popover in the bottom-left, it's
     // assumed that we don't need to accommodate cases in which that key
@@ -104,6 +104,27 @@ class ExpressionKeypad extends React.Component {
             roundTopRight && roundedTopRight,
         ];
         const rightPage = <View style={rightPageStyle}>
+            {/* 新增一列 */}
+            <View style={[column, oneColumn]}>
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.FRAC_INCLUSIVE}
+                    style={roundTopRight && roundedTopRight}
+                />
+                <TouchableKeypadButton keyConfig={KeyConfigs.CDOT} />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.RIGHT}
+                    borders={BorderStyles.LEFT}
+                />
+                <TouchableKeypadButton
+                    keyConfig={dismissOrJumpOutKey}
+                    borders={BorderStyles.LEFT}
+                />
+                {/* 将收起键盘按钮换成确认按钮 */}
+                {/* <TouchableKeypadButton
+                    keyConfig={KeyConfigs.SUREBTN}
+                    borders={BorderStyles.LEFT}
+                /> */}
+            </View>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.NUM_7}
@@ -113,16 +134,16 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.NUM_4}
                     borders={BorderStyles.NONE}
                 />
-                {/* <TouchableKeypadButton
+                <TouchableKeypadButton
                     keyConfig={KeyConfigs.NUM_1}
                     borders={BorderStyles.BOTTOM}
-                /> */}
-                <ManyKeypadButton
+                />
+                {/* <ManyKeypadButton
                     keys={extraKeys1}
                     manyId={Keys.MANY1}
                     manyType={KeyTypes.MANY1}
                     borders={BorderStyles.NONE}
-                />
+                /> */}
                 {/* 左下集合按钮位置 */}
                 <ManyKeypadButton
                     keys={extraKeys}

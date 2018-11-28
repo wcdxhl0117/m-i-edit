@@ -253,8 +253,11 @@
 * 在math-input原项目下，http://khan.github.io/math-input/custom.html可设置键盘结构，设置好的参数直接放到index.html后面，能实现不同功能的键盘
 
 * 在store （110）改动，让其不能收起键盘
-
 * 目前添加操作输入框的相关操作，首先考虑在input-wrapper上去定义新方法
+
+* key-configs.js下的不同type对应的active背景颜色不一样,type: KeyTypes.INPUT_NAVIGATION，type: KeyTypes.VALUE, type: KeyTypes.OPERATOR
+
+* keypad.js(349 --> 69ß): maxWidth: widthPx, 其实改变按钮宽度的方法就是上面的重要线索，express-keypad.js（40），如果键盘为6列4行，这对应改为：static rows = 4; static columns = 6;
 
 # license
 
