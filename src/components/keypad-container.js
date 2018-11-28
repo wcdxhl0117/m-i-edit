@@ -22,6 +22,7 @@ class KeypadContainer extends React.Component {
     static propTypes = {
         active: React.PropTypes.bool,
         extraKeys: React.PropTypes.arrayOf(keyIdPropType),
+        extraKeys1: React.PropTypes.arrayOf(keyIdPropType),
         keypadType: React.PropTypes.oneOf(Object.keys(KeypadTypes)).isRequired,
         layoutMode: React.PropTypes.oneOf(Object.keys(LayoutModes)).isRequired,
         navigationPadEnabled: React.PropTypes.bool.isRequired,
@@ -103,6 +104,7 @@ class KeypadContainer extends React.Component {
     renderKeypad = () => {
         const {
             extraKeys,
+            extraKeys1,
             keypadType,
             layoutMode,
             navigationPadEnabled,
@@ -110,6 +112,7 @@ class KeypadContainer extends React.Component {
 
         const keypadProps = {
             extraKeys,
+            extraKeys1,
             // HACK(charlie): In order to properly round the corners of the
             // compact keypad, we need to instruct some of our child views to
             // crop themselves. At least we're colocating all the layout

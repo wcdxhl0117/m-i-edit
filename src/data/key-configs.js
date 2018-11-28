@@ -258,6 +258,10 @@ KeyConfigs[Keys.MANY] = {
     type: KeyTypes.MANY,
     // childKeyIds will be configured by the client.
 };
+KeyConfigs[Keys.MANY1] = {
+    type: KeyTypes.MANY1,
+    // childKeyIds will be configured by the client.
+};
 
 // Add in every numeral.
 const NUMBERS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];

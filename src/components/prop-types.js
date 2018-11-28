@@ -32,6 +32,7 @@ const keyConfigPropType = React.PropTypes.shape({
 const keypadConfigurationPropType = React.PropTypes.shape({
     keypadType: React.PropTypes.oneOf(Object.keys(KeypadTypes)).isRequired,
     extraKeys: React.PropTypes.arrayOf(keyIdPropType),
+    extraKeys1: React.PropTypes.arrayOf(keyIdPropType),
 });
 
 // NOTE(jared): This is no longer guaranteed to be React element

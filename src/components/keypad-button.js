@@ -134,6 +134,7 @@ class KeypadButton extends React.PureComponent {
                 break;
 
             case KeyTypes.MANY:
+            case KeyTypes.MANY1:
             case KeyTypes.VALUE:
                 backgroundStyle = styles.value;
                 break;
@@ -219,7 +220,8 @@ class KeypadButton extends React.PureComponent {
 
         if (type === KeyTypes.EMPTY) {
             return <View style={buttonStyle} {...eventHandlers} />;
-        } else if (type === KeyTypes.MANY) {
+        // } else if (type === KeyTypes.MANY) {
+        } else if (type === KeyTypes.MANY || type === KeyTypes.MANY1) {
             // TODO(charlie): Make the long-press interaction accessible. See
             // the TODO in key-configs.js for more.
             const manyButtonA11yMarkup = {

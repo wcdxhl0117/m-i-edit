@@ -67,6 +67,7 @@ const Keys = {
     // A custom key that captures an arbitrary number of symbols but has no
     // 'default' symbol or action.
     MANY: 'MANY',
+    MANY1: 'MANY1',
 };
 
 module.exports = Keys;

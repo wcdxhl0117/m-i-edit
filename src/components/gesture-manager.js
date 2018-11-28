@@ -92,6 +92,7 @@ class GestureManager {
             return;
         }
 
+        console.log('ontouchstart', evt, id);
         const [x] = coordsForEvent(evt);
 
         // TODO(charlie): It doesn't seem to be guaranteed that every touch

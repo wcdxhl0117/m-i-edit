@@ -24,12 +24,16 @@ const { cursorContextPropType, keyIdPropType } = require('./prop-types');
 const KeyConfigs = require('../data/key-configs');
 const CursorContexts = require('./input/cursor-contexts');
 
+const Keys = require('../data/keys');
+const {KeyTypes} = require('../consts');
+
 class ExpressionKeypad extends React.Component {
     static propTypes = {
         currentPage: React.PropTypes.number.isRequired,
         cursorContext: cursorContextPropType.isRequired,
         dynamicJumpOut: React.PropTypes.bool,
         extraKeys: React.PropTypes.arrayOf(keyIdPropType),
+        extraKeys1: React.PropTypes.arrayOf(keyIdPropType),
         roundTopLeft: React.PropTypes.bool,
         roundTopRight: React.PropTypes.bool,
     };
@@ -52,6 +56,7 @@ class ExpressionKeypad extends React.Component {
             cursorContext,
             dynamicJumpOut,
             extraKeys,
+            extraKeys1,
             roundTopLeft,
             roundTopRight,
         } = this.props;
@@ -113,13 +118,17 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.BOTTOM}
                 /> */}
                 <ManyKeypadButton
-                    keys={['a', 'b']}
-                    borders={BorderStyles.TOP}
+                    keys={extraKeys1}
+                    manyId={Keys.MANY1}
+                    manyType={KeyTypes.MANY1}
+                    borders={BorderStyles.NONE}
                 />
                 {/* 左下集合按钮位置 */}
                 <ManyKeypadButton
                     keys={extraKeys}
-                    borders={BorderStyles.TOP}
+                    manyId={Keys.MANY}
+                    manyType={KeyTypes.MANY}
+                    borders={BorderStyles.NONE}
                 />
             </View>
             <View style={[column, oneColumn]}>

@@ -94,7 +94,8 @@ const mapStateToProps = (state, ownProps) => {
 
     // Override with the default child props, if the key is a multi-symbol key
     // (but not a many-symbol key, which operates under different rules).
-    const useFirstChildProps = type !== KeyTypes.MANY &&
+    // const useFirstChildProps = type !== KeyTypes.MANY &&
+    const useFirstChildProps = type !== KeyTypes.MANY && type !== KeyTypes.MANY1 &&
         childKeys && childKeys.length > 0;
 
     return {

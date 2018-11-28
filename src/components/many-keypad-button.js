@@ -19,7 +19,9 @@ class ManyKeypadButton extends React.Component {
     };
 
     render() {
-        const {keys, ...rest} = this.props;
+        // const {keys, ...rest} = this.props;
+        const {keys, manyId, manyType, ...rest} = this.props;
+
         // If we have no extra symbols, render an empty button. If we have just
         // one, render a standard button. Otherwise, capture them all in a
         // single button.
@@ -30,8 +32,10 @@ class ManyKeypadButton extends React.Component {
             return <TouchableKeypadButton keyConfig={keyConfig} {...rest} />;
         } else {
             const keyConfig = {
-                id: Keys.MANY,
-                type: KeyTypes.MANY,
+                // id: Keys.MANY,
+                id: manyId,
+               // type: KeyTypes.MANY,
+                type: manyType,
                 childKeyIds: keys,
             };
             return <TouchableKeypadButton keyConfig={keyConfig} {...rest} />;

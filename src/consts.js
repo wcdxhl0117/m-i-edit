@@ -26,6 +26,7 @@ module.exports = {
         // For buttons that house multiple buttons and have no action
         // themselves.  用于容纳多个按钮且没有动作的按钮他们自己。
         MANY: 'MANY',
+        MANY1: 'MANY1',
         // For the echo animation that appears on press.
         // 对于在新闻中出现的回声动画。
         ECHO: 'ECHO',
