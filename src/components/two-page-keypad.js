@@ -18,6 +18,8 @@ const {
 class TwoPageKeypad extends React.Component {
     static propTypes = {
         currentPage: React.PropTypes.oneOf([0, 1, 2, 3, 4]).isRequired,
+        fivePage: React.PropTypes.node.isRequired,
+        fourPage: React.PropTypes.node.isRequired,
         threePage: React.PropTypes.node.isRequired,
         paginationEnabled: React.PropTypes.bool.isRequired,
         twoPage: React.PropTypes.node.isRequired,
@@ -27,6 +29,8 @@ class TwoPageKeypad extends React.Component {
     render() {
         const {
             currentPage,
+            fivePage,
+            fourPage,
             threePage,
             twoPage,
             paginationEnabled,
@@ -37,18 +41,26 @@ class TwoPageKeypad extends React.Component {
             return <Keypad style={[column, styles.keypad]}>
                 <View style={styles.borderTop}>
                     <ViewPager>
+                        {fivePage}
+                        {fourPage}
                         {threePage}
                         {twoPage}
                         {onePage}
                     </ViewPager>
                 </View>
                 {/* 小点点个数 */}
-                <PagerIndicator numPages={3} currentPage={currentPage} />
+                <PagerIndicator numPages={5} currentPage={currentPage} />
             </Keypad>;
         } else {
             // 全屏展示
             return <Keypad style={styles.keypad}>
                 <View style={row}>
+                    <View style={fullWidth}>
+                        {fivePage}
+                    </View>
+                    <View style={fullWidth}>
+                        {fourPage}
+                    </View>
                     <View style={fullWidth}>
                         {threePage}
                     </View>
