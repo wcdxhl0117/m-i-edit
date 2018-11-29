@@ -110,18 +110,16 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.FRAC_INCLUSIVE}
                     style={roundTopRight && roundedTopRight}
                 />
-                <TouchableKeypadButton keyConfig={KeyConfigs.CDOT} />
-                {/* <TouchableKeypadButton
-                    keyConfig={KeyConfigs.RIGHT}
-                    borders={BorderStyles.LEFT}
-                /> */}
                 <TouchableKeypadButton
-                    keyConfig={dismissOrJumpOutKey}
-                    borders={BorderStyles.LEFT}
+                    keyConfig={KeyConfigs.EXP}
+                    borders={BorderStyles.NONE}
                 />
-                {/* 将收起键盘按钮换成确认按钮 */}
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.SUREBTN}
+                    keyConfig={KeyConfigs.SQRT}
+                    borders={BorderStyles.NONE}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.LEFT_PAREN}
                     borders={BorderStyles.LEFT}
                 />
             </View>
@@ -202,7 +200,7 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.LEFT}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.TIMES}
+                    keyConfig={KeyConfigs.COMMA}
                     borders={BorderStyles.LEFT}
                 />
                 

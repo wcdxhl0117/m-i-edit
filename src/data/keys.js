@@ -7,6 +7,11 @@
 // We should clean it up by removing this file and requiring clients to use the
 // `id` field on the key configurations.
 const Keys = {
+    // 新增
+    COMMA: 'COMMA',
+    BRACKETS: 'BRACKETS',
+
+    // 新增结束
     PLUS: 'PLUS',
     MINUS: 'MINUS',
     NEGATIVE: 'NEGATIVE',

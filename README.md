@@ -16,6 +16,9 @@
     具体修改的文件见：
     https://github.com/wangchao117/m-i-edit/commit/eae546cf1cc6612a6e462b71ae09681233c8e4d5
 ```
+> 此类型公式不是一般公式都能这样做，只有特定类型的能，参照math-wrapper.js（72-81）行
+    
+
 
 #### 进入页面聚焦修改
     math-input.js，在组件挂在结束的钩子里调用它的focus方法。
@@ -260,6 +263,7 @@
 * keypad.js(349 --> 69ß): maxWidth: widthPx, 其实改变按钮宽度的方法就是上面的重要线索，express-keypad.js（40），如果键盘为6列4行，这对应改为：static rows = 4; static columns = 6;
 
 * 键盘公式点击的动画速度：view-pager.js (44:animationDurationMs), 这个额速度它是根据整个宽度的像素数量来计算时间的，我除了个6，不然从第一页到最后一夜动画太长了。当然应该是能定死的
+
 
 # license
 

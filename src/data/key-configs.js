@@ -9,6 +9,18 @@ const {DecimalSeparators, IconTypes, KeyTypes} = require('../consts');
 const {decimalSeparator} = require('../utils');
 
 const KeyConfigs = {
+    // 新增
+    [Keys.COMMA]: {
+        type: KeyTypes.OPERATOR,
+        ariaLabel: i18n._('Cosine'),
+    },
+    [Keys.BRACKETS]: {
+        type: KeyTypes.OPERATOR,
+        ariaLabel: i18n._('Cosine'),
+    },
+
+    // 新增结束
+
     // Basic math keys.
     [Keys.PLUS]: {
         type: KeyTypes.OPERATOR,

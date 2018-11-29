@@ -3,6 +3,11 @@
  */
 
 module.exports = {
+    // 新增
+    COMMA: require('./comma'),
+    BRACKETS: require('./brackets'),
+    // 新增结束
+
     COS: require('./cos'),
     SUREBTN: require('./surebtn'),
     EQUIV:require('./equiv'),

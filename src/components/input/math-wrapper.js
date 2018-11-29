@@ -25,6 +25,11 @@ const MQ_END = 0;
 // that do not provide explicit actions (like the numeral keys) will merely
 // write their contents to MathQuill.
 const KeyActions = {
+    // 新增
+    [Keys.COMMA]: {str: ',', fn: WRITE},
+    // [Keys.BRACKETS]: {str: '', fn: WRITE},
+
+    // 新增结束
     [Keys.PLUS]: {str: '+', fn: WRITE},
     [Keys.MINUS]: {str: '-', fn: WRITE},
     [Keys.NEGATIVE]: {str: '-', fn: WRITE},
@@ -66,6 +71,7 @@ const NormalCommands = {
     [Keys.TAN]: 'tan',
 };
 
+// 可能与many公式类型有关
 const ArithmeticOperators = ['+', '-', '\\cdot', '\\times', '\\div'];
 const EqualityOperators = ['=', '\\neq', '<', '\\leq', '>', '\\geq'];
 
@@ -471,7 +477,7 @@ class MathWrapper {
         if (cursor[this.MQ.L] === MQ_END) {
             const parent = cursor.parent;
             const grandparent = parent.parent;
-            if (grandparent.ctrlSeq === '\\left(') {
+            if (grandparent.ctrlSeq === '\\ç') {
                 const command = this._maybeFindCommandBeforeParens(grandparent);
                 if (command) {
                     cursor.insLeftOf(command.startNode);
