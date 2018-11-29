@@ -71,7 +71,7 @@ const createStore = () => {
 
     const initialKeypadState = {
         extraKeys: ['x', 'y', 'a', 'b'],
-        extraKeys1: ['a', 'b'],
+        extraKeys1: ['d', 'e'],
         keypadType: defaultKeypadType,
         active: false,
     };
