@@ -25,26 +25,26 @@ class PagerIcon extends React.Component {
     render() {
         const {active, radiusPx} = this.props;
 
-        const fillColor = active ? 'blue' : gray85;
+        const fillColor = active ? '#51d326' : gray85;
 
         // return <svg width={2 * radiusPx} height={2 * radiusPx}>
         // ()=>console.log('click',this.props.page)
         
         return <View 
                 onClick={()=> this.props.changeTab(this.props.page)}
-                style={styles.btnMargin}
+                style={styles.indicators}
             >
-            {/* <svg width={2 * radiusPx} height={2 * radiusPx}> */}
-            {/* <circle
-                cx={radiusPx}
-                cy={radiusPx}
-                r={radiusPx}
-                fill={fillColor}
-            /> */}
-                <div style={{width: '100%', height: '100%',backgroundColor: fillColor, borderRadius: '6px',}}>
-                    tab{this.props.page + 1}
-                </div>
-            {/* </svg>; */}
+            <svg width={2 * radiusPx} height={2 * radiusPx}>
+                <circle
+                    cx={radiusPx}
+                    cy={radiusPx}
+                    r={radiusPx}
+                    fill={fillColor}
+                />
+            </svg>
+            {/* <div style={{width: '100%', height: '100%',backgroundColor: fillColor, borderRadius: '6px',}}>
+                tab{this.props.page + 1}
+            </div> */}
         
         </View>;
     }
@@ -86,15 +86,21 @@ class PagerIndicator extends React.Component {
         return <View style={styles.indicatorStrip}>
             <View style={styles.iconStrip} dynamicStyle={iconStripSize}>
                 {indicators}
+                <Text onPress={()=>{ this.props.changeCurrentPage(4) }} style={styles.titleStyle}>公式</Text>
+            </View>
+
+            <View style={styles.btnMargin}>
+                {/* <Text onPress={()=>{console.log('pager-indicator:切换画板'); showCanvas()}}>{'手写'}</Text> */}
+                <Text onPress={()=>{ this.props.changeCurrentPage(0) }}>{'手写'}</Text>
             </View>
             <View style={styles.btnMargin}>
-                <Text onPress={()=>{console.log('pager-indicator:切换中文键盘'); showKeyboard()}}>{'中文'}</Text>
+                <Text onPress={()=>{console.log('pager-indicator:切换中文键盘'); showKeyboard(1)}}>{'英文'}</Text>
             </View>
             <View style={styles.btnMargin}>
-                <Text onPress={()=>{console.log('pager-indicator:切换画板'); showCanvas()}}>{'手写'}</Text>
+                <Text onPress={()=>{console.log('pager-indicator:切换中文键盘'); showKeyboard(2)}}>{'中文'}</Text>
             </View>
             <View style={styles.btnMargin}>
-                <Text onPress={()=>{console.log('pager-indicator:确认按钮'); sendAnswer()}}>{'确认'}</Text> 
+                <Text style={styles.surebtn} onPress={()=>{console.log('pager-indicator:确认按钮'); sendAnswer()}}>{'确认'}</Text> 
             </View>
         </View>;
     }
@@ -107,27 +113,45 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         height: pageIndicatorHeightPx,
-        height: '50px',
-        lineHeight: '40px',
+        height: '60px',
+        lineHeight: '30px',
     },
     iconStrip: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        width: 'auto'
+        width: 'auto',
+        position: 'relative',
+        marginLeft: '-30px',
     },
     // new
     indicators: {
-        
+        marginRight: '4px !important',
+        marginBottom: '10px'
+    },
+    titleStyle: {
+        position: 'absolute',
+        height: '14px',
+        bottom: '0px',
+        left: '16px',
+        color: '#51d326',
     },
     btnMargin: {
-        width: '60px',
+        width: '40px',
         height: '40px',
+        lineHeight: '40px',
         borderRadius: '6px',
         textAlign: 'center',
-        backgroundColor: '#ccc',
-        marginLeft: '6px !important',
-        marginRight: '6px !important',
-        color: '#fff'
+        marginLeft: '8px !important',
+        marginRight: '8px !important',
+        color: '#a0a0a0'
+    },
+    surebtn: {
+        display: 'inline-block',
+        width: '80px',
+        textAlign: 'center',
+        color: '#fff',
+        backgroundColor: '#47c3f7',
+        borderRadius: '6px'
     }
 });
 
@@ -140,6 +164,7 @@ const mapStateToProps = (state) => {
 const mapDispatchProps = (dispatch) => {
 	return {
 		changeCurrentPage(i) {
+            console.log(i)
 			const action = {
 				type: 'changeCurrentPage',
 				value: i
