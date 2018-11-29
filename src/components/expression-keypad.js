@@ -212,29 +212,24 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.BACKSPACE}
                     borders={BorderStyles.LEFT}
                 />
-                {/* <TouchableKeypadButton
+                <TouchableKeypadButton
                     keyConfig={KeyConfigs.LEFT}
                     borders={BorderStyles.LEFT}
                 />
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.RIGHT}
                     borders={BorderStyles.LEFT}
-                /> */}
+                />
                 {/* <TouchableKeypadButton keyConfig={KeyConfigs.CDOT} /> */}
                 <TouchableKeypadButton
                     keyConfig={dismissOrJumpOutKey}
                     borders={BorderStyles.LEFT}
                 />
                 {/* 将收起键盘按钮换成确认按钮 */}
-                <TouchableKeypadButton
+                {/* <TouchableKeypadButton
                     keyConfig={KeyConfigs.SUREBTN}
                     borders={BorderStyles.LEFT}
-                />
-                <TouchableKeypadButton
-                    keyConfig={KeyConfigs.SUREBTN}
-                    borders={BorderStyles.LEFT}
-                />
-
+                /> */}
             </View>
             
         </View>;
@@ -265,26 +260,6 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.NONE}
                 />
             </View>
-            <View style={[column, oneColumn]}>
-                <TouchableKeypadButton
-                    keyConfig={KeyConfigs.EXP_2}
-                    borders={BorderStyles.NONE}
-                    style={roundTopLeft && roundedTopLeft}
-                />
-                <TouchableKeypadButton
-                    keyConfig={KeyConfigs.SQRT}
-                    borders={BorderStyles.NONE}
-                />
-                <TouchableKeypadButton
-                    keyConfig={KeyConfigs.LOG}
-                    borders={BorderStyles.BOTTOM}
-                />
-                <TouchableKeypadButton
-                    keyConfig={KeyConfigs.SIN}
-                    borders={BorderStyles.NONE}
-                />
-            </View>
-            
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.EXP_3}
