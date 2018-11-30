@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+  <meta http-equiv="Content-Type" Content="text/html;charset=utf-8"/>
+  <meta content="utf-8" http-equiv="encoding">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Handwriting Demo</title>
+
+  <script type="text/javascript" src="../lib/sketchable.full.min.js"></script>
+
+
+</head>
+
+<body>
+<h3>drawing canvas </h3>
+
+<label>
+  <input type="checkbox" id="toggle-interactive" checked="checked">
+  Interactive
+</label>
+
+
+
+<canvas id="drawing-canvas" width="300" height="200" style="border:1px solid #000000; cursor: pointer;"></canvas>
+<br/>
+<div id="drawing-data" class="center">
+  <p>(no event triggered yet)</p>
+</div>
+
+<button type="button" onclick="alert('Hello world!')">Click Me!</button>
+
+
+<script>
+    (function() {
+        var options = {
+            events: {
+                mousedown: function(elem, data, evt) {
+                    console.log('mouse down');
+                    notifyEvent(evt.type);
+                },
+                mouseup: function(elem, data, evt) {
+                    notifyEvent(evt.type);
+                },
+                mousemove: function(elem, data, evt) {
+                    notifyEvent(evt.type);
+                }
+            }
+        };
+
+        var sketcher = new Sketchable(document.getElementById('drawing-canvas'), options);
+
+        document.getElementById("drawing-canvas").onmousedown = function() {console.log('mouse down')};
+
+        // Change interactive state when clicking on the toggle checkbox.
+        document.getElementById('toggle-interactive').addEventListener('click', function(evt) {
+            options.interactive = this.checked;
+            sketcher.config(options);
+        });
+
+        function notifyEvent(type) {
+
+            document.getElementById('drawing-data').innerHTML = '<p><strong>' + type + '</strong> event triggered</p>';
+        }
+
+    })();
+</script>
+
+</body>
+</html>
