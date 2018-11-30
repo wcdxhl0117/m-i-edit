@@ -4,6 +4,7 @@
 
 const React = require('react');
 const { connect } = require('react-redux');
+import Whiteboard from './whiteboard';
 const { StyleSheet } = require('aphrodite');
 
 const { View } = require('../fake-react-native-web');
@@ -877,8 +878,8 @@ class ExpressionKeypad extends React.Component {
         
     </View>;
 
-        const sixPage = <View>
-            123
+        const sixPage = <View style={fivePageStyle}>
+            <Whiteboard/>
         </View>
 
         return <TwoPageKeypad
