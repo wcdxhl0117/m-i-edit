@@ -190,13 +190,14 @@ class KeypadContainer extends React.Component {
                         onElementMounted(element);
                     }
                 }}
-            >
-                {navigationPadEnabled &&
+            >   
+                {/* 这是控制全键盘模式下的方向健的 */}
+                {/* {navigationPadEnabled &&
                     <NavigationPad
                         roundTopLeft={layoutMode === LayoutModes.COMPACT}
                         style={styles.navigationPadContainer}
                     />
-                }
+                } */}
                 <View style={styles.keypadLayout}>
                     {this.renderKeypad()}
                 </View>

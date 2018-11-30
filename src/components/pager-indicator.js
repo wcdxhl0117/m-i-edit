@@ -121,11 +121,11 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         width: 'auto',
         position: 'relative',
-        marginLeft: '-30px',
+        marginLeft: '-26px',
     },
     // new
     indicators: {
-        marginRight: '4px !important',
+        marginRight: '3px !important',
         marginBottom: '10px'
     },
     titleStyle: {
@@ -141,12 +141,13 @@ const styles = StyleSheet.create({
         lineHeight: '40px',
         borderRadius: '6px',
         textAlign: 'center',
-        marginLeft: '8px !important',
-        marginRight: '8px !important',
+        marginLeft: '6px !important',
+        marginRight: '6px !important',
         color: '#a0a0a0'
     },
     surebtn: {
         display: 'inline-block',
+        margin: '0',
         width: '80px',
         textAlign: 'center',
         color: '#fff',

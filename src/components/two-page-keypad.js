@@ -39,8 +39,8 @@ class TwoPageKeypad extends React.Component {
             onePage,
         } = this.props;
 
-        if (paginationEnabled) {
-            return <Keypad style={[column, styles.keypad]}>
+        // if (paginationEnabled) {
+            return <Keypad className='aaaaa' style={[column, styles.keypad]}>
                 <View style={styles.borderTop}>
                     <ViewPager>
                         {sixPage}
@@ -54,31 +54,31 @@ class TwoPageKeypad extends React.Component {
                 {/* 小点点个数 */}
                 <PagerIndicator numPages={6} currentPage={currentPage} />
             </Keypad>;
-        } else {
-            // 全屏展示
-            return <Keypad style={styles.keypad}>
-                <View style={row}>
-                    <View style={fullWidth}>
-                        {sixPage}
-                    </View>
-                    <View style={fullWidth}>
-                        {fivePage}
-                    </View>
-                    <View style={fullWidth}>
-                        {fourPage}
-                    </View>
-                    <View style={fullWidth}>
-                        {threePage}
-                    </View>
-                    <View style={fullWidth}>
-                        {twoPage}
-                    </View>
-                    <View style={[styles.borderLeft, fullWidth]}>
-                        {onePage}
-                    </View>
-                </View>
-            </Keypad>;
-        }
+        // } else {
+        //     // 全屏展示
+        //     return <Keypad style={styles.keypad}>
+        //         <View style={row}>
+        //             <View style={fullWidth}>
+        //                 {sixPage}
+        //             </View>
+        //             <View style={fullWidth}>
+        //                 {fivePage}
+        //             </View>
+        //             <View style={fullWidth}>
+        //                 {fourPage}
+        //             </View>
+        //             <View style={fullWidth}>
+        //                 {threePage}
+        //             </View>
+        //             <View style={fullWidth}>
+        //                 {twoPage}
+        //             </View>
+        //             <View style={[styles.borderLeft, fullWidth]}>
+        //                 {onePage}
+        //             </View>
+        //         </View>
+        //     </Keypad>;
+        // }
     }
 }
 

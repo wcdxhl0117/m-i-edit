@@ -5,6 +5,8 @@ import React, {Component} from 'react';
 // import {Sketchable} from '../../whiteboard/sketchable.full.min'
 const {View,Text} = require('../fake-react-native-web');
 var sketcher = null;
+let wi = screen.width - 5;
+console.log(wi)
 
 export default class Whiteboard extends Component {
     componentDidMount() {
@@ -57,12 +59,12 @@ export default class Whiteboard extends Component {
 
         return scg
     }
-
+    
     render() {
         // return <div><h5>Hello</h5></div>;
         return (<View>
             <Text onPress={this.generateSVGInk}>{'SVG INK'}</Text>
-            <canvas id="drawing-canvas" width="300" height="200" ref="canvas"
+            <canvas id="drawing-canvas" width={wi} height="200" ref="canvas"
                     style={{'border': '1px solid #000000'}}/>
         </View>);
     }
