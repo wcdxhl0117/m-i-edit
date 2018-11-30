@@ -48,6 +48,6 @@ module.exports = {
             // appends `module.exports = window.MathQuill` to mathquill.js
             test: /[\/]mathquill\.js$/,
             loader: "exports?window.MathQuill",
-        }],
+        },  { test: /\.html$/, loader: 'html' }],
     },
 };
