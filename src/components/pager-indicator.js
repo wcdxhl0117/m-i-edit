@@ -86,7 +86,7 @@ class PagerIndicator extends React.Component {
         return <View style={styles.indicatorStrip}>
             <View style={styles.iconStrip} dynamicStyle={iconStripSize}>
                 {indicators}
-                <Text onPress={()=>{ this.props.changeCurrentPage(4) }} style={styles.titleStyle}>公式</Text>
+                <Text onPress={()=>{ this.props.changeCurrentPage(5) }} style={styles.titleStyle}>公式</Text>
             </View>
 
             <View style={styles.btnMargin}>

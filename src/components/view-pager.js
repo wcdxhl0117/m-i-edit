@@ -104,6 +104,11 @@ class ViewPager extends React.Component {
                 {children[4]}
             </View>
 
+            {/* 新增第六个tab */}
+            <View dynamicStyle={dynamicPageStyle}>
+                {children[5]}
+            </View>
+
         </View>;
     }
 }
@@ -119,7 +124,7 @@ const styles = StyleSheet.create({
         // 2tab用,这是我没发现的关键点，美国大拿帮助下踩发现
         // maxWidth: '250%',
         // 3tab用
-        maxWidth: '800%'
+        maxWidth: '850%'
     },
 
     rightPage: {

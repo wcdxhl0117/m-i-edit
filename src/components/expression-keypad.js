@@ -48,7 +48,7 @@ class ExpressionKeypad extends React.Component {
 
     // static numPages = 2;
     // 变为5个tab
-    static numPages = 5;
+    static numPages = 6;
 
     render() {
         const {
@@ -877,6 +877,10 @@ class ExpressionKeypad extends React.Component {
         
     </View>;
 
+        const sixPage = <View>
+            123
+        </View>
+
         return <TwoPageKeypad
             currentPage={currentPage}
             onePage={onePage}
@@ -884,6 +888,7 @@ class ExpressionKeypad extends React.Component {
             threePage={threePage}
             fourPage={fourPage}
             fivePage={fivePage}
+            sixPage={sixPage}
         />;
     }
 }
