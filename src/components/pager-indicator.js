@@ -94,13 +94,13 @@ class PagerIndicator extends React.Component {
                 <Text onPress={()=>{ this.props.changeCurrentPage(0) }}>{'手写'}</Text>
             </View>
             <View style={styles.btnMargin}>
-                <Text onPress={()=>{console.log('pager-indicator:切换中文键盘'); showKeyboard(1)}}>{'英文'}</Text>
+                <Text onPress={()=>{console.log('pager-indicator:切换中文键盘'); window.showKeyboard(1)}}>{'英文'}</Text>
             </View>
             <View style={styles.btnMargin}>
-                <Text onPress={()=>{console.log('pager-indicator:切换中文键盘'); showKeyboard(2)}}>{'中文'}</Text>
+                <Text onPress={()=>{console.log('pager-indicator:切换中文键盘'); window.showKeyboard(2)}}>{'中文'}</Text>
             </View>
             <View style={styles.btnMargin}>
-                <Text style={styles.surebtn} onPress={()=>{console.log('pager-indicator:确认按钮'); sendAnswer()}}>{'确认'}</Text> 
+                <Text style={styles.surebtn} onPress={()=>{console.log('pager-indicator:确认按钮'); window.sendAnswer()}}>{'确认'}</Text> 
             </View>
         </View>;
     }

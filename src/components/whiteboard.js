@@ -95,7 +95,7 @@ export default class Whiteboard extends Component {
                     onPress={this.generateSVGInk}
                 >{str}</Text>
             </View>
-            <canvas id="drawing-canvas" width={wi} height="220" ref="canvas"
+            <canvas id="drawing-canvas" width='300' height="220" ref="canvas"
                     // onTouchEnd={this.generateSVGInk}
                     style={{'border': '1px solid #000000'}}/>
         </View>);

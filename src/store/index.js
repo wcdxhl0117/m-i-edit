@@ -110,7 +110,7 @@ const createStore = () => {
                 // the first place.
                 if (keyConfig.id === Keys.DISMISS) {
                     // return keypadReducer(state, {type: 'DismissKeypad'});
-                    closePaid();
+                    window.closePaid();
                     return keypadReducer(state, {type: 'ActivateKeypad'});
                 }
                 return state;

@@ -57,7 +57,7 @@
         let allStr = localStorage.getItem('toLatex');
         console.log('answer: ' + allStr);
         try{
-            window.Android.sendAnswer(allStr);
+            Android.sendAnswer(allStr);
         }catch(e){
             console.log('没有设备');
         }
@@ -65,9 +65,9 @@
 
     // 调用手写板
     function showCanvas() {
-        // window.Android.Handwrite(); // 安卓定义一个调用native手写板的方法
+        // Android.Handwrite(); // 安卓定义一个调用native手写板的方法
         try{
-            window.Android.Handwrite();
+            Android.Handwrite();
         }catch(e){
             console.log('没有设备');
         }
@@ -77,7 +77,7 @@
     function showKeyboard(){
         console.log('show keyboard');
         try {
-            window.Android.showKeyboard();
+            Android.showKeyboard();
         }catch(e){
             console.log('没有设备');
         }
@@ -100,7 +100,7 @@
     // 通知native点击了输入框或者光标
     function clickBlink() {
         try {
-            // window.Android.showKeyboard();
+            Android.clickBlink();
         }catch(e){
             console.log('没有设备');
         }
