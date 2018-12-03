@@ -104,269 +104,134 @@ class ExpressionKeypad extends React.Component {
             styles.rightPage,
             roundTopRight && roundedTopRight,
         ];
-        // const onePage = <View style={onePageStyle}>
-        //     {/* 新增一列 */}
-        //     <View style={[column, oneColumn]}>
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.FRAC_INCLUSIVE}
-        //             style={roundTopRight && roundedTopRight}
-        //         />
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.EXP}
-        //             borders={BorderStyles.NONE}
-        //         />
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.SQRT}
-        //             borders={BorderStyles.NONE}
-        //         />
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.LEFT_PAREN}
-        //             borders={BorderStyles.LEFT}
-        //         />
-        //     </View>
-        //     <View style={[column, oneColumn]}>
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.NUM_7}
-        //             borders={BorderStyles.LEFT}
-        //         />
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.NUM_4}
-        //             borders={BorderStyles.LEFT}
-        //         />
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.NUM_1}
-        //             borders={BorderStyles.ALL}
-        //         />
-        //         {/* <ManyKeypadButton
-        //             keys={extraKeys1}
-        //             manyId={Keys.MANY1}
-        //             manyType={KeyTypes.MANY1}
-        //             borders={BorderStyles.NONE}
-        //         /> */}
-        //         {/* 左下集合按钮位置 */}
-        //         <ManyKeypadButton
-        //             keys={extraKeys}
-        //             manyId={Keys.MANY}
-        //             manyType={KeyTypes.MANY}
-        //             borders={BorderStyles.ALL}
-        //         />
-        //     </View>
-        //     <View style={[column, oneColumn]}>
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.NUM_8}
-        //             borders={BorderStyles.NONE}
-        //         />
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.NUM_5}
-        //             borders={BorderStyles.NONE}
-        //         />
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.NUM_2}
-        //             borders={BorderStyles.NONE}
-        //         />
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.NUM_0}
-        //             borders={BorderStyles.LEFT}
-        //         />
-        //     </View>
-        //     <View style={[column, oneColumn]}>
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.NUM_9}
-        //             borders={BorderStyles.NONE}
-        //         />
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.NUM_6}
-        //             borders={BorderStyles.NONE}
-        //         />
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.NUM_3}
-        //             borders={BorderStyles.BOTTOM}
-        //         />
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.DECIMAL}
-        //             borders={BorderStyles.LEFT}
-        //         />
-        //     </View>
-        //     <View style={[column, oneColumn]}>
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.MINUS}
-        //             borders={BorderStyles.LEFT}
-        //         />
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.PLUS}
-        //             borders={BorderStyles.LEFT}
-        //         />
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.EQUAL}
-        //             borders={BorderStyles.LEFT}
-        //         />
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.COMMA}
-        //             borders={BorderStyles.LEFT}
-        //         />
-                
-        //     </View>
-        //     <View style={[column, oneColumn]}>
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.BACKSPACE}
-        //             borders={BorderStyles.LEFT}
-        //         />
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.LEFT}
-        //             borders={BorderStyles.LEFT}
-        //         />
-        //         <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.RIGHT}
-        //             borders={BorderStyles.LEFT}
-        //         />
-        //         {/* <TouchableKeypadButton keyConfig={KeyConfigs.CDOT} /> */}
-        //         <TouchableKeypadButton
-        //             keyConfig={dismissOrJumpOutKey}
-        //             borders={BorderStyles.LEFT}
-        //         />
-        //         {/* 将收起键盘按钮换成确认按钮 */}
-        //         {/* <TouchableKeypadButton
-        //             keyConfig={KeyConfigs.SUREBTN}
-        //             borders={BorderStyles.LEFT}
-        //         /> */}
-        //     </View>
-            
-        // </View>;
-        
-
         const onePage = <View style={onePageStyle}>
-        {/* 新增一列 */}
-        <View style={[column, oneColumn]}>
-            <TouchableKeypadButton
-                keyConfig={KeyConfigs.FRAC_INCLUSIVE}
-                style={roundTopRight && roundedTopRight}
-            />
-            <TouchableKeypadButton keyConfig={KeyConfigs.CDOT} />
-            {/* <TouchableKeypadButton
-                keyConfig={KeyConfigs.RIGHT}
-                borders={BorderStyles.LEFT}
-            /> */}
-            <TouchableKeypadButton
-                keyConfig={dismissOrJumpOutKey}
-                borders={BorderStyles.LEFT}
-            />
-            {/* 将收起键盘按钮换成确认按钮 */}
-            <TouchableKeypadButton
-                keyConfig={KeyConfigs.SUREBTN}
-                borders={BorderStyles.LEFT}
-            />
-        </View>
-        <View style={[column, oneColumn]}>
-            <TouchableKeypadButton
-                keyConfig={KeyConfigs.NUM_7}
-                borders={BorderStyles.LEFT}
-            />
-            <TouchableKeypadButton
-                keyConfig={KeyConfigs.NUM_4}
-                borders={BorderStyles.LEFT}
-            />
-            <TouchableKeypadButton
-                keyConfig={KeyConfigs.NUM_1}
-                borders={BorderStyles.ALL}
-            />
-            {/* <ManyKeypadButton
-                keys={extraKeys1}
-                manyId={Keys.MANY1}
-                manyType={KeyTypes.MANY1}
-                borders={BorderStyles.NONE}
-            /> */}
-            {/* 左下集合按钮位置 */}
-            <ManyKeypadButton
-                keys={extraKeys}
-                manyId={Keys.MANY}
-                manyType={KeyTypes.MANY}
-                borders={BorderStyles.ALL}
-            />
-        </View>
-        <View style={[column, oneColumn]}>
-            <TouchableKeypadButton
-                keyConfig={KeyConfigs.NUM_8}
-                borders={BorderStyles.NONE}
-            />
-            <TouchableKeypadButton
-                keyConfig={KeyConfigs.NUM_5}
-                borders={BorderStyles.NONE}
-            />
-            <TouchableKeypadButton
-                keyConfig={KeyConfigs.NUM_2}
-                borders={BorderStyles.NONE}
-            />
-            <TouchableKeypadButton
-                keyConfig={KeyConfigs.NUM_0}
-                borders={BorderStyles.LEFT}
-            />
-        </View>
-        <View style={[column, oneColumn]}>
-            <TouchableKeypadButton
-                keyConfig={KeyConfigs.NUM_9}
-                borders={BorderStyles.NONE}
-            />
-            <TouchableKeypadButton
-                keyConfig={KeyConfigs.NUM_6}
-                borders={BorderStyles.NONE}
-            />
-            <TouchableKeypadButton
-                keyConfig={KeyConfigs.NUM_3}
-                borders={BorderStyles.BOTTOM}
-            />
-            <TouchableKeypadButton
-                keyConfig={KeyConfigs.DECIMAL}
-                borders={BorderStyles.LEFT}
-            />
-        </View>
-        <View style={[column, oneColumn]}>
-            <TouchableKeypadButton
-                keyConfig={KeyConfigs.MINUS}
-                borders={BorderStyles.LEFT}
-            />
-            <TouchableKeypadButton
-                keyConfig={KeyConfigs.PLUS}
-                borders={BorderStyles.LEFT}
-            />
-            <TouchableKeypadButton
-                keyConfig={KeyConfigs.DIVIDE}
-                borders={BorderStyles.LEFT}
-            />
-            <TouchableKeypadButton
-                keyConfig={KeyConfigs.TIMES}
-                borders={BorderStyles.LEFT}
-            />
+            {/* 新增一列 */}
+            <View style={[column, oneColumn]}>
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.FRAC_INCLUSIVE}
+                    style={roundTopRight && roundedTopRight}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EXP_2}
+                    borders={BorderStyles.NONE}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.SQRT}
+                    borders={BorderStyles.NONE}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.LEFT_PAREN}
+                    borders={BorderStyles.LEFT}
+                />
+            </View>
+            <View style={[column, oneColumn]}>
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.NUM_7}
+                    borders={BorderStyles.LEFT}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.NUM_4}
+                    borders={BorderStyles.LEFT}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.NUM_1}
+                    borders={BorderStyles.ALL}
+                />
+                {/* <ManyKeypadButton
+                    keys={extraKeys1}
+                    manyId={Keys.MANY1}
+                    manyType={KeyTypes.MANY1}
+                    borders={BorderStyles.NONE}
+                /> */}
+                {/* 左下集合按钮位置 */}
+                <ManyKeypadButton
+                    keys={extraKeys}
+                    manyId={Keys.MANY}
+                    manyType={KeyTypes.MANY}
+                    borders={BorderStyles.ALL}
+                />
+            </View>
+            <View style={[column, oneColumn]}>
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.NUM_8}
+                    borders={BorderStyles.NONE}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.NUM_5}
+                    borders={BorderStyles.NONE}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.NUM_2}
+                    borders={BorderStyles.NONE}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.NUM_0}
+                    borders={BorderStyles.LEFT}
+                />
+            </View>
+            <View style={[column, oneColumn]}>
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.NUM_9}
+                    borders={BorderStyles.NONE}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.NUM_6}
+                    borders={BorderStyles.NONE}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.NUM_3}
+                    borders={BorderStyles.BOTTOM}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.DECIMAL}
+                    borders={BorderStyles.LEFT}
+                />
+            </View>
+            <View style={[column, oneColumn]}>
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.MINUS}
+                    borders={BorderStyles.LEFT}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.PLUS}
+                    borders={BorderStyles.LEFT}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EQUAL}
+                    borders={BorderStyles.LEFT}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.COMMA}
+                    borders={BorderStyles.LEFT}
+                />
+                
+            </View>
+            <View style={[column, oneColumn]}>
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.BACKSPACE}
+                    borders={BorderStyles.LEFT}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.LEFT}
+                    borders={BorderStyles.LEFT}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.RIGHT}
+                    borders={BorderStyles.LEFT}
+                />
+                {/* <TouchableKeypadButton keyConfig={KeyConfigs.CDOT} /> */}
+                <TouchableKeypadButton
+                    keyConfig={dismissOrJumpOutKey}
+                    borders={BorderStyles.LEFT}
+                />
+                {/* 将收起键盘按钮换成确认按钮 */}
+                {/* <TouchableKeypadButton
+                    keyConfig={KeyConfigs.SUREBTN}
+                    borders={BorderStyles.LEFT}
+                /> */}
+            </View>
             
-        </View>
-        <View style={[column, oneColumn]}>
-            <TouchableKeypadButton
-                keyConfig={KeyConfigs.BACKSPACE}
-                borders={BorderStyles.LEFT}
-            />
-            <TouchableKeypadButton
-                keyConfig={KeyConfigs.LEFT}
-                borders={BorderStyles.LEFT}
-            />
-            <TouchableKeypadButton
-                keyConfig={KeyConfigs.RIGHT}
-                borders={BorderStyles.LEFT}
-            />
-            {/* <TouchableKeypadButton keyConfig={KeyConfigs.CDOT} /> */}
-            <TouchableKeypadButton
-                keyConfig={dismissOrJumpOutKey}
-                borders={BorderStyles.LEFT}
-            />
-            {/* 将收起键盘按钮换成确认按钮 */}
-            {/* <TouchableKeypadButton
-                keyConfig={KeyConfigs.SUREBTN}
-                borders={BorderStyles.LEFT}
-            /> */}
-        </View>
-        
-    </View>;
-
-
-
+        </View>;
 
         const twoPageStyle = [
             row,
