@@ -110,18 +110,19 @@ class ExpressionKeypad extends React.Component {
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.FRAC_INCLUSIVE}
                     style={roundTopRight && roundedTopRight}
+                    borders={BorderStyles.BOTTOM}
                 />
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.EXP_2}
-                    borders={BorderStyles.NONE}
+                    borders={BorderStyles.BOTTOM}
                 />
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.SQRT}
-                    borders={BorderStyles.NONE}
+                    borders={BorderStyles.BOTTOM}
                 />
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.LEFT_PAREN}
-                    borders={BorderStyles.LEFT}
+                    borders={BorderStyles.BOTTOM}
                 />
             </View>
             <View style={[column, oneColumn]}>
@@ -190,19 +191,19 @@ class ExpressionKeypad extends React.Component {
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.MINUS}
-                    borders={BorderStyles.LEFT}
+                    borders={BorderStyles.ALL}
                 />
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.PLUS}
-                    borders={BorderStyles.LEFT}
+                    borders={BorderStyles.ALL}
                 />
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.EQUAL}
-                    borders={BorderStyles.LEFT}
+                    borders={BorderStyles.ALL}
                 />
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.COMMA}
-                    borders={BorderStyles.LEFT}
+                    borders={BorderStyles.ALL}
                 />
                 
             </View>
