@@ -40,7 +40,9 @@ const KeyActions = {
     [Keys.PARALLEL]: {str: '\\parallel', fn: WRITE},
     [Keys.PM]: {str: '\\pm', fn: WRITE},
     [Keys.APPROX]: {str: '\\approx', fn: WRITE},
+    [Keys.TWOFEN]: {str: '\'\'', fn: WRITE},
     [Keys.FEN]: {str: '\'', fn: WRITE},
+    [Keys.LE]: {str: '\\le', fn: WRITE},
     
     
 

@@ -19,6 +19,8 @@ module.exports = {
     CIRC: require('./circ'),
     APPROX: require('./approx'),
     FEN: require('./fen'),
+    LE: require('./le'),
+    TWOFEN: require('./twofen'),
     
 
     // 新增结束

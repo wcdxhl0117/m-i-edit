@@ -23,6 +23,8 @@ const Keys = {
     CIRC: 'CIRC',
     APPROX: 'APPROX',
     FEN: 'FEN',
+    LE: 'LE',
+    TWOFEN: 'TWOFEN',
 
     // 新增结束
     PLUS: 'PLUS',
