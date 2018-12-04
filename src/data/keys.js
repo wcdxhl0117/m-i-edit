@@ -22,7 +22,7 @@ const Keys = {
     PM: 'PM',
     CIRC: 'CIRC',
     APPROX: 'APPROX',
-    
+    FEN: 'FEN',
 
     // 新增结束
     PLUS: 'PLUS',
