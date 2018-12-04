@@ -252,7 +252,7 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.BOTTOM}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.LOG}
+                    keyConfig={KeyConfigs.TWOTERM}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton

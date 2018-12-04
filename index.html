@@ -54,7 +54,7 @@
 
     // 确认按钮点击将latex传给Native
     function sendAnswer(answer) {
-        let allStr = localStorage.getItem('toLatex');
+        var allStr = localStorage.getItem('toLatex');
         console.log('answer: ' + allStr);
         try{
             Android.sendAnswer(allStr);

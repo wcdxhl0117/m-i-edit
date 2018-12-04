@@ -10,6 +10,7 @@ const Keys = {
     // 新增
     COMMA: 'COMMA',
     BRACKETS: 'BRACKETS',
+    TWOTERM: 'TWOTERM',
 
     // 新增结束
     PLUS: 'PLUS',

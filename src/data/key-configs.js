@@ -18,6 +18,10 @@ const KeyConfigs = {
         type: KeyTypes.OPERATOR,
         ariaLabel: i18n._('Cosine'),
     },
+    [Keys.TWOTERM]: {
+        type: KeyTypes.OPERATOR,
+        ariaLabel: i18n._('Cosine'),
+    },
 
     // 新增结束
 

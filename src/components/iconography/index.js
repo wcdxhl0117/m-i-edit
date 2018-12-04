@@ -6,6 +6,7 @@ module.exports = {
     // 新增
     COMMA: require('./comma'),
     BRACKETS: require('./brackets'),
+    TWOTERM: require('./twoterm'),
     // 新增结束
 
     COS: require('./cos'),

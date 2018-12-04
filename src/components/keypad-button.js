@@ -347,7 +347,7 @@ const styleForButtonDimensions = (heightPx, widthPx) => {
             height: heightPx,
             // 为了适应pad上的宽度问题
             width: '100%',
-            maxWidth: widthPx,
+            maxWidth: '100%',
         },
     }).buttonSize;
 };

@@ -69,7 +69,7 @@ class PagerIndicator extends React.Component {
                     key={i}
                     page={i}
                     changeTab={this.props.changeCurrentPage}
-                    active={i === currentPage}
+                    active={i === currentPage && i !== 0}
                     radiusPx={pagerIconRadiusPx}
                 />
             );
@@ -86,12 +86,12 @@ class PagerIndicator extends React.Component {
         return <View style={styles.indicatorStrip}>
             <View style={styles.iconStrip} dynamicStyle={iconStripSize}>
                 {indicators}
-                <Text onPress={()=>{ this.props.changeCurrentPage(5) }} style={styles.titleStyle}>公式</Text>
+                <Text onPress={()=>{ this.props.changeCurrentPage(5) }} style={(currentPage==0) ? styles.titleStyle1: styles.titleStyle2}>公式</Text>
             </View>
 
             <View style={styles.btnMargin}>
                 {/* <Text onPress={()=>{console.log('pager-indicator:切换画板'); showCanvas()}}>{'手写'}</Text> */}
-                <Text onPress={()=>{ this.props.changeCurrentPage(0) }}>{'手写'}</Text>
+                <Text style={(currentPage==0) ? styles.handwritten1: styles.handwritten2} onPress={()=>{ this.props.changeCurrentPage(0) }}>{'手写'}</Text>
             </View>
             <View style={styles.btnMargin}>
                 <Text onPress={()=>{console.log('pager-indicator:切换中文键盘'); window.showKeyboard(1)}}>{'英文'}</Text>
@@ -128,7 +128,14 @@ const styles = StyleSheet.create({
         marginRight: '3px !important',
         marginBottom: '10px'
     },
-    titleStyle: {
+    titleStyle1: {
+        position: 'absolute',
+        height: '14px',
+        bottom: '0px',
+        left: '16px',
+        color: '#a0a0a0',
+    },
+    titleStyle2: {
         position: 'absolute',
         height: '14px',
         bottom: '0px',
@@ -153,7 +160,13 @@ const styles = StyleSheet.create({
         color: '#fff',
         backgroundColor: '#47c3f7',
         borderRadius: '6px'
-    }
+    },
+    handwritten1: {
+        color: '#51d326'
+    },
+    handwritten2: {
+        color: '#a0a0a0'
+    },
 });
 
 const mapStateToProps = (state) => {
