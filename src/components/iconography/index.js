@@ -9,6 +9,7 @@ module.exports = {
     TWOTERM: require('./twoterm'),
     ANGLE: require('./angle'),
     RIGHTSUB: require('./rightsub'),
+    MIDDLEBRACKETS: require('./middlebrackets'),
     // 新增结束
 
     COS: require('./cos'),

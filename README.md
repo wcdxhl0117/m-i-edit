@@ -157,6 +157,16 @@
         }
 ```
 
+#### 公式输入时，自动移动到输入处的相关设置
+    math-wrapper.js文件，如果需要光标移动到输入的位置，需要在presskey()方法中去设置，通过if判断，去做移动光标的操作,如下是中括号添加（200-203）
+```
+ } else if(key===Keys.MIDDLEBRACKETS) {
+            this.mathField.write('\\left[\\right]');
+            this.mathField.keystroke('Left');
+        } else { // added by SongLin.  放入字符串到输入框
+
+```
+
 #### 与native通讯，将外部字符串放入输入框的方法（感谢宋霖）
     我一直的思路是在math-input.js组件里面去改，在math-wrapper组件组去写对应的方法，一直有问题。
     宋霖老师的做法：在component/app.js

@@ -31,6 +31,8 @@ const KeyActions = {
     [Keys.TWOTERM]: {str: '识别不出来', fn: WRITE},
     [Keys.ANGLE]: {str: '\\angle', fn: WRITE},
     [Keys.RIGHTSUB]: {str: '{}_{}', fn: WRITE},
+    // 需要主动移动光标到输入处，所以在pressKey()方法中去设置公式
+    // [Keys.MIDDLEBRACKETS]: {str: '\\left[\\right]', fn: WRITE},
     
 
     // 新增结束
@@ -195,6 +197,9 @@ class MathWrapper {
             this.mathField[WRITE](key);
         } else if (/^NUM_\d/.test(key)) {
             this.mathField[WRITE](key[4]);
+        } else if(key===Keys.MIDDLEBRACKETS) {
+            this.mathField.write('\\left[\\right]');
+            this.mathField.keystroke('Left');
         } else { // added by SongLin.  放入字符串到输入框
             console.log('add chinese:  ', key);
             this.mathField[WRITE](key);

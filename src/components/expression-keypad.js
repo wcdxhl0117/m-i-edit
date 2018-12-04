@@ -270,7 +270,7 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.BOTTOM}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.LN}
+                    keyConfig={KeyConfigs.MIDDLEBRACKETS}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
