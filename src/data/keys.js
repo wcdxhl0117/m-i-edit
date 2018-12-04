@@ -11,6 +11,7 @@ const Keys = {
     COMMA: 'COMMA',
     BRACKETS: 'BRACKETS',
     TWOTERM: 'TWOTERM',
+    ANGLE: 'ANGLE',
 
     // 新增结束
     PLUS: 'PLUS',

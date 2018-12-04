@@ -29,6 +29,8 @@ const KeyActions = {
     [Keys.COMMA]: {str: ',', fn: WRITE},
     // [Keys.BRACKETS]: {str: '', fn: WRITE},
     [Keys.TWOTERM]: {str: '识别不出来', fn: WRITE},
+    [Keys.ANGLE]: {str: '\\angle', fn: WRITE},
+    
 
     // 新增结束
     [Keys.PLUS]: {str: '+', fn: WRITE},

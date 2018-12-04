@@ -256,7 +256,7 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.SIN}
+                    keyConfig={KeyConfigs.ANGLE}
                     borders={BorderStyles.NONE}
                 />
             </View>

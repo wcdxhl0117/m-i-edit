@@ -7,6 +7,7 @@ module.exports = {
     COMMA: require('./comma'),
     BRACKETS: require('./brackets'),
     TWOTERM: require('./twoterm'),
+    ANGLE: require('./angle'),
     // 新增结束
 
     COS: require('./cos'),
