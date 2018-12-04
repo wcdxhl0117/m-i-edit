@@ -274,17 +274,17 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.COS}
+                    keyConfig={KeyConfigs.VERTICAL}
                     borders={BorderStyles.NONE}
                 />
             </View>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.EXP}
+                    keyConfig={KeyConfigs.RIGHTTOPBTM}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.RADICAL}
+                    keyConfig={KeyConfigs.ABSOLUTEVALUE}
                     borders={BorderStyles.BOTTOM}
                 />
                 <TouchableKeypadButton

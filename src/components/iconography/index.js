@@ -10,6 +10,9 @@ module.exports = {
     ANGLE: require('./angle'),
     RIGHTSUB: require('./rightsub'),
     MIDDLEBRACKETS: require('./middlebrackets'),
+    VERTICAL: require('./vertical'),
+    RIGHTTOPBTM: require('./righttopbtm'),
+    ABSOLUTEVALUE: require('./absolutevalue'),
     // 新增结束
 
     COS: require('./cos'),

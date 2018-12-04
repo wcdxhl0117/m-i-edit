@@ -25,17 +25,20 @@ const MQ_END = 0;
 // that do not provide explicit actions (like the numeral keys) will merely
 // write their contents to MathQuill.
 const KeyActions = {
-    // 新增
+///////// 新增
     [Keys.COMMA]: {str: ',', fn: WRITE},
     // [Keys.BRACKETS]: {str: '', fn: WRITE},
     [Keys.TWOTERM]: {str: '识别不出来', fn: WRITE},
     [Keys.ANGLE]: {str: '\\angle', fn: WRITE},
     // [Keys.RIGHTSUB]: {str: '{}_{}', fn: WRITE},
+
     // 需要主动移动光标到输入处，所以在pressKey()方法中去设置公式
     // [Keys.MIDDLEBRACKETS]: {str: '\\left[\\right]', fn: WRITE},
+
+    [Keys.VERTICAL]: {str: '\\perp', fn: WRITE},
     
 
-    // 新增结束
+////////// 新增结束
     [Keys.PLUS]: {str: '+', fn: WRITE},
     [Keys.MINUS]: {str: '-', fn: WRITE},
     [Keys.NEGATIVE]: {str: '-', fn: WRITE},
@@ -203,6 +206,12 @@ class MathWrapper {
             this.mathField.keystroke('Left');
         } else if(key===Keys.RIGHTSUB) {
             this.mathField.write('{}_{}');
+            this.mathField.keystroke('Left');
+        } else if(key===Keys.RIGHTTOPBTM) {
+            this.mathField.write('{}_{}^{}');
+            this.mathField.keystroke('Left');
+        } else if(key===Keys.ABSOLUTEVALUE) {
+            this.mathField.write('\\left|{}\\right| ');
             this.mathField.keystroke('Left');
         } else { // added by SongLin.  放入字符串到输入框
             console.log('add chinese:  ', key);
