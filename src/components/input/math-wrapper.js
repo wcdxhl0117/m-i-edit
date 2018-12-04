@@ -30,6 +30,7 @@ const KeyActions = {
     // [Keys.BRACKETS]: {str: '', fn: WRITE},
     [Keys.TWOTERM]: {str: '识别不出来', fn: WRITE},
     [Keys.ANGLE]: {str: '\\angle', fn: WRITE},
+    [Keys.RIGHTSUB]: {str: '{}_{}', fn: WRITE},
     
 
     // 新增结束

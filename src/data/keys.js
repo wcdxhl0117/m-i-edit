@@ -12,6 +12,7 @@ const Keys = {
     BRACKETS: 'BRACKETS',
     TWOTERM: 'TWOTERM',
     ANGLE: 'ANGLE',
+    RIGHTSUB: 'RIGHTSUB',
 
     // 新增结束
     PLUS: 'PLUS',
