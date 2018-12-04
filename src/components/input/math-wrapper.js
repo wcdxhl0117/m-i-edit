@@ -37,6 +37,8 @@ const KeyActions = {
 
     [Keys.VERTICAL]: {str: '\\perp', fn: WRITE},
     [Keys.TRIANGLE]: {str: '\\triangle', fn: WRITE},
+    [Keys.PARALLEL]: {str: '\\parallel', fn: WRITE},
+    [Keys.PM]: {str: '\\pm', fn: WRITE},
     
 
 ////////// 新增结束
@@ -201,6 +203,7 @@ class MathWrapper {
             this.mathField[WRITE](key);
         } else if (/^NUM_\d/.test(key)) {
             this.mathField[WRITE](key[4]);
+
         // 新增，需要将光标聚焦到输入处
         } else if(key===Keys.MIDDLEBRACKETS) {
             this.mathField.write('\\left[\\right]');
@@ -212,7 +215,10 @@ class MathWrapper {
             this.mathField.write('{}_{}^{}');
             this.mathField.keystroke('Left');
         } else if(key===Keys.ABSOLUTEVALUE) {
-            this.mathField.write('\\left|{}\\right| ');
+            this.mathField.write('\\left|{}\\right|');
+            this.mathField.keystroke('Left');
+        } else if(key===Keys.CIRC) {
+            this.mathField.write('\\circ');
             this.mathField.keystroke('Left');
         } else { // added by SongLin.  放入字符串到输入框
             console.log('add chinese:  ', key);

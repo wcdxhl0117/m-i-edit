@@ -14,6 +14,10 @@ module.exports = {
     RIGHTTOPBTM: require('./righttopbtm'),
     ABSOLUTEVALUE: require('./absolutevalue'),
     TRIANGLE: require('./triangle'),
+    PARALLEL: require('./parallel'),
+    PM: require('./pm'),
+    CIRC: require('./circ'),
+
     // 新增结束
 
     COS: require('./cos'),

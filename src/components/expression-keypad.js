@@ -292,17 +292,17 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.TAN}
+                    keyConfig={KeyConfigs.PARALLEL}
                     borders={BorderStyles.NONE}
                 />
             </View>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.GEQ}
+                    keyConfig={KeyConfigs.PM}
                     borders={BorderStyles.LEFT}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.EQUAL}
+                    keyConfig={KeyConfigs.CIRC}
                     borders={BorderStyles.ALL}
                 />
                 <TouchableKeypadButton
