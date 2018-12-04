@@ -36,6 +36,7 @@ const KeyActions = {
     // [Keys.MIDDLEBRACKETS]: {str: '\\left[\\right]', fn: WRITE},
 
     [Keys.VERTICAL]: {str: '\\perp', fn: WRITE},
+    [Keys.TRIANGLE]: {str: '\\triangle', fn: WRITE},
     
 
 ////////// 新增结束

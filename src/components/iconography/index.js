@@ -13,6 +13,7 @@ module.exports = {
     VERTICAL: require('./vertical'),
     RIGHTTOPBTM: require('./righttopbtm'),
     ABSOLUTEVALUE: require('./absolutevalue'),
+    TRIANGLE: require('./triangle'),
     // 新增结束
 
     COS: require('./cos'),

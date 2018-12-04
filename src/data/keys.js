@@ -17,6 +17,7 @@ const Keys = {
     VERTICAL: 'VERTICAL',
     RIGHTTOPBTM: 'RIGHTTOPBTM',
     ABSOLUTEVALUE: 'ABSOLUTEVALUE',
+    TRIANGLE: 'TRIANGLE',
 
     // 新增结束
     PLUS: 'PLUS',

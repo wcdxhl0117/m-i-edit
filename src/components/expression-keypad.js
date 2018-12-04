@@ -288,7 +288,7 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.BOTTOM}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.LOG_N}
+                    keyConfig={KeyConfigs.TRIANGLE}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
