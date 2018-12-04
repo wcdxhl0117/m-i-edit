@@ -97,7 +97,7 @@ class ExpressionKeypad extends React.Component {
         } else {
             dismissOrJumpOutKey = KeyConfigs.DISMISS;
         }
-
+        
         const onePageStyle = [
             row,
             fullWidth,
@@ -306,11 +306,11 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.ALL}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.LEFT_PAREN}
+                    keyConfig={KeyConfigs.APPROX}
                     borders={BorderStyles.LEFT}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.LEFT_PAREN}
+                    keyConfig={KeyConfigs.NEQ}
                     borders={BorderStyles.LEFT}
                 />
             </View>

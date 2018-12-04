@@ -17,6 +17,8 @@ module.exports = {
     PARALLEL: require('./parallel'),
     PM: require('./pm'),
     CIRC: require('./circ'),
+    APPROX: require('./approx'),
+    
 
     // 新增结束
 

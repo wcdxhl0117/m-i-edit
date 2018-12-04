@@ -39,6 +39,8 @@ const KeyActions = {
     [Keys.TRIANGLE]: {str: '\\triangle', fn: WRITE},
     [Keys.PARALLEL]: {str: '\\parallel', fn: WRITE},
     [Keys.PM]: {str: '\\pm', fn: WRITE},
+    [Keys.APPROX]: {str: '\\approx', fn: WRITE},
+    
     
 
 ////////// 新增结束
@@ -219,7 +221,6 @@ class MathWrapper {
             this.mathField.keystroke('Left');
         } else if(key===Keys.CIRC) {
             this.mathField.write('\\circ');
-            this.mathField.keystroke('Left');
         } else { // added by SongLin.  放入字符串到输入框
             console.log('add chinese:  ', key);
             this.mathField[WRITE](key);

@@ -21,6 +21,8 @@ const Keys = {
     PARALLEL: 'PARALLEL',
     PM: 'PM',
     CIRC: 'CIRC',
+    APPROX: 'APPROX',
+    
 
     // 新增结束
     PLUS: 'PLUS',

@@ -20,7 +20,9 @@ class Circ extends React.Component {
                     <g>
                         <path d="M28,18.612H14.8v13.2H28V18.612L28,18.612z M16,30.612v-10.8h10.8v10.8H16L16,30.612z"/>
                     </g>
-                    <circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="30.992" cy="17.48" r="2"/>
+                    <g>
+                        <circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="30.992" cy="17.48" r="2"/>
+                    </g>
                 </g>
 			</svg>
         )
