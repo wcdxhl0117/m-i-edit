@@ -27,6 +27,7 @@ const Keys = {
     TWOFEN: 'TWOFEN',
     DWAN: 'DWAN',
     ALPHA: 'ALPHA',
+    COT: 'COT',
 
     // 新增结束
     PLUS: 'PLUS',

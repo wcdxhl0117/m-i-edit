@@ -374,11 +374,11 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.BOTTOM}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.LOG}
+                    keyConfig={KeyConfigs.SIN}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.SIN}
+                    keyConfig={KeyConfigs.COT}
                     borders={BorderStyles.NONE}
                 />
             </View>

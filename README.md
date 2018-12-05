@@ -278,6 +278,8 @@
 
 * 按钮点击状态的背景动画时间控制：echo-manager.js（79）
 
+* sin cos cot tan等需要特殊处理的公式（加括号，移动光标到输入位置）：math-wrapper.js（87，158）
+
 
 # license
 

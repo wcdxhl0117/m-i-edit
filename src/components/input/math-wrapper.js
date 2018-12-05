@@ -45,6 +45,7 @@ const KeyActions = {
     [Keys.LE]: {str: '\\le', fn: WRITE},
     [Keys.DWAN]: {str: '、', fn: WRITE},
     [Keys.ALPHA]: {str: '\\alpha', fn: WRITE},
+    // [Keys.COT]: {str: '\\cot', fn: WRITE},
     
     
     
@@ -89,6 +90,7 @@ const NormalCommands = {
     [Keys.SIN]: 'sin',
     [Keys.COS]: 'cos',
     [Keys.TAN]: 'tan',
+    [Keys.COT]: 'cot'
 };
 
 // 可能与many公式类型有关

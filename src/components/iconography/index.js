@@ -23,6 +23,7 @@ module.exports = {
     TWOFEN: require('./twofen'),
     DWAN: require('./dwan'),
     ALPHA: require('./alpha'),
+    COT: require('./cot'),
     
 
     // 新增结束
