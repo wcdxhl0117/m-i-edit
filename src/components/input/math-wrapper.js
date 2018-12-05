@@ -44,6 +44,7 @@ const KeyActions = {
     [Keys.FEN]: {str: '\'', fn: WRITE},
     [Keys.LE]: {str: '\\le', fn: WRITE},
     [Keys.DWAN]: {str: '、', fn: WRITE},
+    [Keys.ALPHA]: {str: '\\alpha', fn: WRITE},
     
     
     

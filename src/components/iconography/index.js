@@ -22,6 +22,7 @@ module.exports = {
     LE: require('./le'),
     TWOFEN: require('./twofen'),
     DWAN: require('./dwan'),
+    ALPHA: require('./alpha'),
     
 
     // 新增结束
