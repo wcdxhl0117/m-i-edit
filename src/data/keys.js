@@ -25,6 +25,7 @@ const Keys = {
     FEN: 'FEN',
     LE: 'LE',
     TWOFEN: 'TWOFEN',
+    DWAN: 'DWAN',
 
     // 新增结束
     PLUS: 'PLUS',

@@ -21,6 +21,7 @@ module.exports = {
     FEN: require('./fen'),
     LE: require('./le'),
     TWOFEN: require('./twofen'),
+    DWAN: require('./dwan'),
     
 
     // 新增结束

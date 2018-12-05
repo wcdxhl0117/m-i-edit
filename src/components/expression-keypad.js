@@ -350,7 +350,7 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.GEQ}
                     borders={BorderStyles.NONE}
                 />
-            </View> */} */}
+            </View> */} 
 
 
             
@@ -483,7 +483,7 @@ class ExpressionKeypad extends React.Component {
         const threePage = <View style={threePageStyle}>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.EXP}
+                    keyConfig={KeyConfigs.DWAN}
                     borders={BorderStyles.NONE}
                     style={roundTopLeft && roundedTopLeft}
                 />

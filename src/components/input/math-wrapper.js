@@ -43,6 +43,8 @@ const KeyActions = {
     [Keys.TWOFEN]: {str: '\'\'', fn: WRITE},
     [Keys.FEN]: {str: '\'', fn: WRITE},
     [Keys.LE]: {str: '\\le', fn: WRITE},
+    [Keys.DWAN]: {str: '、', fn: WRITE},
+    
     
     
 
