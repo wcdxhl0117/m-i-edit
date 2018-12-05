@@ -276,6 +276,8 @@
 
 * 宽屏（iPad）模式下，结构会错乱：解决办法就是取消在宽屏时展示全部公式---> two-page-keypad.js（42，57-81），仅仅处理这里还不行，会有方向键，文件keypad-container.js(195-200), 去掉展示方向键的按钮，按钮在pad上的宽度调整为100%（keypad-button.js: 346）
 
+* 按钮点击状态的背景动画时间控制：echo-manager.js（79）
+
 
 # license
 

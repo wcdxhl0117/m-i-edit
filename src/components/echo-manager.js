@@ -77,7 +77,7 @@ class EchoManager extends React.Component {
                 break;
 
             case EchoAnimationTypes.FADE_ONLY:
-                animationDurationMs = 300;
+                animationDurationMs = 50;
                 animationTransitionName = 'echo-fade-only';
                 break;
 
