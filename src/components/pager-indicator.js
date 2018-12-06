@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
         color: '#51d326',
     },
     btnMargin: {
-        width: '30px',
+        width: '40px',
         height: '30px',
         lineHeight: '30px',
         borderRadius: '6px',
