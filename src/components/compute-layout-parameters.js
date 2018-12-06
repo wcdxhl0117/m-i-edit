@@ -28,7 +28,9 @@ const {
 } = require('./common-style');
 
 const minButtonHeight = 48;
-const maxButtonSize = 64;
+// const maxButtonSize = 64;
+// 改变按钮最大高度
+const maxButtonSize = 56;
 const minSpaceAboveKeypad = 32;
 
 // These values are taken from an iPhone 5, but should be consistent with the

@@ -280,6 +280,10 @@
 
 * sin cos cot tan等需要特殊处理的公式（加括号，移动光标到输入位置）：math-wrapper.js（87，158）
 
+* 输入框位置向上自适应，在component/app.js去设置输入框的位置
+
+* 按钮最大高度：compute-layout-parameters.js（31）
+
 
 # license
 
