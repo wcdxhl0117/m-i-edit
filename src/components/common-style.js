@@ -2,7 +2,7 @@
  * Common parameters used to style components.
  */
 
-const gray85 = '#D6D8DA';
+const gray85 = '#F6F7F7';
 
 module.exports = {
     brightGreen: '#78C008',
