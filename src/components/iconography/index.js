@@ -24,6 +24,7 @@ module.exports = {
     DWAN: require('./dwan'),
     ALPHA: require('./alpha'),
     COT: require('./cot'),
+    COLON: require('./colon'),
     
 
     // 新增结束

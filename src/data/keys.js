@@ -28,6 +28,7 @@ const Keys = {
     DWAN: 'DWAN',
     ALPHA: 'ALPHA',
     COT: 'COT',
+    COLON: 'COLON',
 
     // 新增结束
     PLUS: 'PLUS',

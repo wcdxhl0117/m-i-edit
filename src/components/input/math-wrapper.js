@@ -46,6 +46,8 @@ const KeyActions = {
     [Keys.DWAN]: {str: '、', fn: WRITE},
     [Keys.ALPHA]: {str: '\\alpha', fn: WRITE},
     // [Keys.COT]: {str: '\\cot', fn: WRITE},
+    [Keys.COLON]: {str: ':', fn: WRITE},
+
     
     
     
