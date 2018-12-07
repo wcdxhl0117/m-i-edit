@@ -36,6 +36,8 @@ const Keys = {
     TEMPERATURE: 'TEMPERATURE',
     ONE: 'ONE',
     LEFTRIGHT: 'LEFTRIGHT',
+    FOUR: 'FOUR',
+    PI: 'PI',
 
     // 新增结束
     PLUS: 'PLUS',
@@ -73,7 +75,7 @@ const Keys = {
     TAN: 'TAN',
 
     // TODO(charlie): Add in additional Greek letters.
-    PI: 'PI',
+    // PI: 'PI',
     THETA: 'THETA',
 
     UP: 'UP',

@@ -54,6 +54,8 @@ const KeyActions = {
     [Keys.QIE]: {str: '且', fn: WRITE},
     [Keys.TEMPERATURE]: {str: '°C', fn: WRITE},
     [Keys.ONE]: {str: '①', fn: WRITE},
+    [Keys.FOUR]: {str: '④', fn: WRITE},
+    [Keys.PI]: {str: '\\pi', fn: WRITE},
     
     
     

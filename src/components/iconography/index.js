@@ -33,6 +33,8 @@ module.exports = {
     TEMPERATURE: require('./temperature'),
     ONE: require('./one'),
     LEFTRIGHT: require('./leftright'),
+    FOUR: require('./four'),
+    PI: require('./pi'),
     
 
     // 新增结束

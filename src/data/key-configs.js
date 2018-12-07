@@ -126,6 +126,14 @@ const KeyConfigs = {
         type: KeyTypes.OPERATOR,
         ariaLabel: i18n._('Cosine'),
     },
+    [Keys.FOUR]: {
+        type: KeyTypes.OPERATOR,
+        ariaLabel: i18n._('Cosine'),
+    },
+    [Keys.PI]: {
+        type: KeyTypes.OPERATOR,
+        ariaLabel: i18n._('Cosine'),
+    },
     
 
     // 新增结束
@@ -288,14 +296,14 @@ const KeyConfigs = {
         type: KeyTypes.OPERATOR,
         ariaLabel: i18n._('Tangent'),
     },
-    [Keys.PI]: {
-        type: KeyTypes.VALUE,
-        ariaLabel: i18n._('Pi'),
-        icon: {
-            type: IconTypes.MATH,
-            data: '\\pi',
-        },
-    },
+    // [Keys.PI]: {
+    //     type: KeyTypes.VALUE,
+    //     ariaLabel: i18n._('Pi'),
+    //     icon: {
+    //         type: IconTypes.MATH,
+    //         data: '\\pi',
+    //     },
+    // },
     // [Keys.THETA]: {
     //     type: KeyTypes.VALUE,
     //     ariaLabel: i18n._('Theta'),
