@@ -27,6 +27,9 @@ module.exports = {
     COLON: require('./colon'),
     BETA: require('./beta'),
     HUO: require('./huo'),
+    BAI: require('./bai'),
+    THETA: require('./theta'),
+    QIE: require('./qie'),
     
 
     // 新增结束

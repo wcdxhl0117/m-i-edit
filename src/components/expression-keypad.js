@@ -402,19 +402,19 @@ class ExpressionKeypad extends React.Component {
             </View>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.EXP}
+                    keyConfig={KeyConfigs.BAI}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.RADICAL}
-                    borders={BorderStyles.BOTTOM}
-                />
-                <TouchableKeypadButton
-                    keyConfig={KeyConfigs.LOG_N}
+                    keyConfig={KeyConfigs.THETA}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.TAN}
+                    borders={BorderStyles.NONE}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.QIE}
                     borders={BorderStyles.NONE}
                 />
             </View>

@@ -31,6 +31,8 @@ const Keys = {
     COLON: 'COLON',
     BETA: 'BETA',
     HUO: 'HUO',
+    BAI: 'BAI',
+    QIE: 'QIE',
 
     // 新增结束
     PLUS: 'PLUS',

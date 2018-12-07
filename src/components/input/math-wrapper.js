@@ -49,6 +49,9 @@ const KeyActions = {
     [Keys.COLON]: {str: ':', fn: WRITE},
     [Keys.BETA]: {str: '\\beta', fn: WRITE},
     [Keys.HUO]: {str: '或', fn: WRITE},
+    [Keys.BAI]: {str: '%', fn: WRITE},
+    [Keys.THETA]: {str: '\\theta', fn: WRITE},
+    [Keys.QIE]: {str: '且', fn: WRITE},
 
     
     
@@ -75,7 +78,7 @@ const KeyActions = {
     [Keys.RIGHT_PAREN]: {str: ')', fn: CMD},
     [Keys.SQRT]: {str: 'sqrt', fn: CMD},
     [Keys.PI]: {str: 'pi', fn: CMD},
-    [Keys.THETA]: {str: 'theta', fn: CMD},
+    // [Keys.THETA]: {str: 'theta', fn: CMD},
     [Keys.RADICAL]: {str: 'nthroot', fn: CMD},
     [Keys.LT]: {str: '<', fn: WRITE},
     [Keys.LEQ]: {str: '\\leq', fn: WRITE},
