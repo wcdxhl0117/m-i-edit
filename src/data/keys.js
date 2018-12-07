@@ -41,6 +41,10 @@ const Keys = {
     RIGHTLEFT: 'RIGHTLEFT',
     TWO: 'TWO',
     FIVE: 'FIVE',
+    THREE: 'THREE',
+    SIX: 'SIX',
+    SIM: 'SIM',
+    CONG: 'CONG',
 
     // 新增结束
     PLUS: 'PLUS',

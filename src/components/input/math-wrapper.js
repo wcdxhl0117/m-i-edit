@@ -55,9 +55,13 @@ const KeyActions = {
     [Keys.TEMPERATURE]: {str: '°C', fn: WRITE},
     [Keys.ONE]: {str: '①', fn: WRITE},
     [Keys.TWO]: {str: '②', fn: WRITE},
+    [Keys.THREE]: {str: '③', fn: WRITE},
     [Keys.FOUR]: {str: '④', fn: WRITE},
     [Keys.FIVE]: {str: '⑤', fn: WRITE},
+    [Keys.SIX]: {str: '⑥', fn: WRITE},
     [Keys.PI]: {str: '\\pi', fn: WRITE},
+    [Keys.SIM]: {str: '\\sim', fn: WRITE},
+    [Keys.CONG]: {str: '\\cong', fn: WRITE},
     
     
     

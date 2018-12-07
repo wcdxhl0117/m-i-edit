@@ -38,6 +38,10 @@ module.exports = {
     RIGHTLEFT: require('./rightleft'),
     TWO: require('./two'),
     FIVE: require('./five'),
+    THREE: require('./three'),
+    SIX: require('./six'),
+    SIM: require('./sim'),
+    CONG: require('./cong'),
 
 
     // 新增结束

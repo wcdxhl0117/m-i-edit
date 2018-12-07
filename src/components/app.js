@@ -37,7 +37,7 @@ class App extends React.Component {
                     marginRight: 10,
                     marginBottom: 40,
                     position: 'fixed',
-                    bottom: '234',
+                    bottom: '245',
                     width: '95%'
                 }}
             >
