@@ -31,7 +31,7 @@ class PagerIcon extends React.Component {
         // ()=>console.log('click',this.props.page)
         
         return <View 
-                onClick={()=> this.props.changeTab(this.props.page)}
+                // onClick={()=> this.props.changeTab(this.props.page)}
                 style={styles.indicators}
             >
             <svg width={2 * radiusPx} height={2 * radiusPx}>
