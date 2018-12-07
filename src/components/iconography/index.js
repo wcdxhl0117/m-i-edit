@@ -25,6 +25,8 @@ module.exports = {
     ALPHA: require('./alpha'),
     COT: require('./cot'),
     COLON: require('./colon'),
+    BETA: require('./beta'),
+    HUO: require('./huo'),
     
 
     // 新增结束

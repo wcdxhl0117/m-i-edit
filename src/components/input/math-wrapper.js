@@ -47,6 +47,8 @@ const KeyActions = {
     [Keys.ALPHA]: {str: '\\alpha', fn: WRITE},
     // [Keys.COT]: {str: '\\cot', fn: WRITE},
     [Keys.COLON]: {str: ':', fn: WRITE},
+    [Keys.BETA]: {str: '\\beta', fn: WRITE},
+    [Keys.HUO]: {str: '或', fn: WRITE},
 
     
     

@@ -29,6 +29,8 @@ const Keys = {
     ALPHA: 'ALPHA',
     COT: 'COT',
     COLON: 'COLON',
+    BETA: 'BETA',
+    HUO: 'HUO',
 
     // 新增结束
     PLUS: 'PLUS',
