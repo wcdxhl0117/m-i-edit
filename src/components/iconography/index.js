@@ -30,6 +30,9 @@ module.exports = {
     BAI: require('./bai'),
     THETA: require('./theta'),
     QIE: require('./qie'),
+    TEMPERATURE: require('./temperature'),
+    ONE: require('./one'),
+    LEFTRIGHT: require('./leftright'),
     
 
     // 新增结束

@@ -52,7 +52,9 @@ const KeyActions = {
     [Keys.BAI]: {str: '%', fn: WRITE},
     [Keys.THETA]: {str: '\\theta', fn: WRITE},
     [Keys.QIE]: {str: '且', fn: WRITE},
-
+    [Keys.TEMPERATURE]: {str: '°C', fn: WRITE},
+    [Keys.ONE]: {str: '①', fn: WRITE},
+    
     
     
     
@@ -233,6 +235,9 @@ class MathWrapper {
             this.mathField.keystroke('Left');
         } else if(key===Keys.ABSOLUTEVALUE) {
             this.mathField.write('\\left|{}\\right|');
+            this.mathField.keystroke('Left');
+        } else if(key===Keys.LEFTRIGHT) {
+            this.mathField.write('\\left[\\right)');
             this.mathField.keystroke('Left');
         } else if(key===Keys.CIRC) {
             this.mathField.write('\\circ');

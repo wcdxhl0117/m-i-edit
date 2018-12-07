@@ -420,15 +420,15 @@ class ExpressionKeypad extends React.Component {
             </View>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.GEQ}
+                    keyConfig={KeyConfigs.TEMPERATURE}
                     borders={BorderStyles.LEFT}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.EQUAL}
+                    keyConfig={KeyConfigs.LEFTRIGHT}
                     borders={BorderStyles.ALL}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.LEFT_PAREN}
+                    keyConfig={KeyConfigs.ONE}
                     borders={BorderStyles.LEFT}
                 />
                 <TouchableKeypadButton

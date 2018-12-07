@@ -33,6 +33,9 @@ const Keys = {
     HUO: 'HUO',
     BAI: 'BAI',
     QIE: 'QIE',
+    TEMPERATURE: 'TEMPERATURE',
+    ONE: 'ONE',
+    LEFTRIGHT: 'LEFTRIGHT',
 
     // 新增结束
     PLUS: 'PLUS',
