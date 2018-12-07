@@ -54,7 +54,9 @@ const KeyActions = {
     [Keys.QIE]: {str: '且', fn: WRITE},
     [Keys.TEMPERATURE]: {str: '°C', fn: WRITE},
     [Keys.ONE]: {str: '①', fn: WRITE},
+    [Keys.TWO]: {str: '②', fn: WRITE},
     [Keys.FOUR]: {str: '④', fn: WRITE},
+    [Keys.FIVE]: {str: '⑤', fn: WRITE},
     [Keys.PI]: {str: '\\pi', fn: WRITE},
     
     
@@ -238,8 +240,11 @@ class MathWrapper {
         } else if(key===Keys.ABSOLUTEVALUE) {
             this.mathField.write('\\left|{}\\right|');
             this.mathField.keystroke('Left');
-        } else if(key===Keys.LEFTRIGHT) {
+        }  else if(key===Keys.LEFTRIGHT) {
             this.mathField.write('\\left[\\right)');
+            this.mathField.keystroke('Left');
+        } else if(key===Keys.RIGHTLEFT) {
+            this.mathField.write('\\left(\\right]');
             this.mathField.keystroke('Left');
         } else if(key===Keys.CIRC) {
             this.mathField.write('\\circ');

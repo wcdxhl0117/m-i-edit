@@ -35,7 +35,10 @@ module.exports = {
     LEFTRIGHT: require('./leftright'),
     FOUR: require('./four'),
     PI: require('./pi'),
-    
+    RIGHTLEFT: require('./rightleft'),
+    TWO: require('./two'),
+    FIVE: require('./five'),
+
 
     // 新增结束
 

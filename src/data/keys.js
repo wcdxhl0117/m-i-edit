@@ -38,6 +38,9 @@ const Keys = {
     LEFTRIGHT: 'LEFTRIGHT',
     FOUR: 'FOUR',
     PI: 'PI',
+    RIGHTLEFT: 'RIGHTLEFT',
+    TWO: 'TWO',
+    FIVE: 'FIVE',
 
     // 新增结束
     PLUS: 'PLUS',
