@@ -265,6 +265,9 @@ class MathWrapper {
             this.callbacks.onSelectionChanged(cursor.selection);
         }
 
+        // 调用获取输入框噶欧的方法 
+        sumHeight();
+
         // NOTE(charlie): It's insufficient to do this as an `edited` handler
         // on the MathField, as that handler isn't triggered on navigation
         // events.
