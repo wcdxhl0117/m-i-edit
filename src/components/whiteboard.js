@@ -1,68 +1,75 @@
-// import htmlContent from '../../whiteboard/whiteboard.html';
-
 import React, {Component} from 'react';
 
 const ReactDOM = require('react-dom');
 const MathWrapper = require('./input/math-wrapper');
 
-// import {Sketchable} from '../../whiteboard/sketchable.full.min'
 const {View,Text} = require('../fake-react-native-web');
 var sketcher = null;
-let wi = screen.width - 3;
+let wi = screen.width - 4;
 
 export default class Whiteboard extends Component {
-    
+    constructor(props) {
+        super(props);
+        this.state = {
+            latexArr: [],
+        }
+    }
+
     componentDidMount() {
-        
-        this.mathField1 = new MathWrapper(this._mathContainer, {}, {
-            onCursorMove: (cursor) => {
-                // TODO(charlie): It's not great that there is so much coupling
-                // between this keypad and the input behavior. We should wrap
-                // this `MathInput` component in an intermediary component
-                // that translates accesses on the keypad into vanilla props,
-                // to make this input keypad-agnostic.
-                this.props.keypadElement &&
-                    this.props.keypadElement.setCursor(cursor);
-            },
-        });
-
-        // console.log('componentDidMount', this.refs.canvas);
-        // let options = {
-        //     events: {
-        //         mousedown: function (elem, data, evt) {
-        //             console.log('mouse down');
-        //             // notifyEvent(evt.type);
-        //         },
-        //         mouseup: function (elem, data, evt) {
-        //             console.log('mouse up');
-        //         }
-        //         // notifyEvent(evt.type);
-        //         ,
-        //         mousemove: function (elem, data, evt) {
-        //             console.log('mouse move');
-        //             // notifyEvent(evt.type);
-        //         }
-        //     }
-        // };
-
-       // sketcher = new Sketchable(this.refs.canvas, options);
+        this.mathField1 = new MathWrapper(this._mathContainer1, {}, {});
+        this.mathField2 = new MathWrapper(this._mathContainer2, {}, {});
+        this.mathField3 = new MathWrapper(this._mathContainer3, {}, {});
         sketcher = new Sketchable(this.refs.canvas);
     }
-    generateSVGInk = () => {
-        const strokes = sketcher.strokes();
-        const scgInk = this.strokesToScg(strokes);
-        console.log('scgInk generated', scgInk);
-        window.alert(scgInk);
+
+    generateSVGInk = (type) => {
+        let off = false;
+        let _this = this;
+        // let timer = null;
+        if (type === 'end') {
+            this.timer = setTimeout(function(){
+                const strokes = sketcher.strokes();
+                const scgInk = _this.strokesToScg(strokes);
+                console.log('scgInk generated', JSON.stringify(scgInk));
+
+                sketcher.clear();
+                const url = "http://72.93.93.62:8080/hw/mathreco";
+                let options = Object.assign({ method: 'POST' } );
+                options.headers = {
+                    // 'Accept': 'application/json',
+                    'Content-Type': 'application/json;charset=UTF-8"',
+                };
+                const requestSVG = {
+                        "id": 0,
+                        "scg_ink":scgInk,
+                        "info": null,
+                };
+
+                options.body= JSON.stringify(requestSVG);
+                console.log('recognize', url, options);
+                return fetch(url,options)
+                    .then(response => response.json())
+                    .then(json => {
+                        console.log('response', json);
+                        // appendText(json.latex)
+                        // 将latex放入数组
+                        _this.setState(()=>{
+                            return {
+                                latexArr: [...json.latex]
+                            }
+                            console.log(this.state)
+                        })
+                    })  .catch(error => {
+                        console.log(error);
+                    });
+            }, 1000)
+        } else if(type === 'start') {
+            clearTimeout(this.timer)
+        } else {
+            clearTimeout(this.timer)
+        }
+        
     };
-
-    //
-    // transform(strokes) {
-    //     for (var i = 0; i < strokes.length; ++i)
-    //         for (var j = 0, stroke = strokes[i]; j < stroke.length; ++j)
-    //             strokes[i][j] = [ strokes[i][j][0], strokes[i][j][1] ];
-    //     return strokes;
-    // };
-
 
     strokesToScg(strokes) {
         var scg = 'SCG_INK\n' + strokes.length + '\n'
@@ -71,42 +78,35 @@ export default class Whiteboard extends Component {
             stroke.forEach(function (p) {
                 scg += p[0] + ' ' + p[1] + '\n'
             })
-        })
+        });
 
         return scg
     }
-    
+    handleClick(str) {
+        alert(str)
+    }
+
     render() {
-        // return <div><h5>Hello</h5></div>;
-        let str = '\\sqrt[3]{4}';
-        return (<View>
-            <View
-                ref={(node) => {
-                    this._mathContainer = ReactDOM.findDOMNode(node);
-                }}
-            >
-                <Text
-                    onPress={this.generateSVGInk}
-                >{str}</Text>
-                <Text
-                    onPress={this.generateSVGInk}
-                >{str}</Text>
-                <Text
-                    onPress={this.generateSVGInk}
-                >{str}</Text>
-            </View>
-            <canvas id="drawing-canvas" width={wi} height="180" ref="canvas"
-                    // onTouchEnd={this.generateSVGInk}
+        let str = '\\sqrt[3]{890}';
+        return (<div>
+            <div>
+                <span
+                    onClick={() => this.handleClick(str)}
+                    style={{border: 'none',display: 'inline-block',padding: '0 10px'}}
+                    ref={(node) => {
+                        this._mathContainer1 = ReactDOM.findDOMNode(node);
+                    }}
+                >{str}</span>
+                
+            </div>
+            <canvas id="drawing-canvas"
+                    width={wi}
+                    height = '180'
+                    ref="canvas"
+                    onTouchStart={() => this.generateSVGInk('start')}
+                    onTouchEnd={() => this.generateSVGInk('end')}
                     style={{'border': '1px solid #000000'}}/>
-        </View>);
+        </div>);
     }
 }
 
-// export default class Pre extends Component {
-//     constructor(props) {
-//         super(props)
-//     }
-//     render() {
-//         <div>{this.props.preVue}</div>
-//     }
-// }
