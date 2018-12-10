@@ -117,8 +117,10 @@
     }
 
     // 计算输入框高度
+    var iptHeight = 0;
     function sumHeight() {
-        console.log($('.keypad-input').height());
+        console.log($('.keypad-input').height() - iptHeight);
+        iptHeight = $('.keypad-input').height();
         console.log($('body').width())
     }
 
