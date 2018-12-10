@@ -62,7 +62,7 @@ export default class Whiteboard extends Component {
                     })  .catch(error => {
                         console.log(error);
                     });
-            }, 1000)
+            }, 100000)
         } else if(type === 'start') {
             clearTimeout(this.timer)
         } else {
@@ -87,7 +87,8 @@ export default class Whiteboard extends Component {
     }
 
     render() {
-        let str = '\\sqrt[3]{890}';
+        // let str = '\\sqrt[3]{890}';
+        let str = '';
         return (<div>
             <div>
                 <span
