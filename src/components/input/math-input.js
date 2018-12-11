@@ -777,7 +777,7 @@ const fontSizePt = 18;
 // padding in our `render` method.
 const numeralHeightPx = 20;
 const totalDesiredPadding = 8;
-const minHeightPx = numeralHeightPx + totalDesiredPadding * 6;
+const minHeightPx = numeralHeightPx + totalDesiredPadding * 5;
 const minWidthPx = 64;
 
 const styles = StyleSheet.create({

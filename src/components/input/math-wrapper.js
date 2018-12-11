@@ -253,7 +253,7 @@ class MathWrapper {
             this.mathField.write('\\left(\\right]');
             this.mathField.keystroke('Left');
         } else if(key===Keys.CIRC) {
-            this.mathField.write('\\circ');
+            this.mathField.write('^\\circ');
         } else { // added by SongLin.  放入字符串到输入框
             console.log('add chinese:  ', key);
             this.mathField[WRITE](key);

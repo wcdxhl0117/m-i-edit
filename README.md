@@ -282,7 +282,7 @@
 
 * 输入框位置向上自适应，在component/app.js去设置输入框的位置
 
-* 按钮最大高度：compute-layout-parameters.js（31）
+* 按钮最大高度：compute-layout-parameters.js（31）,最好同时调整最小高度，达到适合的高度
 
 * 重要=>修改输入框高度默认值：math-input.js(780), 修改minHeightPx，之前是numeralHeightPx + totalDesiredPadding * 2，改为numeralHeightPx + totalDesiredPadding * 6，同时修改（794），将minHeight和maxHeight同时改为minHiehgt，为了居中，加alignItems:'center' 
 
