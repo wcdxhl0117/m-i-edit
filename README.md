@@ -284,6 +284,8 @@
 
 * 按钮最大高度：compute-layout-parameters.js（31）
 
+* 重要=>修改输入框高度默认值：math-input.js(780), 修改minHeightPx，之前是numeralHeightPx + totalDesiredPadding * 2，改为numeralHeightPx + totalDesiredPadding * 6，同时修改（794），将minHeight和maxHeight同时改为minHiehgt，为了居中，加alignItems:'center' 
+
 
 # license
 
