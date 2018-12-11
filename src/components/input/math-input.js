@@ -730,7 +730,7 @@ class MathInput extends React.Component {
             width: '100%',
             overflow: 'auto',
         };
-
+        console.log(styles.input)
         return <View
             style={styles.input}
             onTouchStart={this.handleTouchStart}
@@ -743,7 +743,7 @@ class MathInput extends React.Component {
             {/* NOTE(charlie): This is used purely to namespace the styles in
                 overrides.css. */}
             <div className='keypad-input'
-                style={{width: '100%', overflow: 'auto',}}
+                style={{width: '100%'}}
             >
                 {/* NOTE(charlie): This element must be styled with inline
                     styles rather than with Aphrodite classes, as MathQuill
@@ -777,7 +777,7 @@ const fontSizePt = 18;
 // padding in our `render` method.
 const numeralHeightPx = 20;
 const totalDesiredPadding = 8;
-const minHeightPx = numeralHeightPx + totalDesiredPadding * 2;
+const minHeightPx = numeralHeightPx + totalDesiredPadding * 6;
 const minWidthPx = 64;
 
 const styles = StyleSheet.create({
@@ -787,6 +787,7 @@ const styles = StyleSheet.create({
         verticalAlign: 'middle',
         // 输入框变为100%宽度
         width: '100%',
+        overflow: 'auto',
     },
 });
 
@@ -803,11 +804,13 @@ const inlineStyles = {
     innerContainer: {
         backgroundColor: 'white',
         display: 'flex',
+        // alignItems:'center',
         minHeight: minHeightPx,
+        maxHeight: minHeightPx,
         minWidth: minWidthPx,
         boxSizing: 'border-box',
         position: 'relative',
-        overflow: 'hidden',
+        overflow: 'auto',
         borderStyle: 'solid',
         borderColor: gray76,
         borderRadius: 4,

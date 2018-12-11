@@ -32,12 +32,14 @@ class App extends React.Component {
         return <View>
             <div
                 style={{
-                    marginTop: 10,
+                    // marginTop: 10,
                     marginLeft: 10,
                     marginRight: 10,
-                    marginBottom: 40,
+                    // height: 60,
+                    // overflow: 'auto',
+                    // marginBottom: 40,
                     position: 'fixed',
-                    bottom: '245',
+                    bottom: '265',
                     width: '95%'
                 }}
             >

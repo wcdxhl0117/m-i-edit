@@ -29,7 +29,7 @@
         }
         .mq-editable-field.mq-math-mode{
             /* overflow: auto !important;
-            max-height: 100px !important; */
+            height: 65px !important; */
         }
         .mq-root-block.mq-hasCursor{
             overflow: auto !important;
@@ -122,7 +122,9 @@
     // 计算输入框高度
     function sumHeight() {
         try {
-            Android.setWebViewHeight($('.keypad-input').height() - iptHeight);
+            if (($('.keypad-input').height() - iptHeight) !== 0) {
+                Android.setWebViewHeight($('.keypad-input').height() - iptHeight);
+            }
         }catch(e){
             console.log('没有设备');
         }
