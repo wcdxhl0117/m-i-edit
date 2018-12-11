@@ -11,6 +11,7 @@
     <style>
         body {
             margin: 0;
+            background: rgba(1, 1, 1, 0)
         }
     </style>
     <style>
@@ -51,7 +52,7 @@
  -->
 <script type="text/javascript">
     var realAnswer = '';
-
+    var iptHeight = 0;
     // 确认按钮点击将latex传给Native
     function sendAnswer(answer) {
         var allStr = localStorage.getItem('toLatex');
@@ -85,9 +86,11 @@
 
     // 输入框内容全部替换的方法
     function getRealAnswer(realAnswer){
+        initIptHeight();
         console.log('real answer received: ' + realAnswer);
         window.appComponent.setState({value:realAnswer});
         window.inputComponent.mathField.setContent(realAnswer);
+        sumHeight();
     }
 
     // 添加字符串到输入框光标处
@@ -117,11 +120,15 @@
     }
 
     // 计算输入框高度
-    var iptHeight = 0;
     function sumHeight() {
-        console.log($('.keypad-input').height() - iptHeight);
+        try {
+            Android.setWebViewHeight($('.keypad-input').height() - iptHeight);
+        }catch(e){
+            console.log('没有设备');
+        }
+    }
+    function initIptHeight() {
         iptHeight = $('.keypad-input').height();
-        console.log($('body').width())
     }
 
 </script>

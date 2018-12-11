@@ -184,7 +184,7 @@ class MathWrapper {
      * @returns {object} a cursor object, consisting of a cursor context
      */
     pressKey(key) {
-        sumHeight();
+        initIptHeight();
 
         const cursor = this.mathField.__controller.cursor;
 
