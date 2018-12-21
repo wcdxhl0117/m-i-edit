@@ -823,6 +823,25 @@ class ExpressionKeypad extends React.Component {
 
         const sixPage = <View style={fivePageStyle}>
             <Whiteboard/>
+            <View style={[column, oneColumn]}>
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.FRAC_INCLUSIVE}
+                    style={roundTopRight && roundedTopRight}
+                    borders={BorderStyles.BOTTOM}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.EXP_2}
+                    borders={BorderStyles.BOTTOM}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.SQRT}
+                    borders={BorderStyles.BOTTOM}
+                />
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.LEFT_PAREN}
+                    borders={BorderStyles.BOTTOM}
+                />
+            </View>
         </View>
 
         return <TwoPageKeypad

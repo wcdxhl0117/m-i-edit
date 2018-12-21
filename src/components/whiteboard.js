@@ -59,7 +59,7 @@ export default class Whiteboard extends Component {
                             }
                             console.log(this.state)
                         })
-                    })  .catch(error => {
+                    }).catch(error => {
                         console.log(error);
                     });
             }, 100000)
@@ -101,7 +101,7 @@ export default class Whiteboard extends Component {
                 
             </div>
             <canvas id="drawing-canvas"
-                    width={wi}
+                    width={wi*0.8}
                     height = '180'
                     ref="canvas"
                     onTouchStart={() => this.generateSVGInk('start')}
