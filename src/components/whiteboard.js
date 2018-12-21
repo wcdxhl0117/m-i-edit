@@ -87,8 +87,8 @@ export default class Whiteboard extends Component {
     }
 
     render() {
-        // let str = '\\sqrt[3]{890}';
-        let str = '';
+        let str = '\\sqrt[3]{890}';
+        // let str = '';
         return (<div>
             <div>
                 <span
@@ -98,7 +98,20 @@ export default class Whiteboard extends Component {
                         this._mathContainer1 = ReactDOM.findDOMNode(node);
                     }}
                 >{str}</span>
-                
+                <span
+                    onClick={() => this.handleClick(str)}
+                    style={{border: 'none',display: 'inline-block',padding: '0 10px'}}
+                    ref={(node) => {
+                        this._mathContainer2 = ReactDOM.findDOMNode(node);
+                    }}
+                >{str}</span>
+                <span
+                    onClick={() => this.handleClick(str)}
+                    style={{border: 'none',display: 'inline-block',padding: '0 10px'}}
+                    ref={(node) => {
+                        this._mathContainer3 = ReactDOM.findDOMNode(node);
+                    }}
+                >{str}</span>
             </div>
             <canvas id="drawing-canvas"
                     width={wi*0.8}
