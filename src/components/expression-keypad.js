@@ -824,7 +824,7 @@ class ExpressionKeypad extends React.Component {
         const sixPage = <View style={fivePageStyle}>
             <Whiteboard/>
             <View style={[column, oneColumn]}>
-                <TouchableKeypadButton
+                {/* <TouchableKeypadButton
                     keyConfig={KeyConfigs.FRAC_INCLUSIVE}
                     style={roundTopRight && roundedTopRight}
                     borders={BorderStyles.BOTTOM}
@@ -840,7 +840,7 @@ class ExpressionKeypad extends React.Component {
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.LEFT_PAREN}
                     borders={BorderStyles.BOTTOM}
-                />
+                /> */}
             </View>
         </View>
 
