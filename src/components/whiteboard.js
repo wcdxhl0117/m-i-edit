@@ -30,7 +30,7 @@ export default class Whiteboard extends Component {
             this.timer = setTimeout(function(){
                 const strokes = sketcher.strokes();
                 const scgInk = _this.strokesToScg(strokes);
-                console.log('scgInk generated', JSON.stringify(scgInk));
+                // console.log('scgInk generated', JSON.stringify(scgInk));
 
                 sketcher.clear();
                 const url = "http://72.93.93.62:8080/hw/mathreco";
@@ -46,7 +46,7 @@ export default class Whiteboard extends Component {
                 };
 
                 options.body= JSON.stringify(requestSVG);
-                console.log('recognize', url, options);
+                // console.log('recognize', url, options);
                 return fetch(url,options)
                     .then(response => response.json())
                     .then(json => {
@@ -57,12 +57,11 @@ export default class Whiteboard extends Component {
                             return {
                                 latexArr: [...json.latex]
                             }
-                            console.log(this.state)
                         })
                     }).catch(error => {
                         console.log(error);
                     });
-            }, 100000)
+            }, 300)
         } else if(type === 'start') {
             clearTimeout(this.timer)
         } else {
@@ -93,21 +92,21 @@ export default class Whiteboard extends Component {
             <div>
                 <span
                     onClick={() => this.handleClick(str)}
-                    style={{border: 'none',display: 'inline-block',padding: '0 10px'}}
+                    style={{border: 'none',display: 'inline-block','border-right': '1px solid #999',margin: '6px 0',padding: '0 10px'}}
                     ref={(node) => {
                         this._mathContainer1 = ReactDOM.findDOMNode(node);
                     }}
                 >{str}</span>
                 <span
                     onClick={() => this.handleClick(str)}
-                    style={{border: 'none',display: 'inline-block',padding: '0 10px'}}
+                    style={{border: 'none',display: 'inline-block','border-right': '1px solid #999',margin: '6px 0',padding: '0 10px'}}
                     ref={(node) => {
                         this._mathContainer2 = ReactDOM.findDOMNode(node);
                     }}
                 >{str}</span>
                 <span
                     onClick={() => this.handleClick(str)}
-                    style={{border: 'none',display: 'inline-block',padding: '0 10px'}}
+                    style={{border: 'none',display: 'inline-block','border-right': '1px solid #999',margin: '6px 0',padding: '0 10px'}}
                     ref={(node) => {
                         this._mathContainer3 = ReactDOM.findDOMNode(node);
                     }}
@@ -119,7 +118,7 @@ export default class Whiteboard extends Component {
                     ref="canvas"
                     onTouchStart={() => this.generateSVGInk('start')}
                     onTouchEnd={() => this.generateSVGInk('end')}
-                    style={{'border': '1px solid #000000'}}/>
+                    style={{'border': '1px solid #999'}}/>
         </div>);
     }
 }
