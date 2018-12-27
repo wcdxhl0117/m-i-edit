@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 const ReactDOM = require('react-dom');
 const MathWrapper = require('./input/math-wrapper');
@@ -19,7 +20,27 @@ export default class Whiteboard extends Component {
         this.mathField1 = new MathWrapper(this._mathContainer1, {}, {});
         this.mathField2 = new MathWrapper(this._mathContainer2, {}, {});
         this.mathField3 = new MathWrapper(this._mathContainer3, {}, {});
-        sketcher = new Sketchable(this.refs.canvas);
+        // sketcher = new Sketchable(this.refs.canvas);
+        sketcher = new Sketchable(this.refs.canvas,  {
+            events: {
+                // We use the "before" event hook to update brush type right before drawing starts.
+                mousedownBefore: function(elem, data, evt) {
+                        // There is a method to get the default mode (pencil) back.
+                        data.options.graphics.lineWidth = 2;
+                        data.options.graphics.strokeStyle = "#000";
+                        // data.sketch.pencil();
+                    }
+                },
+        });
+
+        axios.get('/login')
+            .then((response)=> {
+                console.log(response)
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+
     }
 
     generateSVGInk = (type) => {
@@ -35,11 +56,11 @@ export default class Whiteboard extends Component {
                 sketcher.clear();
                 // https://hw.yooshare.cn
                 // const url = "http://72.93.93.62:8080/hw/mathreco";
-                const url = "https://hw.yooshare.cn";
+                const url = "http://72.93.93.62:8080/hw/mathreco";
                 let options = Object.assign({ method: 'POST' } );
                 options.headers = {
                     // 'Accept': 'application/json',
-                    'Content-Type': 'application/json;charset=UTF-8"',
+                    'Content-Type': 'application/json;charset=UTF-8',
                 };
                 const requestSVG = {
                         "id": 0,
@@ -96,21 +117,21 @@ export default class Whiteboard extends Component {
                 {
                     this.state.latexArr.map((item, index) => {
                         return (
-                        <span style={index === 2 ? style2 : style1}>
-                        <span
-                            key={index}
-                            onClick={() => this.handleClick(item)}
-                            style={{border: 'none'}}
-                            ref={(node) => {
-                                if (index === 0 ) {
-                                    this._mathContainer1 = ReactDOM.findDOMNode(node);
-                                } else if (index ===1) {
-                                    this._mathContainer2 = ReactDOM.findDOMNode(node);
-                                } else if (index ===2) {
-                                    this._mathContainer3 = ReactDOM.findDOMNode(node);
-                                }
-                            }}
-                        >{item}</span></span>)
+                            <span key={index} style={index === 2 ? style2 : style1}>
+                                <span
+                                    onClick={() => this.handleClick(item)}
+                                    style={{border: 'none'}}
+                                    ref={(node) => {
+                                        if (index === 0 ) {
+                                            this._mathContainer1 = ReactDOM.findDOMNode(node);
+                                        } else if (index ===1) {
+                                            this._mathContainer2 = ReactDOM.findDOMNode(node);
+                                        } else if (index ===2) {
+                                            this._mathContainer3 = ReactDOM.findDOMNode(node);
+                                        }
+                                    }}
+                                >{item}</span>
+                            </span>)
                     })
                 }
             </div>

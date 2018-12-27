@@ -17,6 +17,7 @@
     "performance-now": "^0.2.0",
     "react-redux": "^4.4.9",
     "redux": "^3.7.2",
+    "axios": "^0.18.0",
     "redux-logger": "^3.0.6"
   },
   "devDependencies": {

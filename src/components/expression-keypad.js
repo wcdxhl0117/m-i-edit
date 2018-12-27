@@ -812,11 +812,6 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={dismissOrJumpOutKey}
                     borders={BorderStyles.LEFT}
                 />
-                {/* 将收起键盘按钮换成确认按钮 */}
-                {/* <TouchableKeypadButton
-                    keyConfig={KeyConfigs.SUREBTN}
-                    borders={BorderStyles.LEFT}
-                /> */}
             </View>
             
         </View>;
@@ -824,23 +819,22 @@ class ExpressionKeypad extends React.Component {
         const sixPage = <View style={fivePageStyle}>
             <Whiteboard/>
             <View style={[column, oneColumn]}>
-                {/* <TouchableKeypadButton
-                    keyConfig={KeyConfigs.FRAC_INCLUSIVE}
-                    style={roundTopRight && roundedTopRight}
-                    borders={BorderStyles.BOTTOM}
+                <TouchableKeypadButton
+                    keyConfig={KeyConfigs.BACKSPACE}
+                    borders={BorderStyles.LEFT}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.EXP_2}
-                    borders={BorderStyles.BOTTOM}
+                    keyConfig={KeyConfigs.LEFT}
+                    borders={BorderStyles.LEFT}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.SQRT}
-                    borders={BorderStyles.BOTTOM}
+                    keyConfig={KeyConfigs.RIGHT}
+                    borders={BorderStyles.LEFT}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.LEFT_PAREN}
-                    borders={BorderStyles.BOTTOM}
-                /> */}
+                    keyConfig={dismissOrJumpOutKey}
+                    borders={BorderStyles.LEFT}
+                />
             </View>
         </View>
 
