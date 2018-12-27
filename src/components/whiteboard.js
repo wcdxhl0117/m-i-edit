@@ -33,14 +33,13 @@ export default class Whiteboard extends Component {
                 },
         });
 
-        axios.get('/login')
+        axios.get('http://yoocorrect.yoomath.com/api/ycorrect/user/login?username=七八九九&password=123456')
             .then((response)=> {
                 console.log(response)
             })
             .catch(function (error) {
                 console.log(error);
             })
-
     }
 
     generateSVGInk = (type) => {
@@ -112,8 +111,8 @@ export default class Whiteboard extends Component {
     }
 
     render() {
-        return (<div>
-            <div style={{'height': '50px','overflow': 'auto', 'display': 'flex'}}>
+        return (<div style={{'width': '84%', 'borderRight': '1px solid #999'}}>
+            <div style={{'height': '50px', 'overflow': 'auto', 'display': 'flex'}}>
                 {
                     this.state.latexArr.map((item, index) => {
                         return (
@@ -136,12 +135,12 @@ export default class Whiteboard extends Component {
                 }
             </div>
             <canvas id="drawing-canvas"
-                    width={wi*0.8}
+                    width={wi*0.85}
                     height = '180'
                     ref="canvas"
                     onTouchStart={() => this.generateSVGInk('start')}
                     onTouchEnd={() => this.generateSVGInk('end')}
-                    style={{'borderTop': '1px solid #999'}}/>
+                    style={{'borderTop': '1px solid #999',}}/>
         </div>);
     }
 }
