@@ -11,7 +11,7 @@ export default class Whiteboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            latexArr: [],
+            latexArr: ['\\frac{123}{456}','\\sqrt[3]{456}','\\sqrt[3]{789}'],
         }
     }
 
@@ -33,7 +33,9 @@ export default class Whiteboard extends Component {
                 // console.log('scgInk generated', JSON.stringify(scgInk));
 
                 sketcher.clear();
-                const url = "http://72.93.93.62:8080/hw/mathreco";
+                // https://hw.yooshare.cn
+                // const url = "http://72.93.93.62:8080/hw/mathreco";
+                const url = "https://hw.yooshare.cn";
                 let options = Object.assign({ method: 'POST' } );
                 options.headers = {
                     // 'Accept': 'application/json',
@@ -83,34 +85,34 @@ export default class Whiteboard extends Component {
     }
     handleClick(str) {
         alert(str)
+        this.setState({
+			latexArr: []
+		})
     }
 
     render() {
-        let str = '\\sqrt[3]{890}';
-        // let str = '';
         return (<div>
-            <div>
-                <span
-                    onClick={() => this.handleClick(str)}
-                    style={{border: 'none',display: 'inline-block','border-right': '1px solid #999',margin: '6px 0',padding: '0 10px'}}
-                    ref={(node) => {
-                        this._mathContainer1 = ReactDOM.findDOMNode(node);
-                    }}
-                >{str}</span>
-                <span
-                    onClick={() => this.handleClick(str)}
-                    style={{border: 'none',display: 'inline-block','border-right': '1px solid #999',margin: '6px 0',padding: '0 10px'}}
-                    ref={(node) => {
-                        this._mathContainer2 = ReactDOM.findDOMNode(node);
-                    }}
-                >{str}</span>
-                <span
-                    onClick={() => this.handleClick(str)}
-                    style={{border: 'none',display: 'inline-block','border-right': '1px solid #999',margin: '6px 0',padding: '0 10px'}}
-                    ref={(node) => {
-                        this._mathContainer3 = ReactDOM.findDOMNode(node);
-                    }}
-                >{str}</span>
+            <div style={{'height': '50px','overflow': 'auto', 'display': 'flex'}}>
+                {
+                    this.state.latexArr.map((item, index) => {
+                        return (
+                        <span style={index === 2 ? style2 : style1}>
+                        <span
+                            key={index}
+                            onClick={() => this.handleClick(item)}
+                            style={{border: 'none'}}
+                            ref={(node) => {
+                                if (index === 0 ) {
+                                    this._mathContainer1 = ReactDOM.findDOMNode(node);
+                                } else if (index ===1) {
+                                    this._mathContainer2 = ReactDOM.findDOMNode(node);
+                                } else if (index ===2) {
+                                    this._mathContainer3 = ReactDOM.findDOMNode(node);
+                                }
+                            }}
+                        >{item}</span></span>)
+                    })
+                }
             </div>
             <canvas id="drawing-canvas"
                     width={wi*0.8}
@@ -118,8 +120,22 @@ export default class Whiteboard extends Component {
                     ref="canvas"
                     onTouchStart={() => this.generateSVGInk('start')}
                     onTouchEnd={() => this.generateSVGInk('end')}
-                    style={{'border': '1px solid #999'}}/>
+                    style={{'borderTop': '1px solid #999'}}/>
         </div>);
     }
 }
-
+let style1 = {
+    border: 'none', 
+    display: 'inline-block', 
+    borderRight: '1px solid #999', 
+    margin: '6px 0',
+    padding: '0 10px', 
+    height: '30px'
+}
+let style2 = {
+    border: 'none', 
+    display: 'inline-block', 
+    margin: '6px 0', 
+    padding: '0 10px', 
+    height: '30px'
+}
