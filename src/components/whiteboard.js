@@ -32,7 +32,8 @@ export default class Whiteboard extends Component {
         console.log('scgInk generated', JSON.stringify(scgInk));
 
         sketcher.clear();
-        const url = "http://72.93.93.62:8080/hw/mathreco";
+        // const url = "http://72.93.93.62:8080/hw/mathreco";
+        const url = "https://hw.yooshare.cn/hw/mathreco";
         let options = Object.assign({ method: 'POST' } );
         options.headers = {
             // 'Accept': 'application/json',
