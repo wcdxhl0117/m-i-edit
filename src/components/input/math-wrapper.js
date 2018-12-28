@@ -173,8 +173,8 @@ class MathWrapper {
     }
 
     _writeNormalFunction(name) {
-        this.mathField.write(`\\${name}\\left(\\right)`);
-        this.mathField.keystroke('Left');
+        this.mathField.write(name);
+        // this.mathField.keystroke('Left');
     }
 
     /**
