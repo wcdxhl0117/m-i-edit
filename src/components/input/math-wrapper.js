@@ -173,8 +173,10 @@ class MathWrapper {
     }
 
     _writeNormalFunction(name) {
-        this.mathField.write(name);
+        // 三角函数去括号
+        // this.mathField.write(`\\${name}\\left(\\right)`);
         // this.mathField.keystroke('Left');
+        this.mathField.write(name);
     }
 
     /**
