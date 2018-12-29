@@ -44,7 +44,8 @@ module.exports = {
     CONG: require('./cong'),
     THREETERM: require('./threeterm'),
     LG: require('./lg'),
-    
+    INFTY: require('./infty'),
+
 
     // 新增结束
 

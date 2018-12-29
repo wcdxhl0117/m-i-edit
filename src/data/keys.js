@@ -47,6 +47,8 @@ const Keys = {
     CONG: 'CONG',
     THREETERM: 'THREETERM',
     LG: 'LG',
+    INFTY: 'INFTY',
+
 
     // 新增结束
     PLUS: 'PLUS',
