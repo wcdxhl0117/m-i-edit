@@ -174,6 +174,10 @@ const KeyConfigs = {
         type: KeyTypes.OPERATOR,
         ariaLabel: i18n._('Cosine'),
     },
+    [Keys.NEG]: {
+        type: KeyTypes.OPERATOR,
+        ariaLabel: i18n._('Cosine'),
+    },
     
     
 

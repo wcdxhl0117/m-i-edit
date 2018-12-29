@@ -48,6 +48,7 @@ const Keys = {
     THREETERM: 'THREETERM',
     LG: 'LG',
     INFTY: 'INFTY',
+    NEG: 'NEG',
 
 
     // 新增结束

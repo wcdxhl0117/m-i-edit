@@ -5,7 +5,7 @@
  */
 const React = require('react');
 
-class Huo extends React.Component {
+class Infty extends React.Component {
     static propTypes = {
         color: React.PropTypes.string.isRequired,
     };
@@ -23,4 +23,4 @@ class Huo extends React.Component {
     }
 }
 
-module.exports = Huo;
+module.exports = Infty;

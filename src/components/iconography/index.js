@@ -45,6 +45,7 @@ module.exports = {
     THREETERM: require('./threeterm'),
     LG: require('./lg'),
     INFTY: require('./infty'),
+    NEG: require('./neg'),
 
 
     // 新增结束

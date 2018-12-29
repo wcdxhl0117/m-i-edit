@@ -286,6 +286,8 @@
 
 * 重要=>修改输入框高度默认值：math-input.js(780), 修改minHeightPx，之前是numeralHeightPx + totalDesiredPadding * 2，改为numeralHeightPx + totalDesiredPadding * 6，同时修改（794），将minHeight和maxHeight同时改为minHiehgt，为了居中，加alignItems:'center' 
 
+* common-style.js为公共样式文件，比如边框颜色等在这里面，修改样式设定，一般在common-style.js，style.js, compute-layout-parameters.js结合修改
+
 
 # license
 
