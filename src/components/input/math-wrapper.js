@@ -28,7 +28,9 @@ const KeyActions = {
 ///////// 新增
     [Keys.COMMA]: {str: ',', fn: WRITE},
     // [Keys.BRACKETS]: {str: '', fn: WRITE},
-    [Keys.TWOTERM]: {str: '识别不出来', fn: WRITE},
+    [Keys.TWOTERM]: {str: '2识别不出来', fn: WRITE},
+    [Keys.THREETERM]: {str: '3识别不出来', fn: WRITE},
+    
     [Keys.ANGLE]: {str: '\\angle', fn: WRITE},
     // [Keys.RIGHTSUB]: {str: '{}_{}', fn: WRITE},
 
@@ -62,6 +64,7 @@ const KeyActions = {
     [Keys.PI]: {str: '\\pi', fn: WRITE},
     [Keys.SIM]: {str: '\\sim', fn: WRITE},
     [Keys.CONG]: {str: '\\cong', fn: WRITE},
+    [Keys.LG]: {str: '\\lg', fn: WRITE},
     
     
     

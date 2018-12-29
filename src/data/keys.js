@@ -45,6 +45,8 @@ const Keys = {
     SIX: 'SIX',
     SIM: 'SIM',
     CONG: 'CONG',
+    THREETERM: 'THREETERM',
+    LG: 'LG',
 
     // 新增结束
     PLUS: 'PLUS',

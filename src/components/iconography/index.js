@@ -42,7 +42,9 @@ module.exports = {
     SIX: require('./six'),
     SIM: require('./sim'),
     CONG: require('./cong'),
-
+    THREETERM: require('./threeterm'),
+    LG: require('./lg'),
+    
 
     // 新增结束
 

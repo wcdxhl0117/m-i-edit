@@ -567,12 +567,12 @@ class ExpressionKeypad extends React.Component {
         const fourPage = <View style={fourPageStyle}>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.EXP}
+                    keyConfig={KeyConfigs.THREETERM}
                     borders={BorderStyles.NONE}
                     style={roundTopLeft && roundedTopLeft}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.CUBE_ROOT}
+                    keyConfig={KeyConfigs.LG}
                     borders={BorderStyles.BOTTOM}
                 />
                 <TouchableKeypadButton
