@@ -49,6 +49,7 @@ const Keys = {
     LG: 'LG',
     INFTY: 'INFTY',
     NEG: 'NEG',
+    LOGARITHM: 'LOGARITHM',
 
 
     // 新增结束

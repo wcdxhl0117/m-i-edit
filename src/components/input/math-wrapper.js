@@ -67,7 +67,7 @@ const KeyActions = {
     [Keys.LG]: {str: '\\lg', fn: WRITE},
     [Keys.INFTY]: {str: '\\infty', fn: WRITE},
     [Keys.NEG]: {str: '\\neg', fn: WRITE},
-    
+    [Keys.LOGARITHM]: {str: '\\log_{}{}', fn: WRITE},
     
     
     

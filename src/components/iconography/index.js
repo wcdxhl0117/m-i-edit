@@ -46,6 +46,8 @@ module.exports = {
     LG: require('./lg'),
     INFTY: require('./infty'),
     NEG: require('./neg'),
+    LOGARITHM: require('./logarithm'),
+    
 
 
     // 新增结束
