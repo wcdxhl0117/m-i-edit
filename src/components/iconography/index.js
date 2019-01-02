@@ -47,6 +47,9 @@ module.exports = {
     INFTY: require('./infty'),
     NEG: require('./neg'),
     LOGARITHM: require('./logarithm'),
+    COMPLEMENT: require('./complement'),
+    VEE: require('./vee'),
+    BAR: require('./bar'),
     
 
 

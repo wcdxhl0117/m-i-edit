@@ -50,6 +50,9 @@ const Keys = {
     INFTY: 'INFTY',
     NEG: 'NEG',
     LOGARITHM: 'LOGARITHM',
+    COMPLEMENT: 'COMPLEMENT',
+    VEE: 'VEE',
+    BAR: 'BAR',
 
 
     // 新增结束

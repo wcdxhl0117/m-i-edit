@@ -68,6 +68,9 @@ const KeyActions = {
     [Keys.INFTY]: {str: '\\infty', fn: WRITE},
     [Keys.NEG]: {str: '\\neg', fn: WRITE},
     [Keys.LOGARITHM]: {str: '\\log_{}{}', fn: WRITE},
+    [Keys.COMPLEMENT]: {str: '补集', fn: WRITE},
+    [Keys.VEE]: {str: '\\vee', fn: WRITE},
+    
     
     
     
@@ -258,6 +261,9 @@ class MathWrapper {
             this.mathField.keystroke('Left');
         } else if(key===Keys.RIGHTLEFT) {
             this.mathField.write('\\left(\\right]');
+            this.mathField.keystroke('Left');
+        } else if(key===Keys.BAR) {
+            this.mathField.write('\\bar{ }');
             this.mathField.keystroke('Left');
         } else if(key===Keys.CIRC) {
             this.mathField.write('^\\circ');
