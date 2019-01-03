@@ -270,6 +270,9 @@ class MathWrapper {
         } else if(key===Keys.OVERRIGHTARROW) {
             this.mathField.write('\\overrightarrow{ }');
             this.mathField.keystroke('Left');
+        } else if(key===Keys.HAT) {
+            this.mathField.write('估计值');
+            this.mathField.keystroke('Left');
         } else if(key===Keys.CIRC) {
             this.mathField.write('^\\circ');
         } else { // added by SongLin.  放入字符串到输入框

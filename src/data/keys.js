@@ -56,6 +56,7 @@ const Keys = {
     OVERRIGHTARROW: 'OVERRIGHTARROW',
     VARNOTHING: 'VARNOTHING',
     WEDGE: 'WEDGE',
+    HAT: 'HAT',
 
 
     // 新增结束

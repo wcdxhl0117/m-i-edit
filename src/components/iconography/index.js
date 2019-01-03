@@ -53,7 +53,7 @@ module.exports = {
     OVERRIGHTARROW: require('./overrightarrow'),
     VARNOTHING: require('./varnothing'),
     WEDGE: require('./wedge'),
-    
+    HAT: require('./hat'),
     
 
     // 新增结束

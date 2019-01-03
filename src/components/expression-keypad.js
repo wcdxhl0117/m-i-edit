@@ -622,11 +622,11 @@ class ExpressionKeypad extends React.Component {
             </View>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.GEQ}
+                    keyConfig={KeyConfigs.CDOT}
                     borders={BorderStyles.LEFT}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.EQUAL}
+                    keyConfig={KeyConfigs.HAT}
                     borders={BorderStyles.ALL}
                 />
                 <TouchableKeypadButton
