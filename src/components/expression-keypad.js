@@ -648,11 +648,11 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.BOTTOM}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.CDOTS}
+                    keyConfig={KeyConfigs.CUP}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.CDOTS}
+                    keyConfig={KeyConfigs.SUPSET}
                     borders={BorderStyles.NONE}
                 />
             </View>

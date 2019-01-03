@@ -75,6 +75,9 @@ const KeyActions = {
     [Keys.CAP]: {str: '\\cap', fn: WRITE},
     [Keys.SUBSET]: {str: '\\subset', fn: WRITE},
     [Keys.CDOTS]: {str: '\\cdots', fn: WRITE},
+    [Keys.CUP]: {str: '\\cup', fn: WRITE},
+    [Keys.SUPSET]: {str: '\\supset', fn: WRITE},
+    
     
     
     

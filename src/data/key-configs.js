@@ -226,6 +226,14 @@ const KeyConfigs = {
         type: KeyTypes.OPERATOR,
         ariaLabel: i18n._('Cosine'),
     },
+    [Keys.CUP]: {
+        type: KeyTypes.OPERATOR,
+        ariaLabel: i18n._('Cosine'),
+    },
+    [Keys.SUPSET]: {
+        type: KeyTypes.OPERATOR,
+        ariaLabel: i18n._('Cosine'),
+    },
     
     
     

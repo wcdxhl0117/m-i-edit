@@ -58,6 +58,9 @@ module.exports = {
     SUBSET: require('./subset'),
     CDOTS: require('./cdots'),
     PARENTHESIS: require('./parenthesis'),
+    CUP: require('./cup'),
+    SUPSET: require('./supset'),
+    
     
     
 
