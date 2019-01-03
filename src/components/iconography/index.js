@@ -50,8 +50,8 @@ module.exports = {
     COMPLEMENT: require('./complement'),
     VEE: require('./vee'),
     BAR: require('./bar'),
+    OVERRIGHTARROW: require('./overrightarrow'),
     
-
 
     // 新增结束
 

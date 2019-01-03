@@ -608,7 +608,7 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.RADICAL}
+                    keyConfig={KeyConfigs.OVERRIGHTARROW}
                     borders={BorderStyles.BOTTOM}
                 />
                 <TouchableKeypadButton

@@ -53,6 +53,7 @@ const Keys = {
     COMPLEMENT: 'COMPLEMENT',
     VEE: 'VEE',
     BAR: 'BAR',
+    OVERRIGHTARROW: 'OVERRIGHTARROW',
 
 
     // 新增结束

@@ -265,6 +265,9 @@ class MathWrapper {
         } else if(key===Keys.BAR) {
             this.mathField.write('\\bar{ }');
             this.mathField.keystroke('Left');
+        } else if(key===Keys.OVERRIGHTARROW) {
+            this.mathField.write('\\overrightarrow{ }');
+            this.mathField.keystroke('Left');
         } else if(key===Keys.CIRC) {
             this.mathField.write('^\\circ');
         } else { // added by SongLin.  放入字符串到输入框
