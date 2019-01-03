@@ -63,6 +63,10 @@ module.exports = {
     OMEGA: require('./omega'),
     IN: require('./in'),
     NOTIN: require('./notin'),
+    SUBSETEQ: require('./subseteq'),
+    SUBSETNEQQ: require('./subsetneqq'),
+    MU: require('./mu'),
+    RHO: require('./rho'),
     
     
 

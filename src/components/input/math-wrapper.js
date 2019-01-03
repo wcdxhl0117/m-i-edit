@@ -28,8 +28,8 @@ const KeyActions = {
 ///////// 新增
     [Keys.COMMA]: {str: ',', fn: WRITE},
     // [Keys.BRACKETS]: {str: '', fn: WRITE},
-    [Keys.TWOTERM]: {str: '2识别不出来', fn: WRITE},
-    [Keys.THREETERM]: {str: '3识别不出来', fn: WRITE},
+    [Keys.TWOTERM]: {str: '事例（两条件）', fn: WRITE},
+    [Keys.THREETERM]: {str: '事例（三条件）', fn: WRITE},
     
     [Keys.ANGLE]: {str: '\\angle', fn: WRITE},
     // [Keys.RIGHTSUB]: {str: '{}_{}', fn: WRITE},
@@ -80,6 +80,10 @@ const KeyActions = {
     [Keys.OMEGA]: {str: '\\Omega', fn: WRITE},
     [Keys.IN]: {str: '\\in', fn: WRITE},
     [Keys.NOTIN]: {str: '\\notin', fn: WRITE},
+    [Keys.SUBSETEQ]: {str: '\\subseteq', fn: WRITE},
+    [Keys.SUBSETNEQQ]: {str: '真包含于', fn: WRITE},
+    [Keys.MU]: {str: '\\mu', fn: WRITE},
+    [Keys.RHO]: {str: '\\rho', fn: WRITE},
     
     
     

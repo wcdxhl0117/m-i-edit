@@ -66,6 +66,10 @@ const Keys = {
     OMEGA: 'OMEGA',
     IN: 'IN',
     NOTIN: 'NOTIN',
+    SUBSETEQ: 'SUBSETEQ',
+    SUBSETNEQQ: 'SUBSETNEQQ',
+    MU: 'MU',
+    RHO: 'RHO',
 
 
     // 新增结束
