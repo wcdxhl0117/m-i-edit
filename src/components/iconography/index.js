@@ -56,6 +56,9 @@ module.exports = {
     HAT: require('./hat'),
     CAP: require('./cap'),
     SUBSET: require('./subset'),
+    CDOTS: require('./cdots'),
+    PARENTHESIS: require('./parenthesis'),
+    
     
 
     // 新增结束

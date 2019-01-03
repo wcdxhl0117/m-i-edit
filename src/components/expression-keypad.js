@@ -640,19 +640,19 @@ class ExpressionKeypad extends React.Component {
             </View>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.GT}
+                    keyConfig={KeyConfigs.CDOTS}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.NEQ}
+                    keyConfig={KeyConfigs.PARENTHESIS}
                     borders={BorderStyles.BOTTOM}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.LT}
+                    keyConfig={KeyConfigs.CDOTS}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.RIGHT_PAREN}
+                    keyConfig={KeyConfigs.CDOTS}
                     borders={BorderStyles.NONE}
                 />
             </View>

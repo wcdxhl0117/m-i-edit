@@ -74,6 +74,7 @@ const KeyActions = {
     [Keys.WEDGE]: {str: '\\wedge', fn: WRITE},
     [Keys.CAP]: {str: '\\cap', fn: WRITE},
     [Keys.SUBSET]: {str: '\\subset', fn: WRITE},
+    [Keys.CDOTS]: {str: '\\cdots', fn: WRITE},
     
     
     
@@ -274,6 +275,9 @@ class MathWrapper {
             this.mathField.keystroke('Left');
         } else if(key===Keys.HAT) {
             this.mathField.write('估计值');
+            this.mathField.keystroke('Left');
+        } else if(key===Keys.PARENTHESIS) {
+            this.mathField.write('\\left\\{\\right\\}');
             this.mathField.keystroke('Left');
         } else if(key===Keys.CIRC) {
             this.mathField.write('^\\circ');

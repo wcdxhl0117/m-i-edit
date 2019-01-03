@@ -59,6 +59,8 @@ const Keys = {
     HAT: 'HAT',
     CAP: 'CAP',
     SUBSET: 'SUBSET',
+    CDOTS: 'CDOTS',
+    PARENTHESIS: 'PARENTHESIS',
 
 
     // 新增结束
