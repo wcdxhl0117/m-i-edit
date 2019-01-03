@@ -630,11 +630,11 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.ALL}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.LEFT_PAREN}
+                    keyConfig={KeyConfigs.CAP}
                     borders={BorderStyles.LEFT}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.LEFT_PAREN}
+                    keyConfig={KeyConfigs.SUBSET}
                     borders={BorderStyles.LEFT}
                 />
             </View>

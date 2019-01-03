@@ -57,6 +57,8 @@ const Keys = {
     VARNOTHING: 'VARNOTHING',
     WEDGE: 'WEDGE',
     HAT: 'HAT',
+    CAP: 'CAP',
+    SUBSET: 'SUBSET',
 
 
     // 新增结束

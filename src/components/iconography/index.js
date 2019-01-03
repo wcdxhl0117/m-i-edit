@@ -54,6 +54,8 @@ module.exports = {
     VARNOTHING: require('./varnothing'),
     WEDGE: require('./wedge'),
     HAT: require('./hat'),
+    CAP: require('./cap'),
+    SUBSET: require('./subset'),
     
 
     // 新增结束

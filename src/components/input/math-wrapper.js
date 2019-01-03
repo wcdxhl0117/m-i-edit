@@ -72,6 +72,8 @@ const KeyActions = {
     [Keys.VEE]: {str: '\\vee', fn: WRITE},
     [Keys.VARNOTHING]: {str: '\\varnothing', fn: WRITE},
     [Keys.WEDGE]: {str: '\\wedge', fn: WRITE},
+    [Keys.CAP]: {str: '\\cap', fn: WRITE},
+    [Keys.SUBSET]: {str: '\\subset', fn: WRITE},
     
     
     
