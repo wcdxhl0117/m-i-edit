@@ -77,6 +77,9 @@ const KeyActions = {
     [Keys.CDOTS]: {str: '\\cdots', fn: WRITE},
     [Keys.CUP]: {str: '\\cup', fn: WRITE},
     [Keys.SUPSET]: {str: '\\supset', fn: WRITE},
+    [Keys.OMEGA]: {str: '\\Omega', fn: WRITE},
+    [Keys.IN]: {str: '\\in', fn: WRITE},
+    [Keys.NOTIN]: {str: '\\notin', fn: WRITE},
     
     
     

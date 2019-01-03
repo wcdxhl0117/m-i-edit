@@ -63,6 +63,9 @@ const Keys = {
     PARENTHESIS: 'PARENTHESIS',
     CUP: 'CUP',
     SUPSET: 'SUPSET',
+    OMEGA: 'OMEGA',
+    IN: 'IN',
+    NOTIN: 'NOTIN',
 
 
     // 新增结束

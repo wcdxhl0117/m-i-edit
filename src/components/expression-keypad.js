@@ -529,7 +529,7 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.NONE}
                 />
             </View>
-            {/* 新增一列，不要再多了，不然格子宽度不够 最多容下6列*/}
+            {/* 新增一列 */}
             <View style={[column, oneColumn]}>
                 {/* 新增一行 */}
                 <TouchableKeypadButton
@@ -663,15 +663,15 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.COS}
+                    keyConfig={KeyConfigs.OMEGA}
                     borders={BorderStyles.BOTTOM}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.COS}
+                    keyConfig={KeyConfigs.IN}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.COS}
+                    keyConfig={KeyConfigs.NOTIN}
                     borders={BorderStyles.NONE}
                 />
             </View>

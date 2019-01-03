@@ -60,7 +60,9 @@ module.exports = {
     PARENTHESIS: require('./parenthesis'),
     CUP: require('./cup'),
     SUPSET: require('./supset'),
-    
+    OMEGA: require('./omega'),
+    IN: require('./in'),
+    NOTIN: require('./notin'),
     
     
 

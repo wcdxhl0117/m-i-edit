@@ -234,8 +234,18 @@ const KeyConfigs = {
         type: KeyTypes.OPERATOR,
         ariaLabel: i18n._('Cosine'),
     },
-    
-    
+    [Keys.OMEGA]: {
+        type: KeyTypes.OPERATOR,
+        ariaLabel: i18n._('Cosine'),
+    },
+    [Keys.IN]: {
+        type: KeyTypes.OPERATOR,
+        ariaLabel: i18n._('Cosine'),
+    },
+    [Keys.NOTIN]: {
+        type: KeyTypes.OPERATOR,
+        ariaLabel: i18n._('Cosine'),
+    },
     
     
 
