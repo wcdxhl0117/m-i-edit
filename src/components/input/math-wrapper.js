@@ -70,6 +70,8 @@ const KeyActions = {
     [Keys.LOGARITHM]: {str: '\\log_{}{}', fn: WRITE},
     [Keys.COMPLEMENT]: {str: '补集', fn: WRITE},
     [Keys.VEE]: {str: '\\vee', fn: WRITE},
+    [Keys.VARNOTHING]: {str: '\\varnothing', fn: WRITE},
+    [Keys.WEDGE]: {str: '\\wedge', fn: WRITE},
     
     
     

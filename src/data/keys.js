@@ -54,6 +54,8 @@ const Keys = {
     VEE: 'VEE',
     BAR: 'BAR',
     OVERRIGHTARROW: 'OVERRIGHTARROW',
+    VARNOTHING: 'VARNOTHING',
+    WEDGE: 'WEDGE',
 
 
     // 新增结束

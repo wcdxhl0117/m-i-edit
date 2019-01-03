@@ -51,6 +51,9 @@ module.exports = {
     VEE: require('./vee'),
     BAR: require('./bar'),
     OVERRIGHTARROW: require('./overrightarrow'),
+    VARNOTHING: require('./varnothing'),
+    WEDGE: require('./wedge'),
+    
     
 
     // 新增结束
