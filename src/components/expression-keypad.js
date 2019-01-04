@@ -728,11 +728,11 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.OVERRIGHTARROW}
+                    keyConfig={KeyConfigs.LAMBDA}
                     borders={BorderStyles.BOTTOM}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.VARNOTHING}
+                    keyConfig={KeyConfigs.DELTA}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton

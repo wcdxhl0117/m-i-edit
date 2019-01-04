@@ -72,7 +72,9 @@ module.exports = {
     NU: require('./nu'),
     SIGMA: require('./sigma'),
     GAMMA: require('./gamma'),
-    
+    LAMBDA: require('./lambda'),
+    DELTA: require('./delta'),
+     
     
     
     

@@ -75,6 +75,8 @@ const Keys = {
     NU: 'NU',
     SIGMA: 'SIGMA',
     GAMMA: 'GAMMA',
+    LAMBDA: 'LAMBDA',
+    DELTA: 'DELTA',
 
 
     // 新增结束
