@@ -722,7 +722,7 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.NONE}
                 />
             </View> */}
-            <View style={[column, oneColumn]}>
+            {/* <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.GAMMA}
                     borders={BorderStyles.NONE}
@@ -739,62 +739,62 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.UPSILON}
                     borders={BorderStyles.NONE}
                 />
-            </View>
-            {/* <View style={[column, oneColumn]}>
+            </View> */}
+            <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.CDOT}
                     borders={BorderStyles.LEFT}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.HAT}
+                    keyConfig={KeyConfigs.KONG}
                     borders={BorderStyles.ALL}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.CAP}
+                    keyConfig={KeyConfigs.KONG}
                     borders={BorderStyles.LEFT}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.SUBSET}
+                    keyConfig={KeyConfigs.KONG}
                     borders={BorderStyles.LEFT}
                 />
-            </View> */}
-            {/* <View style={[column, oneColumn]}>
+            </View>
+            <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.CDOTS}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.PARENTHESIS}
+                    keyConfig={KeyConfigs.KONG}
                     borders={BorderStyles.BOTTOM}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.CUP}
+                    keyConfig={KeyConfigs.KONG}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.SUPSET}
+                    keyConfig={KeyConfigs.KONG}
                     borders={BorderStyles.NONE}
                 />
-            </View> */}
+            </View>
             {/* 新增一列 */}
-            {/* <View style={[column, oneColumn]}>
+            <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.SIM}
+                    keyConfig={KeyConfigs.KONG}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.OMEGA}
+                    keyConfig={KeyConfigs.KONG}
                     borders={BorderStyles.BOTTOM}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.IN}
+                    keyConfig={KeyConfigs.KONG}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.NOTIN}
+                    keyConfig={KeyConfigs.KONG}
                     borders={BorderStyles.NONE}
                 />
-            </View> */}
+            </View>
 
         </View>;
 

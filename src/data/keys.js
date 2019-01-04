@@ -78,7 +78,8 @@ const Keys = {
     LAMBDA: 'LAMBDA',
     DELTA: 'DELTA',
     UPSILON: 'UPSILON',
-    
+    KONG: 'KONG',
+
 
 
     // 新增结束

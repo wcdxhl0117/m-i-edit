@@ -75,6 +75,7 @@ module.exports = {
     LAMBDA: require('./lambda'),
     DELTA: require('./delta'),
     UPSILON: require('./upsilon'),
+    KONG: require('./kong'),
     
     
     
