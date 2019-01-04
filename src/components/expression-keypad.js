@@ -704,7 +704,7 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.NONE}
                 />
             </View> */}
-            <View style={[column, oneColumn]}>
+            {/* <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.SUPSETEQ}
                     borders={BorderStyles.NONE}
@@ -714,15 +714,15 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.BOTTOM}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.COMPLEMENT}
+                    keyConfig={KeyConfigs.NU}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.VEE}
+                    keyConfig={KeyConfigs.SIGMA}
                     borders={BorderStyles.NONE}
                 />
-            </View>
-            {/* <View style={[column, oneColumn]}>
+            </View> */}
+            <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.BAR}
                     borders={BorderStyles.NONE}
@@ -739,7 +739,7 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.WEDGE}
                     borders={BorderStyles.NONE}
                 />
-            </View> */}
+            </View>
             {/* <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.CDOT}

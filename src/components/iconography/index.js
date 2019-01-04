@@ -69,6 +69,9 @@ module.exports = {
     RHO: require('./rho'),
     SUPSETEQ: require('./supseteq'),
     SUPSETNEQQ: require('./supsetneqq'),
+    NU: require('./nu'),
+    SIGMA: require('./sigma'),
+    
     
     
     
