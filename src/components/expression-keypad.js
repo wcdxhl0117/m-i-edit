@@ -742,7 +742,7 @@ class ExpressionKeypad extends React.Component {
             </View> */}
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.CDOT}
+                    keyConfig={KeyConfigs.VARPHI}
                     borders={BorderStyles.LEFT}
                 />
                 <TouchableKeypadButton

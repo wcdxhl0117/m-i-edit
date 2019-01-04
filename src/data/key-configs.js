@@ -298,7 +298,10 @@ const KeyConfigs = {
         type: KeyTypes.OPERATOR,
         ariaLabel: i18n._('Cosine'),
     },
-    
+    [Keys.VARPHI]: {
+        type: KeyTypes.OPERATOR,
+        ariaLabel: i18n._('Cosine'),
+    },
     
 
     

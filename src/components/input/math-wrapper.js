@@ -92,6 +92,8 @@ const KeyActions = {
     [Keys.LAMBDA]: {str: '\\lambda', fn: WRITE},
     [Keys.DELTA]: {str: '\\Delta', fn: WRITE},
     [Keys.UPSILON]: {str: '\\upsilon', fn: WRITE},
+    [Keys.VARPHI]: {str: '\\varphi', fn: WRITE},
+    
     // 占位
     [Keys.KONG]: {str: '', fn: WRITE},
     
