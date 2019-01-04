@@ -724,7 +724,7 @@ class ExpressionKeypad extends React.Component {
             </View> */}
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.BAR}
+                    keyConfig={KeyConfigs.GAMMA}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton

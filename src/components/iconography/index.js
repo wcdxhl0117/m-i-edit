@@ -71,6 +71,7 @@ module.exports = {
     SUPSETNEQQ: require('./supsetneqq'),
     NU: require('./nu'),
     SIGMA: require('./sigma'),
+    GAMMA: require('./gamma'),
     
     
     

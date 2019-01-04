@@ -74,6 +74,7 @@ const Keys = {
     SUPSETNEQQ: 'SUPSETNEQQ',
     NU: 'NU',
     SIGMA: 'SIGMA',
+    GAMMA: 'GAMMA',
 
 
     // 新增结束

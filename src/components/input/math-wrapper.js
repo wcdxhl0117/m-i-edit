@@ -88,6 +88,7 @@ const KeyActions = {
     [Keys.SUPSETNEQQ]: {str: '真包含', fn: WRITE},
     [Keys.NU]: {str: '\\nu', fn: WRITE},
     [Keys.SIGMA]: {str: '\\sigma', fn: WRITE},
+    [Keys.GAMMA]: {str: '\\gamma', fn: WRITE},
     
     
     
