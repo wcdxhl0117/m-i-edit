@@ -26,7 +26,9 @@ module.exports = {
     valueGrey: '#FFF',
     operatorGrey : '#FAFAFA',
     controlGrey : '#F6F7F7',
-    emptyGrey : '#F0F1F2',
+    // 空位按钮颜色改为按钮颜色
+    // emptyGrey : '#F0F1F2',
+    emptyGrey : gray85,
 
     // Constants defining any borders between elements in the keypad.
     innerBorderColor: gray85,

@@ -16,7 +16,7 @@ class EmptyKeypadButton extends React.Component {
 
     render() {
         const {gestureManager, ...rest} = this.props;
-
+        console.log(rest)
         // Register touch events on the button, but don't register its DOM node
         // or compute focus state or anything like that. We want the gesture
         // manager to know about touch events that start on empty buttons, but
