@@ -91,6 +91,7 @@ const KeyActions = {
     [Keys.GAMMA]: {str: '\\gamma', fn: WRITE},
     [Keys.LAMBDA]: {str: '\\lambda', fn: WRITE},
     [Keys.DELTA]: {str: '\\Delta', fn: WRITE},
+    [Keys.UPSILON]: {str: '\\upsilon', fn: WRITE},
     
     
     

@@ -736,7 +736,7 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.WEDGE}
+                    keyConfig={KeyConfigs.UPSILON}
                     borders={BorderStyles.NONE}
                 />
             </View>

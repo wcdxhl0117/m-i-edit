@@ -74,7 +74,8 @@ module.exports = {
     GAMMA: require('./gamma'),
     LAMBDA: require('./lambda'),
     DELTA: require('./delta'),
-     
+    UPSILON: require('./upsilon'),
+    
     
     
     
