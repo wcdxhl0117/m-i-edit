@@ -84,6 +84,8 @@ const KeyActions = {
     [Keys.SUBSETNEQQ]: {str: '真包含于', fn: WRITE},
     [Keys.MU]: {str: '\\mu', fn: WRITE},
     [Keys.RHO]: {str: '\\rho', fn: WRITE},
+    [Keys.SUPSETEQ]: {str: '\\supseteq', fn: WRITE},
+    [Keys.SUPSETNEQQ]: {str: '真包含', fn: WRITE},
     
     
     

@@ -706,11 +706,11 @@ class ExpressionKeypad extends React.Component {
             </View> */}
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.LOGARITHM}
+                    keyConfig={KeyConfigs.SUPSETEQ}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.LN}
+                    keyConfig={KeyConfigs.SUPSETNEQQ}
                     borders={BorderStyles.BOTTOM}
                 />
                 <TouchableKeypadButton

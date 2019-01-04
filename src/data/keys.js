@@ -70,6 +70,8 @@ const Keys = {
     SUBSETNEQQ: 'SUBSETNEQQ',
     MU: 'MU',
     RHO: 'RHO',
+    SUPSETEQ: 'SUPSETEQ',
+    SUPSETNEQQ: 'SUPSETNEQQ',
 
 
     // 新增结束

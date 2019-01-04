@@ -67,6 +67,9 @@ module.exports = {
     SUBSETNEQQ: require('./subsetneqq'),
     MU: require('./mu'),
     RHO: require('./rho'),
+    SUPSETEQ: require('./supseteq'),
+    SUPSETNEQQ: require('./supsetneqq'),
+    
     
     
 
