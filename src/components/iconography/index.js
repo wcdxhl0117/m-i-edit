@@ -77,6 +77,7 @@ module.exports = {
     UPSILON: require('./upsilon'),
     KONG: require('./kong'),
     VARPHI: require('./varphi'),
+    OMEGA: require('./omega'),
     
     
     

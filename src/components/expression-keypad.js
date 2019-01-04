@@ -11,6 +11,7 @@ const { View } = require('../fake-react-native-web');
 const TwoPageKeypad = require('./two-page-keypad');
 const ManyKeypadButton = require('./many-keypad-button');
 const TouchableKeypadButton = require('./touchable-keypad-button');
+const ENPTYBTN = require('./empty-keypad-button');
 const {
     row,
     column,
@@ -685,7 +686,7 @@ class ExpressionKeypad extends React.Component {
             roundTopLeft && roundedTopLeft,
         ];
         const fivePage = <View style={fivePageStyle}>
-            {/* <View style={[column, oneColumn]}>
+            <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.SUBSETEQ}
                     borders={BorderStyles.NONE}
@@ -703,8 +704,8 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.RHO}
                     borders={BorderStyles.NONE}
                 />
-            </View> */}
-            {/* <View style={[column, oneColumn]}>
+            </View>
+            <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.SUPSETEQ}
                     borders={BorderStyles.NONE}
@@ -721,8 +722,8 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.SIGMA}
                     borders={BorderStyles.NONE}
                 />
-            </View> */}
-            {/* <View style={[column, oneColumn]}>
+            </View>
+            <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.GAMMA}
                     borders={BorderStyles.NONE}
@@ -739,13 +740,16 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.UPSILON}
                     borders={BorderStyles.NONE}
                 />
-            </View> */}
+            </View>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.VARPHI}
                     borders={BorderStyles.LEFT}
                 />
-                <TouchableKeypadButton
+                <ENPTYBTN />
+                <ENPTYBTN />
+                <ENPTYBTN />
+                {/* <TouchableKeypadButton
                     keyConfig={KeyConfigs.KONG}
                     borders={BorderStyles.ALL}
                 />
@@ -756,14 +760,17 @@ class ExpressionKeypad extends React.Component {
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.KONG}
                     borders={BorderStyles.LEFT}
-                />
+                /> */}
             </View>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.CDOTS}
+                    keyConfig={KeyConfigs.OMEGA}
                     borders={BorderStyles.NONE}
                 />
-                <TouchableKeypadButton
+                <ENPTYBTN />
+                <ENPTYBTN />
+                <ENPTYBTN />
+                {/* <TouchableKeypadButton
                     keyConfig={KeyConfigs.KONG}
                     borders={BorderStyles.BOTTOM}
                 />
@@ -774,7 +781,7 @@ class ExpressionKeypad extends React.Component {
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.KONG}
                     borders={BorderStyles.NONE}
-                />
+                /> */}
             </View>
             {/* 新增一列 */}
             <View style={[column, oneColumn]}>
@@ -782,6 +789,13 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.KONG}
                     borders={BorderStyles.NONE}
                 />
+                <ENPTYBTN />
+                <ENPTYBTN />
+                <ENPTYBTN />
+                {/* <TouchableKeypadButton
+                    keyConfig={KeyConfigs.KONG}
+                    borders={BorderStyles.NONE}
+                />
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.KONG}
                     borders={BorderStyles.BOTTOM}
@@ -793,7 +807,7 @@ class ExpressionKeypad extends React.Component {
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.KONG}
                     borders={BorderStyles.NONE}
-                />
+                /> */}
             </View>
 
         </View>;
