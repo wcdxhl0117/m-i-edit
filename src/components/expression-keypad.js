@@ -579,7 +579,7 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.SIM}
                     borders={BorderStyles.NONE}
                 />
-                {/* <TouchableKeypadButton
+                <TouchableKeypadButton
                     keyConfig={KeyConfigs.OMEGA}
                     borders={BorderStyles.BOTTOM}
                 />
@@ -590,7 +590,7 @@ class ExpressionKeypad extends React.Component {
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.NOTIN}
                     borders={BorderStyles.NONE}
-                /> */}
+                />
             </View>
 
         </View>;
