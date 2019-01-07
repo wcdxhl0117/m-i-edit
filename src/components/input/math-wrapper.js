@@ -631,7 +631,8 @@ class MathWrapper {
         const shouldPrefixWithParens = precedingNode === MQ_END ||
                 invalidPrefixes.includes(precedingNode.ctrlSeq.trim());
         if (shouldPrefixWithParens) {
-            this.mathField.write('\\left(\\right)');
+            // 不要括号
+            // this.mathField.write('\\left(\\right)');
         }
 
         // Insert the appropriate exponent operator.
