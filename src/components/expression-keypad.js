@@ -482,7 +482,7 @@ class ExpressionKeypad extends React.Component {
             roundTopLeft && roundedTopLeft,
         ];
         const fourPage = <View style={fourPageStyle}>
-            {/* <View style={[column, oneColumn]}>
+            <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.THREETERM}
                     borders={BorderStyles.NONE}
@@ -572,7 +572,7 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.SUPSET}
                     borders={BorderStyles.NONE}
                 />
-            </View> */}
+            </View>
             {/* 新增一列 */}
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton

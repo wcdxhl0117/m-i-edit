@@ -3637,7 +3637,8 @@ LatexCmds.ang = LatexCmds.angle = bind(VanillaSymbol,'\\angle ','&ang;');
 LatexCmds.measuredangle = bind(VanillaSymbol,'\\measuredangle ','&#8737;');
 
 // 王超新增
-LatexCmds.subsetneqq = bind(BinaryOperator,'\\subsetneqq ','&#10955;');
+LatexCmds.subsetneqq = bind(BinaryOperator,'\\subsetneqq','&#10955;');
+LatexCmds.complement = bind(VanillaSymbol, '\\complement ', '&#8705;');
 
 // 王超新增结束
 
@@ -4205,7 +4206,8 @@ LatexCmds.mathsf = bind(Style, '\\mathsf', 'span', 'class="mq-sans-serif mq-font
 LatexCmds.mathtt = bind(Style, '\\mathtt', 'span', 'class="mq-monospace mq-font"');
 //text-decoration
 LatexCmds.underline = bind(Style, '\\underline', 'span', 'class="mq-non-leaf mq-underline"');
-LatexCmds.overline = LatexCmds.bar = bind(Style, '\\overline', 'span', 'class="mq-non-leaf mq-overline"');
+// 王超修改  \\overline --> \\bar
+LatexCmds.overline = LatexCmds.bar = bind(Style, '\\bar', 'span', 'class="mq-non-leaf mq-overline"');
 LatexCmds.overrightarrow = bind(Style, '\\overrightarrow', 'span', 'class="mq-non-leaf mq-overarrow mq-arrow-right"');
 LatexCmds.overleftarrow = bind(Style, '\\overleftarrow', 'span', 'class="mq-non-leaf mq-overarrow mq-arrow-left"');
 

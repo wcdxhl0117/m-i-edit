@@ -68,7 +68,7 @@ const KeyActions = {
     [Keys.INFTY]: {str: '\\infty', fn: WRITE},
     [Keys.NEG]: {str: '\\neg', fn: WRITE},
     [Keys.LOGARITHM]: {str: '\\log_{}{}', fn: WRITE},
-    [Keys.COMPLEMENT]: {str: '补集', fn: WRITE},
+    [Keys.COMPLEMENT]: {str: '\\complement', fn: WRITE},
     [Keys.VEE]: {str: '\\vee', fn: WRITE},
     [Keys.VARNOTHING]: {str: '\\varnothing', fn: WRITE},
     [Keys.WEDGE]: {str: '\\wedge', fn: WRITE},
@@ -282,13 +282,15 @@ class MathWrapper {
             this.mathField.write('{}_{}^{}');
             this.mathField.keystroke('Left');
         } else if(key===Keys.ABSOLUTEVALUE) {
+            // 如果不加{},反解析反而会有{}
             this.mathField.write('\\left|{}\\right|');
             this.mathField.keystroke('Left');
         }  else if(key===Keys.LEFTRIGHT) {
-            this.mathField.write('\\left[\\right)');
+            // 如果不加{},反解析反而会有{}
+            this.mathField.write('\\left[{}\\right)');
             this.mathField.keystroke('Left');
         } else if(key===Keys.RIGHTLEFT) {
-            this.mathField.write('\\left(\\right]');
+            this.mathField.write('\\left({}\\right]');
             this.mathField.keystroke('Left');
         } else if(key===Keys.BAR) {
             this.mathField.write('\\bar{ }');
