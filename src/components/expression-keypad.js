@@ -621,7 +621,7 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.NONE}
                 />
             </View>
-            {/* <View style={[column, oneColumn]}>
+            <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.SUPSETEQ}
                     borders={BorderStyles.NONE}
@@ -638,7 +638,7 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.SIGMA}
                     borders={BorderStyles.NONE}
                 />
-            </View> */}
+            </View>
             {/* <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.GAMMA}
