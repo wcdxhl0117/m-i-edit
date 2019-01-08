@@ -602,7 +602,7 @@ class ExpressionKeypad extends React.Component {
             roundTopLeft && roundedTopLeft,
         ];
         const fivePage = <View style={fivePageStyle}>
-            {/* <View style={[column, oneColumn]}>
+            <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.SUBSETEQ}
                     borders={BorderStyles.NONE}
@@ -620,7 +620,7 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.RHO}
                     borders={BorderStyles.NONE}
                 />
-            </View> */}
+            </View>
             {/* <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.SUPSETEQ}

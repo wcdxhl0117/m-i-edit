@@ -288,6 +288,31 @@
 
 * common-style.js为公共样式文件，比如边框颜色等在这里面，修改样式设定，一般在common-style.js，style.js, compute-layout-parameters.js结合修改
 
+* mathquill新增公式的方法（Larry Zhang）: 
+```
+    ====
+
+    How to add new, simple symbols to Mathquill
+    1. Find the HTML code using search web site such as Google
+    2. Add the new binding to mathquill.js
+
+    For example, to add \subsetneqq,
+    1. Find the HTML code which is &#10955;
+    2. Add the following to mathquill.js, under "Symbols for Advanced Mathematics"
+    (I suggest adding it at the end of this section, after existing symbols, for easier maintenance):
+    
+    LatexCmds.subsetneqq = bind(BinaryOperator,'\\subsetneqq ','&#10955;');
+
+    As another example, to add \complement,
+    1. Find the HTML code which is &#8705;
+    2. Add the following to mathquill.js:
+
+    LatexCmds.complement = bind(VanillaSymbol, '\\complement ', '&#8705;');
+
+    ====
+
+    The more complicated ones, such as array, require more work and it's case by case.
+```
 
 # license
 

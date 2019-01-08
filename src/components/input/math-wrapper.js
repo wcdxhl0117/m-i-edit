@@ -81,7 +81,7 @@ const KeyActions = {
     [Keys.IN]: {str: '\\in', fn: WRITE},
     [Keys.NOTIN]: {str: '\\notin', fn: WRITE},
     [Keys.SUBSETEQ]: {str: '\\subseteq', fn: WRITE},
-    [Keys.SUBSETNEQQ]: {str: '真包含于', fn: WRITE},
+    [Keys.SUBSETNEQQ]: {str: '\\subsetneqq', fn: WRITE},
     [Keys.MU]: {str: '\\mu', fn: WRITE},
     [Keys.RHO]: {str: '\\rho', fn: WRITE},
     [Keys.SUPSETEQ]: {str: '\\supseteq', fn: WRITE},

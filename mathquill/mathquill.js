@@ -3635,6 +3635,13 @@ LatexCmds.deg = LatexCmds.degree = bind(VanillaSymbol,'\\degree ','&deg;');
 
 LatexCmds.ang = LatexCmds.angle = bind(VanillaSymbol,'\\angle ','&ang;');
 LatexCmds.measuredangle = bind(VanillaSymbol,'\\measuredangle ','&#8737;');
+
+// 王超新增
+LatexCmds.subsetneqq = bind(BinaryOperator,'\\subsetneqq ','&#10955;');
+
+// 王超新增结束
+
+
 /*********************************
  * Symbols for Basic Mathematics
  ********************************/
