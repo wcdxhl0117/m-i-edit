@@ -639,7 +639,7 @@ class ExpressionKeypad extends React.Component {
                     borders={BorderStyles.NONE}
                 />
             </View>
-            {/* <View style={[column, oneColumn]}>
+            <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.GAMMA}
                     borders={BorderStyles.NONE}
@@ -656,7 +656,7 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={KeyConfigs.UPSILON}
                     borders={BorderStyles.NONE}
                 />
-            </View> */}
+            </View>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.VARPHI}
