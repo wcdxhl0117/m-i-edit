@@ -16,7 +16,15 @@ export default class Whiteboard extends Component {
         }
     }
 
+    componentWillUpdate() {
+        // console.log('componentWillUpdate')
+        // this.mathField1 = new MathWrapper(this._mathContainer1, {}, {});
+        // this.mathField2 = new MathWrapper(this._mathContainer2, {}, {});
+        // this.mathField3 = new MathWrapper(this._mathContainer3, {}, {});
+    }
+
     componentDidMount() {
+        console.log('componentDidMount')
         this.mathField1 = new MathWrapper(this._mathContainer1, {}, {});
         this.mathField2 = new MathWrapper(this._mathContainer2, {}, {});
         this.mathField3 = new MathWrapper(this._mathContainer3, {}, {});
@@ -72,14 +80,18 @@ export default class Whiteboard extends Component {
                 return fetch(url,options)
                     .then(response => response.json())
                     .then(json => {
-                        console.log('response', json);
-                        // appendText(json.latex)
+                        // console.log('response', json);
                         // 将latex放入数组
+                        for (var i=0;i<json.n_best_latex.length;i++) {                    
+                            json.n_best_latex[i] = json.n_best_latex[i].replace(/\\/g,"\\\\");
+                        }
+                        console.log(json.n_best_latex);
                         _this.setState(()=>{
                             return {
-                                latexArr: [...json.latex]
+                                latexArr: json.n_best_latex
                             }
                         })
+                        
                     }).catch(error => {
                         console.log(error);
                     });
@@ -100,7 +112,6 @@ export default class Whiteboard extends Component {
                 scg += p[0] + ' ' + p[1] + '\n'
             })
         });
-
         return scg
     }
     handleClick(str) {
@@ -111,6 +122,7 @@ export default class Whiteboard extends Component {
     }
 
     render() {
+        console.log('render')
         return (<div style={{'width': '84%', 'borderRight': '1px solid #999'}}>
             <div style={{'height': '44px', 'overflow': 'auto', 'display': 'flex'}}>
                 {

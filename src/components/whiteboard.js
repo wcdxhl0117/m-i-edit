@@ -1,72 +1,108 @@
-// import htmlContent from '../../whiteboard/whiteboard.html';
-
 import React, {Component} from 'react';
+import axios from 'axios';
 
-// import {Sketchable} from '../../whiteboard/sketchable.full.min'
+const ReactDOM = require('react-dom');
+const MathWrapper = require('./input/math-wrapper');
 
-const {connect} = require('react-redux');
 const {View,Text} = require('../fake-react-native-web');
 var sketcher = null;
+let wi = screen.width - 4;
 
 export default class Whiteboard extends Component {
-    componentDidMount() {
-
-
-       sketcher = new Sketchable(this.refs.canvas,  {
-           events: {
-               // We use the "before" event hook to update brush type right before drawing starts.
-               mousedownBefore: function(elem, data, evt) {
-                       // There is a method to get the default mode (pencil) back.
-                       data.options.graphics.lineWidth = 3;
-                       data.options.graphics.strokeStyle = "#0000FF";
-                       // data.sketch.pencil();
-                   }
-               },
-       });
-        // sketcher = new Sketchable(this.refs.canvas);
+    constructor(props) {
+        super(props);
+        this.state = {
+            latexArr: ['\\frac{123}{456}'],
+        }
     }
 
-    generateSVGInk = () => {
-        const strokes = sketcher.strokes();
-        const scgInk = this.strokesToScg(strokes);
-        console.log('scgInk generated', JSON.stringify(scgInk));
+    componentWillUpdate() {
+        // console.log('componentWillUpdate')
+        // this.mathField1 = new MathWrapper(this._mathContainer1, {}, {});
+        // this.mathField2 = new MathWrapper(this._mathContainer2, {}, {});
+        // this.mathField3 = new MathWrapper(this._mathContainer3, {}, {});
+    }
 
-        sketcher.clear();
-        const url = "http://72.93.93.62:8080/hw/mathreco";
-        // const url = "https://hw.yooshare.cn/hw/mathreco";
-        let options = Object.assign({ method: 'POST' } );
-        options.headers = {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json;charset="UTF-8"',
-        };
-        // options.mode = 'cors';
-        const requestSVG = {
-                "id": 0,
-                "scg_ink":scgInk,
-                "info": null,
-        };
+    componentDidMount() {
+        console.log('componentDidMount')
+        this.mathField1 = new MathWrapper(this._mathContainer1, {}, {});
+        this.mathField2 = new MathWrapper(this._mathContainer2, {}, {});
+        this.mathField3 = new MathWrapper(this._mathContainer3, {}, {});
+        // sketcher = new Sketchable(this.refs.canvas);
+        sketcher = new Sketchable(this.refs.canvas,  {
+            events: {
+                // We use the "before" event hook to update brush type right before drawing starts.
+                mousedownBefore: function(elem, data, evt) {
+                        // There is a method to get the default mode (pencil) back.
+                        data.options.graphics.lineWidth = 2;
+                        data.options.graphics.strokeStyle = "#000";
+                        // data.sketch.pencil();
+                    }
+                },
+        });
 
-        options.body= JSON.stringify(requestSVG);
-        console.log('recognize', url, options);
-        return fetch(url,options)
-            .then(response => response.json())
-            .then(json => {
-                console.log('response', json);
-                window.alert(JSON.stringify(json));
-                appendText(json.latex)
-            })  .catch(error => {
-                console.log(error);
-            });
+        // axios.get('http://yoocorrect.yoomath.com/api/ycorrect/user/login?username=七八九九&password=123456')
+        //     .then((response)=> {
+        //         console.log(response)
+        //     })
+        //     .catch(function (error) {
+        //         console.log(error);
+        //     })
+    }
+
+    generateSVGInk = (type) => {
+        let off = false;
+        let _this = this;
+        // let timer = null;
+        if (type === 'end') {
+            this.timer = setTimeout(function(){
+                const strokes = sketcher.strokes();
+                const scgInk = _this.strokesToScg(strokes);
+                // console.log('scgInk generated', JSON.stringify(scgInk));
+
+                sketcher.clear();
+                // https://hw.yooshare.cn
+                // const url = "http://72.93.93.62:8080/hw/mathreco";
+                const url = "http://72.93.93.62:8080/hw/mathreco";
+                let options = Object.assign({ method: 'POST' } );
+                options.headers = {
+                    // 'Accept': 'application/json',
+                    'Content-Type': 'application/json;charset=UTF-8',
+                };
+                const requestSVG = {
+                        "id": 0,
+                        "scg_ink":scgInk,
+                        "info": null,
+                };
+
+                options.body= JSON.stringify(requestSVG);
+                // console.log('recognize', url, options);
+                return fetch(url,options)
+                    .then(response => response.json())
+                    .then(json => {
+                        // console.log('response', json);
+                        // 将latex放入数组
+                        for (var i=0;i<json.n_best_latex.length;i++) {                    
+                            json.n_best_latex[i] = json.n_best_latex[i].replace(/\\/g,"\\\\");
+                        }
+                        console.log(json.n_best_latex);
+                        _this.setState(()=>{
+                            return {
+                                latexArr: json.n_best_latex
+                            }
+                        })
+                        
+                    }).catch(error => {
+                        console.log(error);
+                    });
+            }, 600)
+        } else if(type === 'start') {
+            clearTimeout(this.timer)
+        } else {
+            clearTimeout(this.timer)
+        }
+        
     };
-
-    //
-    // transform(strokes) {
-    //     for (var i = 0; i < strokes.length; ++i)
-    //         for (var j = 0, stroke = strokes[i]; j < stroke.length; ++j)
-    //             strokes[i][j] = [ strokes[i][j][0], strokes[i][j][1] ];
-    //     return strokes;
-    // };
-
 
     strokesToScg(strokes) {
         var scg = 'SCG_INK\n' + strokes.length + '\n'
@@ -76,45 +112,62 @@ export default class Whiteboard extends Component {
                 scg += p[0] + ' ' + p[1] + '\n'
             })
         });
-
         return scg
     }
-
+    handleClick(str) {
+        alert(str)
+        this.setState({
+			latexArr: []
+		})
+    }
 
     render() {
-        // console.log('width:  ' + window.innerWidth + ' height: ' + window.innerHeight);
-
-        let width = Math.round(window.innerWidth * 2/3) - 10;
-        let height = '200'; //todo: remove hardcode, need to fix overall position calculation
-        // console.log(`width used:  ${width}`);
-
-
-        // note:  the upper limit of the width  seems to be screenwidth * ratio ( 1, 1.5 or 2)  to display strokes properly.
-        return (<View style={this.props.style}>
-            <table>
-                <tr>
-            <td>
+        console.log('render')
+        return (<div style={{'width': '84%', 'borderRight': '1px solid #999'}}>
+            <div style={{'height': '44px', 'overflow': 'auto', 'display': 'flex'}}>
+                {
+                    this.state.latexArr.map((item, index) => {
+                        return (
+                            <span key={index} style={index === this.state.latexArr.length - 1 ? style2 : style1}>
+                                <span
+                                    onClick={() => this.handleClick(item)}
+                                    style={{border: 'none'}}
+                                    ref={(node) => {
+                                        if (index === 0 ) {
+                                            this._mathContainer1 = ReactDOM.findDOMNode(node);
+                                        } else if (index ===1) {
+                                            this._mathContainer2 = ReactDOM.findDOMNode(node);
+                                        } else if (index ===2) {
+                                            this._mathContainer3 = ReactDOM.findDOMNode(node);
+                                        }
+                                    }}
+                                >{item}</span>
+                            </span>)
+                    })
+                }
+            </div>
             <canvas id="drawing-canvas"
-                    width={width}
-                    height = {height}
+                    width={wi*0.85}
+                    height = '180'
                     ref="canvas"
-                    style={{'border': '1px solid #000000'}}/>
-            </td>
-            <td>
-                <table>
-                    <tr>
-                <Text onPress={this.generateSVGInk}>{'识别'}</Text>
-                    </tr>
-                    <tr/>
-                    <tr>
-                <Text onPress={()=>sketcher.clear()}>{'清除'}</Text>
-                    </tr>
-                </table>
-            </td>
-                </tr>
-            </table>
-        </View>);
+                    onTouchStart={() => this.generateSVGInk('start')}
+                    onTouchEnd={() => this.generateSVGInk('end')}
+                    style={{'borderTop': '1px solid #999',}}/>
+        </div>);
     }
 }
-
-
+let style1 = {
+    border: 'none', 
+    display: 'inline-block', 
+    borderRight: '1px solid #999', 
+    margin: '6px 0',
+    padding: '0 10px', 
+    height: '30px'
+}
+let style2 = {
+    border: 'none', 
+    display: 'inline-block', 
+    margin: '6px 0', 
+    padding: '0 10px', 
+    height: '30px'
+}
