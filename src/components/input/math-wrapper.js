@@ -94,7 +94,6 @@ const KeyActions = {
     [Keys.UPSILON]: {str: '\\upsilon', fn: WRITE},
     [Keys.VARPHI]: {str: '\\varphi', fn: WRITE},
     [Keys.OMEGA]: {str: '\\Omega', fn: WRITE},
-    
     // 占位
     [Keys.KONG]: {str: '', fn: WRITE},
     
