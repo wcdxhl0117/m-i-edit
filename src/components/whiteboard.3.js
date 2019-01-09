@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 
 const ReactDOM = require('react-dom');
 const MathWrapper = require('./input/math-wrapper');
 
-const {View,Text} = require('../fake-react-native-web');
 var sketcher = null;
 let wi = screen.width - 4;
 
@@ -12,23 +10,14 @@ export default class Whiteboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            latexArr: ['\\frac{123}{456}'],
+            latexArr: ["\\pm 2", "\\frac { I } { 2 }", "\\frac { 5 } { 2 }"]
         }
     }
-
-    componentWillUpdate() {
-        // console.log('componentWillUpdate')
-        // this.mathField1 = new MathWrapper(this._mathContainer1, {}, {});
-        // this.mathField2 = new MathWrapper(this._mathContainer2, {}, {});
-        // this.mathField3 = new MathWrapper(this._mathContainer3, {}, {});
-    }
-
+    
     componentDidMount() {
-        console.log('componentDidMount')
         this.mathField1 = new MathWrapper(this._mathContainer1, {}, {});
         this.mathField2 = new MathWrapper(this._mathContainer2, {}, {});
         this.mathField3 = new MathWrapper(this._mathContainer3, {}, {});
-        // sketcher = new Sketchable(this.refs.canvas);
         sketcher = new Sketchable(this.refs.canvas,  {
             events: {
                 // We use the "before" event hook to update brush type right before drawing starts.
@@ -40,20 +29,10 @@ export default class Whiteboard extends Component {
                     }
                 },
         });
-
-        // axios.get('http://yoocorrect.yoomath.com/api/ycorrect/user/login?username=七八九九&password=123456')
-        //     .then((response)=> {
-        //         console.log(response)
-        //     })
-        //     .catch(function (error) {
-        //         console.log(error);
-        //     })
     }
 
     generateSVGInk = (type) => {
-        let off = false;
         let _this = this;
-        // let timer = null;
         if (type === 'end') {
             this.timer = setTimeout(function(){
                 const strokes = sketcher.strokes();
@@ -80,18 +59,13 @@ export default class Whiteboard extends Component {
                 return fetch(url,options)
                     .then(response => response.json())
                     .then(json => {
-                        // console.log('response', json);
                         // 将latex放入数组
-                        for (var i=0;i<json.n_best_latex.length;i++) {                    
-                            json.n_best_latex[i] = json.n_best_latex[i].replace(/\\/g,"\\\\");
-                        }
                         console.log(json.n_best_latex);
                         _this.setState(()=>{
                             return {
                                 latexArr: json.n_best_latex
                             }
                         })
-                        
                     }).catch(error => {
                         console.log(error);
                     });
@@ -122,7 +96,6 @@ export default class Whiteboard extends Component {
     }
 
     render() {
-        console.log('render')
         return (<div style={{'width': '84%', 'borderRight': '1px solid #999'}}>
             <div style={{'height': '44px', 'overflow': 'auto', 'display': 'flex'}}>
                 {
