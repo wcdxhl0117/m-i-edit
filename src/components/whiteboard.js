@@ -18,6 +18,9 @@ export default class Whiteboard extends Component {
         this.mathField1 = new MathWrapper(this._mathContainer1, {}, {});
         this.mathField2 = new MathWrapper(this._mathContainer2, {}, {});
         this.mathField3 = new MathWrapper(this._mathContainer3, {}, {});
+        this.mathField1.writeContent(this.state.latexArr[0])
+        this.mathField2.writeContent(this.state.latexArr[1])
+        this.mathField3.writeContent(this.state.latexArr[2])
         sketcher = new Sketchable(this.refs.canvas,  {
             events: {
                 // We use the "before" event hook to update brush type right before drawing starts.
@@ -29,6 +32,10 @@ export default class Whiteboard extends Component {
                     }
                 },
         });
+    }
+
+    putIn() {
+        this.mathField1.delAll();
     }
 
     generateSVGInk = (type) => {
@@ -60,16 +67,21 @@ export default class Whiteboard extends Component {
                     .then(response => response.json())
                     .then(json => {
                         // 将latex放入数组
-                        console.log(json.n_best_latex);
+                        // console.log(json.n_best_latex);
                         _this.setState(()=>{
                             return {
                                 latexArr: json.n_best_latex
                             }
                         })
+                        console.log(_this.state.latexArr);
+                        _this.delAllStr();
+                        _this.mathField1.writeContent(_this.state.latexArr[0])
+                        _this.mathField2.writeContent(_this.state.latexArr[1])
+                        _this.mathField3.writeContent(_this.state.latexArr[2])
                     }).catch(error => {
                         console.log(error);
                     });
-            }, 800)
+            }, 600)
         } else if(type === 'start') {
             clearTimeout(this.timer)
         } else {
@@ -88,36 +100,55 @@ export default class Whiteboard extends Component {
         });
         return scg
     }
+
+    // 清空方法
+    delAllStr() {
+        this.mathField1.delAll();
+        this.mathField1.mathField.blur();
+        this.mathField2.delAll();
+        this.mathField2.mathField.blur();
+        this.mathField3.delAll();
+        this.mathField3.mathField.blur();
+        style1.borderRight = '1px solid #999';
+    }
+
     handleClick(str) {
-        alert(str)
-        this.setState({
-			latexArr: []
-		})
+        this.delAllStr();
     }
 
     render() {
         return (<div style={{'width': '84%', 'borderRight': '1px solid #999'}}>
             <div style={{'height': '44px', 'overflow': 'auto', 'display': 'flex'}}>
-                {
-                    this.state.latexArr.map((item, index) => {
-                        return (
-                            <span key={index} style={index === this.state.latexArr.length - 1 ? style2 : style1}>
-                                <span
-                                    onClick={() => this.handleClick(item)}
-                                    style={{border: 'none'}}
-                                    ref={(node) => {
-                                        if (index === 0 ) {
-                                            this._mathContainer1 = ReactDOM.findDOMNode(node);
-                                        } else if (index ===1) {
-                                            this._mathContainer2 = ReactDOM.findDOMNode(node);
-                                        } else if (index ===2) {
-                                            this._mathContainer3 = ReactDOM.findDOMNode(node);
-                                        }
-                                    }}
-                                >{item}</span>
-                            </span>)
-                    })
-                }
+                <span style={style1}>
+                    <span
+                        className='strOne'
+                        onClick={() => this.handleClick(this.state.latexArr[0])}
+                        style={{border: 'none'}}
+                        ref={(node) => {
+                            this._mathContainer1 = ReactDOM.findDOMNode(node);
+                        }}
+                    ></span>
+                </span>
+                <span style={style1}>
+                    <span
+                        className='strTwo'
+                        onClick={() => this.handleClick(this.state.latexArr[1])}
+                        style={{border: 'none'}}
+                        ref={(node) => {
+                            this._mathContainer2 = ReactDOM.findDOMNode(node);
+                        }}
+                    ></span>
+                </span>
+                <span style={style2}>
+                    <span
+                        className='strThree'
+                        onClick={() => this.handleClick(this.state.latexArr[2])}
+                        style={{border: 'none'}}
+                        ref={(node) => {
+                            this._mathContainer3 = ReactDOM.findDOMNode(node);
+                        }}
+                    ></span>
+                </span>
             </div>
             <canvas id="drawing-canvas"
                     width={wi*0.85}
@@ -132,7 +163,7 @@ export default class Whiteboard extends Component {
 let style1 = {
     border: 'none', 
     display: 'inline-block', 
-    borderRight: '1px solid #999', 
+    // borderRight: '1px solid #999', 
     margin: '6px 0',
     padding: '0 10px', 
     height: '30px'

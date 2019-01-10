@@ -407,6 +407,13 @@ class MathWrapper {
     delContent() {
         this.mathField.keystroke('Backspace');
     }
+    // 新增删除全部
+    selectAll() {
+        this.mathField.select();
+    }
+    delAll() {
+        this.mathField.keystroke('Ctrl-A Del');
+    }
 
     isEmpty() {
         const cursor = this.getCursor();
