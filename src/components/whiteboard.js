@@ -10,17 +10,14 @@ export default class Whiteboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            latexArr: ["\\pm 2", "\\frac { I } { 2 }", "\\frac { 5 } { 2 }"]
+            latexArr: []
         }
     }
     
     componentDidMount() {
-        this.mathField1 = new MathWrapper(this._mathContainer1, {}, {});
-        this.mathField2 = new MathWrapper(this._mathContainer2, {}, {});
-        this.mathField3 = new MathWrapper(this._mathContainer3, {}, {});
-        this.mathField1.writeContent(this.state.latexArr[0])
-        this.mathField2.writeContent(this.state.latexArr[1])
-        this.mathField3.writeContent(this.state.latexArr[2])
+        // this.mathField1 = new MathWrapper(this._mathContainer1, {}, {});
+        // this.mathField2 = new MathWrapper(this._mathContainer2, {}, {});
+        // this.mathField3 = new MathWrapper(this._mathContainer3, {}, {});
         sketcher = new Sketchable(this.refs.canvas,  {
             events: {
                 // We use the "before" event hook to update brush type right before drawing starts.
@@ -46,7 +43,6 @@ export default class Whiteboard extends Component {
                 const scgInk = _this.strokesToScg(strokes);
                 // console.log('scgInk generated', JSON.stringify(scgInk));
 
-                sketcher.clear();
                 // https://hw.yooshare.cn
                 // const url = "http://72.93.93.62:8080/hw/mathreco";
                 const url = "http://72.93.93.62:8080/hw/mathreco";
@@ -66,6 +62,7 @@ export default class Whiteboard extends Component {
                 return fetch(url,options)
                     .then(response => response.json())
                     .then(json => {
+                        sketcher.clear();
                         // 将latex放入数组
                         // console.log(json.n_best_latex);
                         _this.setState(()=>{
@@ -113,11 +110,12 @@ export default class Whiteboard extends Component {
     }
 
     handleClick(str) {
+        appendText(str);
         this.delAllStr();
     }
 
     render() {
-        return (<div style={{'width': '84%', 'borderRight': '1px solid #999'}}>
+        return (<div style={{'width': '84%', 'borderRight': '1px solid #999', 'backgroundColor': '#fff'}}>
             <div style={{'height': '44px', 'overflow': 'auto', 'display': 'flex'}}>
                 <span style={style1}>
                     <span
