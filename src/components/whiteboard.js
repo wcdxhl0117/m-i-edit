@@ -115,7 +115,8 @@ export default class Whiteboard extends Component {
     }
 
     render() {
-        return (<div style={{'width': '84%', 'borderRight': '1px solid #999', 'backgroundColor': '#fff'}}>
+        // 'borderRight': '1px solid #999', 
+        return (<div style={{'width': '84%', 'backgroundColor': '#fff'}}>
             <div style={{'height': '44px', 'overflow': 'auto', 'display': 'flex'}}>
                 <span style={style1}>
                     <span
@@ -154,7 +155,7 @@ export default class Whiteboard extends Component {
                     ref="canvas"
                     onTouchStart={() => this.generateSVGInk('start')}
                     onTouchEnd={() => this.generateSVGInk('end')}
-                    style={{'borderTop': '1px solid #999',}}/>
+                    style={{'borderTop': '1px solid #e2e2e2',}}/>
         </div>);
     }
 }
