@@ -72,9 +72,10 @@ export default class Whiteboard extends Component {
                         })
                         console.log(_this.state.latexArr);
                         _this.delAllStr();
-                        _this.mathField1.writeContent(_this.state.latexArr[0])
-                        _this.mathField2.writeContent(_this.state.latexArr[1])
-                        _this.mathField3.writeContent(_this.state.latexArr[2])
+                        style1.borderRight = '1px solid #e2e2e2';
+                        _this.mathField1.writeContent(_this.state.latexArr[0]);
+                        _this.mathField2.writeContent(_this.state.latexArr[1]);
+                        _this.mathField3.writeContent(_this.state.latexArr[2]);
                     }).catch(error => {
                         console.log(error);
                     });
@@ -106,11 +107,16 @@ export default class Whiteboard extends Component {
         this.mathField2.mathField.blur();
         this.mathField3.delAll();
         this.mathField3.mathField.blur();
-        style1.borderRight = '1px solid #999';
+        style1.borderRight = 'none';
     }
 
     handleClick(str) {
         appendText(str);
+        this.setState(() => {
+            return {
+                latexArr: []
+            }
+        });
         this.delAllStr();
     }
 
@@ -155,7 +161,7 @@ export default class Whiteboard extends Component {
                     ref="canvas"
                     onTouchStart={() => this.generateSVGInk('start')}
                     onTouchEnd={() => this.generateSVGInk('end')}
-                    style={{'borderTop': '1px solid #e2e2e2',}}/>
+                    style={{'borderTop': '1px solid #e2e2e2 ',}}/>
         </div>);
     }
 }
