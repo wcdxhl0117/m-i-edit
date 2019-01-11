@@ -72,7 +72,7 @@ export default class Whiteboard extends Component {
                         })
                         console.log(_this.state.latexArr);
                         _this.delAllStr();
-                        style1.borderRight = '1px solid #e2e2e2';
+                        // style1.borderRight = '1px solid #e2e2e2';
                         _this.mathField1.writeContent(_this.state.latexArr[0]);
                         _this.mathField2.writeContent(_this.state.latexArr[1]);
                         _this.mathField3.writeContent(_this.state.latexArr[2]);
@@ -101,13 +101,13 @@ export default class Whiteboard extends Component {
 
     // 清空方法
     delAllStr() {
+        // style1.borderRight = 'none';
         this.mathField1.delAll();
         this.mathField1.mathField.blur();
         this.mathField2.delAll();
         this.mathField2.mathField.blur();
         this.mathField3.delAll();
         this.mathField3.mathField.blur();
-        style1.borderRight = 'none';
     }
 
     handleClick(str) {
@@ -168,7 +168,7 @@ export default class Whiteboard extends Component {
 let style1 = {
     border: 'none', 
     display: 'inline-block', 
-    // borderRight: '1px solid #999', 
+    // borderRight: '', 
     margin: '6px 0',
     padding: '0 10px', 
     height: '30px'
@@ -177,6 +177,6 @@ let style2 = {
     border: 'none', 
     display: 'inline-block', 
     margin: '6px 0', 
-    padding: '0 10px', 
+    padding: '0 12px', 
     height: '30px'
 }
