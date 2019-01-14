@@ -19,6 +19,9 @@ export default class Whiteboard extends Component {
         this.mathField2 = new MathWrapper(this._mathContainer2, {}, {});
         this.mathField3 = new MathWrapper(this._mathContainer3, {}, {});
         sketcher = new Sketchable(this.refs.canvas,  {
+            graphics: {
+                firstPointSize: 1,
+            },
             events: {
                 // We use the "before" event hook to update brush type right before drawing starts.
                 mousedownBefore: function(elem, data, evt) {
