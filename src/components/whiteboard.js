@@ -10,7 +10,7 @@ export default class Whiteboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            latexArr: ["\\pm 2", "\\frac { I } { 2 }", "\\frac { 5 } { 2 }"]
+            latexArr: []
         }
     }
     
@@ -31,6 +31,10 @@ export default class Whiteboard extends Component {
         });
     }
 
+    putIn() {
+        this.mathField1.delAll();
+    }
+
     generateSVGInk = (type) => {
         let _this = this;
         if (type === 'end') {
@@ -39,7 +43,6 @@ export default class Whiteboard extends Component {
                 const scgInk = _this.strokesToScg(strokes);
                 // console.log('scgInk generated', JSON.stringify(scgInk));
 
-                sketcher.clear();
                 // https://hw.yooshare.cn
                 // const url = "http://72.93.93.62:8080/hw/mathreco";
                 const url = "http://72.93.93.62:8080/hw/mathreco";
@@ -59,13 +62,20 @@ export default class Whiteboard extends Component {
                 return fetch(url,options)
                     .then(response => response.json())
                     .then(json => {
+                        sketcher.clear();
                         // 将latex放入数组
-                        console.log(json.n_best_latex);
+                        // console.log(json.n_best_latex);
                         _this.setState(()=>{
                             return {
                                 latexArr: json.n_best_latex
                             }
                         })
+                        console.log(_this.state.latexArr);
+                        _this.delAllStr();
+                        // style1.borderRight = '1px solid #e2e2e2';
+                        _this.mathField1.writeContent(_this.state.latexArr[0]);
+                        _this.mathField2.writeContent(_this.state.latexArr[1]);
+                        _this.mathField3.writeContent(_this.state.latexArr[2]);
                     }).catch(error => {
                         console.log(error);
                     });
@@ -88,36 +98,62 @@ export default class Whiteboard extends Component {
         });
         return scg
     }
+
+    // 清空方法
+    delAllStr() {
+        // style1.borderRight = 'none';
+        this.mathField1.delAll();
+        this.mathField1.mathField.blur();
+        this.mathField2.delAll();
+        this.mathField2.mathField.blur();
+        this.mathField3.delAll();
+        this.mathField3.mathField.blur();
+    }
+
     handleClick(str) {
-        alert(str)
-        this.setState({
-			latexArr: []
-		})
+        appendText(str);
+        this.setState(() => {
+            return {
+                latexArr: []
+            }
+        });
+        this.delAllStr();
     }
 
     render() {
-        return (<div style={{'width': '84%', 'borderRight': '1px solid #999'}}>
+        // 'borderRight': '1px solid #999', 
+        return (<div style={{'width': '84%', 'backgroundColor': '#fff'}}>
             <div style={{'height': '44px', 'overflow': 'auto', 'display': 'flex'}}>
-                {
-                    this.state.latexArr.map((item, index) => {
-                        return (
-                            <span key={index} style={index === this.state.latexArr.length - 1 ? style2 : style1}>
-                                <span
-                                    onClick={() => this.handleClick(item)}
-                                    style={{border: 'none'}}
-                                    ref={(node) => {
-                                        if (index === 0 ) {
-                                            this._mathContainer1 = ReactDOM.findDOMNode(node);
-                                        } else if (index ===1) {
-                                            this._mathContainer2 = ReactDOM.findDOMNode(node);
-                                        } else if (index ===2) {
-                                            this._mathContainer3 = ReactDOM.findDOMNode(node);
-                                        }
-                                    }}
-                                >{item}</span>
-                            </span>)
-                    })
-                }
+                <span style={style1}>
+                    <span
+                        className='strOne'
+                        onClick={() => this.handleClick(this.state.latexArr[0])}
+                        style={{border: 'none'}}
+                        ref={(node) => {
+                            this._mathContainer1 = ReactDOM.findDOMNode(node);
+                        }}
+                    ></span>
+                </span>
+                <span style={style1}>
+                    <span
+                        className='strTwo'
+                        onClick={() => this.handleClick(this.state.latexArr[1])}
+                        style={{border: 'none'}}
+                        ref={(node) => {
+                            this._mathContainer2 = ReactDOM.findDOMNode(node);
+                        }}
+                    ></span>
+                </span>
+                <span style={style2}>
+                    <span
+                        className='strThree'
+                        onClick={() => this.handleClick(this.state.latexArr[2])}
+                        style={{border: 'none'}}
+                        ref={(node) => {
+                            this._mathContainer3 = ReactDOM.findDOMNode(node);
+                        }}
+                    ></span>
+                </span>
             </div>
             <canvas id="drawing-canvas"
                     width={wi*0.85}
@@ -125,14 +161,14 @@ export default class Whiteboard extends Component {
                     ref="canvas"
                     onTouchStart={() => this.generateSVGInk('start')}
                     onTouchEnd={() => this.generateSVGInk('end')}
-                    style={{'borderTop': '1px solid #999',}}/>
+                    style={{'borderTop': '1px solid #e2e2e2 ',}}/>
         </div>);
     }
 }
 let style1 = {
     border: 'none', 
     display: 'inline-block', 
-    borderRight: '1px solid #999', 
+    // borderRight: '', 
     margin: '6px 0',
     padding: '0 10px', 
     height: '30px'
@@ -141,6 +177,6 @@ let style2 = {
     border: 'none', 
     display: 'inline-block', 
     margin: '6px 0', 
-    padding: '0 10px', 
+    padding: '0 12px', 
     height: '30px'
 }

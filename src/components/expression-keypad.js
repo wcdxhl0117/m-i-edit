@@ -690,7 +690,7 @@ class ExpressionKeypad extends React.Component {
 
         const sixPage = <View style={fivePageStyle}>
             <Whiteboard/>
-            {/* <View style={[column, oneColumn]}>
+            <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.BACKSPACE}
                     borders={BorderStyles.LEFT}
@@ -707,7 +707,7 @@ class ExpressionKeypad extends React.Component {
                     keyConfig={dismissOrJumpOutKey}
                     borders={BorderStyles.LEFT}
                 />
-            </View> */}
+            </View>
         </View>
 
         return <TwoPageKeypad
