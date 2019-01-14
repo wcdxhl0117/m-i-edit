@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>AsciiMathToShow</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <script>
+        (function (doc, win) {
+            // 分辨率Resolution适配
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = 270;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                };
+
+            // Abort if browser does not support addEventListener
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+
+            // 一物理像素在不同屏幕的显示效果不一样。要根据devicePixelRatio来修改meta标签的scale,要注释上面的meta标签
+            (function () {
+                return;
+                var dpr = scale = 1;
+                var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+                var devicePixelRatio = win.devicePixelRatio;
+                if (isIPhone) {
+                    // iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+                    if (devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+                        dpr = 3;
+                    } else if (devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+                        dpr = 2;
+                    } else {
+                        dpr = 1;
+                    }
+                } else {
+                    // 其他设备下，仍旧使用1倍的方案
+                    dpr = 1;
+                }
+                scale = 1 / dpr;
+
+                //
+                var metaEl = "";
+                metaEl = doc.createElement('meta');
+                metaEl.setAttribute('name', 'viewport');
+                metaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+                if (docEl.firstElementChild) {
+                    docEl.firstElementChild.appendChild(metaEl);
+                } else {
+                    var wrap = doc.createElement('div');
+                    wrap.appendChild(metaEl);
+                    doc.write(wrap.innerHTML);
+                }
+            })();
+
+        })(document, window);    
+    </script>
+
+    <link rel="stylesheet" href="file:///android_asset/mathquill/mathquill.css">
+    <link rel="stylesheet" href="file:///android_asset/lib/katex/katex.css">
+
+    <style type="text/css">
+        #basic {
+            white-space: nowrap;
+        }
+
+        * {
+            font-size: 0.45rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mq-editable-field.mq-math-mode {
+            border: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="body">
+        <div id="basic"></div>
+    </div>
+
+    <script src="file:///android_asset/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="file:///android_asset/mathquill/mathquill.js"></script>
+
+    <script type="text/javascript">
+        MQ = MathQuill.getInterface(MathQuill.getInterface.MAX);
+        var mq = MQ.MathField($('#basic')[0], {
+            autoSubscriptNumerals: true,
+            handlers: {
+                // edit: function () {
+                //   if (!latex.is(':focus')) latex.val(mq.latex());
+                // }
+            }
+        });
+
+
+        function trim(s) {
+            return trimRight(trimLeft(s));
+        }
+        function trimLeft(s) {
+            if (s == null) {
+                return "";
+            }
+            var whitespace = new String(" \t\n\r");
+            var str = new String(s);
+            if (whitespace.indexOf(str.charAt(0)) != -1) {
+                var j = 0, i = str.length;
+                while (j < i && whitespace.indexOf(str.charAt(j)) != -1) {
+                    j++;
+                }
+                str = str.substring(j, i);
+            }
+            return str;
+        }
+        function trimRight(s) {
+            if (s == null) return "";
+            var whitespace = new String(" \t\n\r");
+            var str = new String(s);
+            if (whitespace.indexOf(str.charAt(str.length - 1)) != -1) {
+                var i = str.length - 1;
+                while (i >= 0 && whitespace.indexOf(str.charAt(i)) != -1) {
+                    i--;
+                }
+                str = str.substring(0, i + 1);
+            }
+            return str;
+        }
+        function AsciiMathToMathMl(value) {
+            console.log("content-wangchao")
+            var content;
+            var jaxs = MathJax.Hub.getAllJax("content");
+            var mmlArray = [];
+            if (jaxs.length > 0) {
+                for (var j = 0; j < jaxs.length; j++) {
+                    var mml = jaxs[j].root.toMathML("");
+                    mml = mml.replace(/[\r\n]/g, "");
+                    // NCR编码转换
+                    mml = mml.replace(/(&#x)(\w{1,4});/gi, function ($0) {
+                        return String.fromCharCode(parseInt(escape($0).replace(/(%26%23x)(\w{1,4})(%3B)/g, "$2"), 16));
+                    });
+                    mmlArray.push(mml);
+                }
+                var count = 0;
+                var content = value.replace(/([^\u4e00-\u9fa5]*)/g, function (match, capture) {
+                    if (trim(capture) == "") {
+                        return capture;
+                    }
+                    if (count < mmlArray.length) {
+                        var temp = mmlArray[count];
+                        count += 1;
+                        return temp;
+                    } else {
+                        return capture;
+                    }
+                });
+            } else {
+                content = value;
+            }
+            window.stub.jsCallBack(content);
+        }
+        sendAsciiMathToShow("");
+
+
+        // 输入方法封装
+        function sendAsciiMathToShow(str) {
+            alert(123)
+            mq.write(str);
+        }
+        sendAsciiMathToShow('\\frac { 1 } { 2 }');
+        // 不让出现光标
+        $('#basic').click(function () {
+            mq.blur();
+        })
+
+    </script>
+</body>
+
+</html>

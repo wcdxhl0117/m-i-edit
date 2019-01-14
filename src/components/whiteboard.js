@@ -25,6 +25,7 @@ export default class Whiteboard extends Component {
                         // There is a method to get the default mode (pencil) back.
                         data.options.graphics.lineWidth = 2;
                         data.options.graphics.strokeStyle = "#000";
+                        // data.options.graphics.beginFill = '#000'
                         // data.sketch.pencil();
                     }
                 },
@@ -123,7 +124,7 @@ export default class Whiteboard extends Component {
     render() {
         // 'borderRight': '1px solid #999', 
         return (<div style={{'width': '84%', 'backgroundColor': '#fff'}}>
-            <div style={{'height': '44px', 'overflow': 'auto', 'display': 'flex'}}>
+            <div style={{'height': '40px', 'overflow': 'auto', 'display': 'flex'}}>
                 <span style={style1}>
                     <span
                         className='strOne'
@@ -157,11 +158,11 @@ export default class Whiteboard extends Component {
             </div>
             <canvas id="drawing-canvas"
                     width={wi*0.85}
-                    height = '180'
+                    height = '160'
                     ref="canvas"
                     onTouchStart={() => this.generateSVGInk('start')}
                     onTouchEnd={() => this.generateSVGInk('end')}
-                    style={{'borderTop': '1px solid #e2e2e2 ',}}/>
+                    style={{'borderTop': '1px solid #e2e2e2 ','opacity': '0.8'}}/>
         </div>);
     }
 }

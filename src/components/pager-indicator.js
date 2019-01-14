@@ -25,7 +25,7 @@ class PagerIcon extends React.Component {
     render() {
         const {active, radiusPx} = this.props;
 
-        const fillColor = active ? '#51d326' : gray85;
+        const fillColor = active ? '#51d326' : '#fff';
 
         // return <svg width={2 * radiusPx} height={2 * radiusPx}>
         // ()=>console.log('click',this.props.page)
