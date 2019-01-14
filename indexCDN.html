@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <title>MathQuill-basic Demo</title>
-  <link href="https://cdn.bootcss.com/mathquill/0.10.1/mathquill.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="mathquill/mathquill.css">
+  <link rel="stylesheet" href="lib/katex/katex.css">
+  <link rel="stylesheet" href="build/math-input.css">
   <script type="text/javascript">
     document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
     window.addEventListener("resize", function () {
@@ -28,8 +30,8 @@
   <div id="body">
       <div id="basic"></div>
   </div>
-  <script src="https://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
-  <script src="https://cdn.bootcss.com/mathquill/0.10.1/mathquill.min.js"></script>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="mathquill/mathquill.js"></script>
   <!--  ASCIImath to Latex -->
   <script type="text/javascript">
     MQ = MathQuill.getInterface(MathQuill.getInterface.MAX);
@@ -45,7 +47,7 @@
     function sendAsciiMathToShow(str) {
       mq.write(str);
     }
-    sendAsciiMathToShow('123');
+    sendAsciiMathToShow('\\subsetneqq');
     // 不让出现光标
     $('#basic').click(function() {
       // mq.blur();
