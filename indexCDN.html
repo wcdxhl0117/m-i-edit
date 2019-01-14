@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <title>MathQuill-basic Demo</title>
+  <link href="https://cdn.bootcss.com/mathquill/0.10.1/mathquill.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./math-input.css">
+  <script type="text/javascript">
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+    window.addEventListener("resize", function () {
+      document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+    }, false);
+  </script>
+</head>
+<style>
+  #basic {
+    padding: 0.2rem 0;
+    width: 100%;
+    font-size: 0.36rem;
+    overflow-x: auto;
+    border: none;
+  }
+  
+</style>
+
+<body>
+  <div id="body">
+    <p>
+      <span id="basic"></span>
+    </p>
+    <p>
+      <textarea id="basic-latex"></textarea>
+    </p>
+    <!-- <p id="add">Add LaTeX encoding</p> -->
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/mathquill/0.10.1/mathquill.min.js"></script>
+  <!--  ASCIImath to Latex -->
+  <script src="./acc.js"></script>
+  <script type="text/javascript">
+    setTimeout(function () {
+      MQ = MathQuill.getInterface(MathQuill.getInterface.MAX);
+      var mq = MQ.MathField($('#basic')[0], {
+        autoSubscriptNumerals: true,
+        handlers: {
+          edit: function () {
+            if (!latex.is(':focus')) latex.val(mq.latex());
+          }
+        }
+      });
+      // \frac{ }{ }
+      mq.focus()
+
+      // Write string to cursor position
+      var str = '\\frac{ }{ }';
+      setTimeout(function () {
+        // str = AMTparseAMtoTeX(str)
+        mq.write(str)
+      }, 100)
+
+      // 删除方法找到（模拟按键的方式）
+      setInterval(function () {
+        // mq.keystroke('Backspace')
+        // mq.keystroke('Right')
+      }, 1000)
+
+      var latex = $('#basic-latex').bind('keydown keypress keyup', function () {
+        var prev = latex.val();
+        setTimeout(function () {
+          var now = latex.val();
+          if (now !== prev) mq.latex(now);
+        });
+      });
+      latex.val(mq.latex());
+
+      $("#add").click(function () {
+        // 这个和write类似
+        mq.cmd('\\sqrt');
+        // 模拟键盘键
+        mq.keystroke('Shift-Left');
+      })
+
+
+      // var startX, startY, moveEndX, moveEndY, X, Y, oldMoveEndX;
+      // $("#basic").on("touchstart", function (e) {
+      //   startX = e.originalEvent.changedTouches[0].pageX,
+      //     startY = e.originalEvent.changedTouches[0].pageY;
+      // });
+      // var off = true;
+      // setInterval(function () {
+      //   off = !off;
+      // }, 60)
+      // $("#basic").on("touchmove", function (e) {
+      //   if (off) {
+      //     e.preventDefault();
+      //     moveEndX = e.originalEvent.changedTouches[0].pageX,
+      //     moveEndY = e.originalEvent.changedTouches[0].pageY;
+      //     if (moveEndX - oldMoveEndX > 0) {
+      //       mq.keystroke('Right');
+      //     } else if (moveEndX - oldMoveEndX < 0) {
+      //       mq.keystroke('Left');
+      //     }
+      //     oldMoveEndX = moveEndX;
+      //   }
+      // });
+
+    }, 20)
+  </script>
+</body>
+
+</html>
