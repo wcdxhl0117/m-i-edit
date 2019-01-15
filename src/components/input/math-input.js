@@ -804,7 +804,7 @@ const inlineStyles = {
     innerContainer: {
         backgroundColor: 'white',
         display: 'flex',
-        // alignItems:'center',
+        alignItems:'center',
         minHeight: minHeightPx,
         maxHeight: minHeightPx,
         minWidth: minWidthPx,
