@@ -210,5 +210,5 @@ let style3= {
 let style4 = {
     'borderTop': '1px solid #e2e2e2',
     // 'background': url('http://qnstatic.file.yoomath.com/parent/V1.0.5/kapian1.png')
-    'background-image': url('http://qnstatic.file.yoomath.com/parent/V1.0.5/kapian1.png')
+    'background-image': 'url(http://qnstatic.file.yoomath.com/parent/V1.0.5/kapian1.png)'
 }
