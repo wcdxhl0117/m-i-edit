@@ -38,8 +38,8 @@ class App extends React.Component {
                     // height: 60,
                     // overflow: 'auto',
                     // marginBottom: 40,
-                    position: 'fixed',
-                    bottom: '255',
+                    // position: 'fixed',
+                    // bottom: '255',
                     // bottom: '285',
                     width: '95%'
                 }}
