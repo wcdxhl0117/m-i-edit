@@ -18,6 +18,17 @@ export default class Whiteboard extends Component {
         this.mathField1 = new MathWrapper(this._mathContainer1, {}, {});
         this.mathField2 = new MathWrapper(this._mathContainer2, {}, {});
         this.mathField3 = new MathWrapper(this._mathContainer3, {}, {});
+
+        // var can = this.refs.canvas;	
+		// 	var cxt = can.getContext("2d");
+		// 	var imgs = new Image();
+		// 	imgs.src = "http://qnstatic.file.yoomath.com/parent/V1.0.5/kapian1.png";
+		// 	imgs.onload = function (){
+		// 		var bg = cxt.createPattern(imgs,"no-repeat");
+		// 		cxt.fillStyle = bg;
+        //         cxt.fillRect(0,0,can.width,can.height);
+        //     };//图片加载完成再执行
+			
         sketcher = new Sketchable(this.refs.canvas,  {
             graphics: {
                 firstPointSize: 1,
@@ -126,7 +137,7 @@ export default class Whiteboard extends Component {
 
     render() {
         // 'borderRight': '1px solid #999', 
-        return (<div style={{'width': '84%', 'backgroundColor': '#fff'}}>
+        return (<div style={{'width': '84%', 'backgroundColor': '#fff', 'position': 'relative'}}>
             <div style={{'height': '40px', 'overflow': 'auto', 'display': 'flex'}}>
                 <span style={style1}>
                     <span
@@ -159,13 +170,14 @@ export default class Whiteboard extends Component {
                     ></span>
                 </span>
             </div>
+            {/* <div style={style3}>仅支持英文、数字、公式</div> */}
             <canvas id="drawing-canvas"
                     width={wi*0.85}
                     height = '160'
                     ref="canvas"
                     onTouchStart={() => this.generateSVGInk('start')}
                     onTouchEnd={() => this.generateSVGInk('end')}
-                    style={{'borderTop': '1px solid #e2e2e2 ','opacity': '0.8'}}/>
+                    style={style4}/>
         </div>);
     }
 }
@@ -183,4 +195,20 @@ let style2 = {
     margin: '6px 0', 
     padding: '0 12px', 
     height: '30px'
+}
+let style3= {
+    position: 'absolute',
+    bottom: '2px',
+    left: '0',
+    textAlign: 'center',
+    width: '100%',
+    textAlign: 'center',
+    height: 'auto',
+    fontSize: '12px',
+    color: '#ccc'
+}
+let style4 = {
+    'borderTop': '1px solid #e2e2e2',
+    // 'background': url('http://qnstatic.file.yoomath.com/parent/V1.0.5/kapian1.png')
+    'background-image': url('http://qnstatic.file.yoomath.com/parent/V1.0.5/kapian1.png')
 }
