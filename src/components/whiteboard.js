@@ -6,6 +6,7 @@ const MathWrapper = require('./input/math-wrapper');
 var sketcher = null;
 let wi = screen.width - 4;
 
+
 export default class Whiteboard extends Component {
     constructor(props) {
         super(props);
@@ -15,6 +16,7 @@ export default class Whiteboard extends Component {
     }
     
     componentDidMount() {
+        console.log(wi)
         this.mathField1 = new MathWrapper(this._mathContainer1, {}, {});
         this.mathField2 = new MathWrapper(this._mathContainer2, {}, {});
         this.mathField3 = new MathWrapper(this._mathContainer3, {}, {});
@@ -209,6 +211,5 @@ let style3= {
 }
 let style4 = {
     'borderTop': '1px solid #e2e2e2',
-    // 'background': url('http://qnstatic.file.yoomath.com/parent/V1.0.5/kapian1.png')
-    'background-image': 'url(http://qnstatic.file.yoomath.com/parent/V1.0.5/kapian1.png)'
+    // 'background-image': 'url(http://qnstatic.file.yoomath.com/parent/V1.0.5/kapian1.png)'
 }
