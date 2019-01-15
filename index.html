@@ -75,10 +75,10 @@
     }
 
     // 显示安卓键盘
-    function showKeyboard(){
+    function showKeyboard(num){
         console.log('show keyboard');
         try {
-            Android.showKeyboard();
+            Android.showKeyboard(num);
         }catch(e){
             console.log('没有设备');
         }
