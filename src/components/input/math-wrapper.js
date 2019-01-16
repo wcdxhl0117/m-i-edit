@@ -28,8 +28,10 @@ const KeyActions = {
 ///////// 新增
     [Keys.COMMA]: {str: ',', fn: WRITE},
     // [Keys.BRACKETS]: {str: '', fn: WRITE},
-    [Keys.TWOTERM]: {str: '事例（两条件）', fn: WRITE},
-    [Keys.THREETERM]: {str: '事例（三条件）', fn: WRITE},
+    // 事例（两条件）
+    [Keys.TWOTERM]: {str: '', fn: WRITE},
+    // 事例（三条件）
+    [Keys.THREETERM]: {str: '', fn: WRITE},
     
     [Keys.ANGLE]: {str: '\\angle', fn: WRITE},
     // [Keys.RIGHTSUB]: {str: '{}_{}', fn: WRITE},
@@ -298,7 +300,8 @@ class MathWrapper {
             this.mathField.write('\\overrightarrow{ }');
             this.mathField.keystroke('Left');
         } else if(key===Keys.HAT) {
-            this.mathField.write('估计值');
+            // 估计值
+            this.mathField.write('');
             this.mathField.keystroke('Left');
         } else if(key===Keys.PARENTHESIS) {
             this.mathField.write('\\left\\{\\right\\}');
