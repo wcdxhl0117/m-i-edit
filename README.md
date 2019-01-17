@@ -101,3 +101,37 @@
             maxWidth: '850%'
         }
 ```
+
+# 公式替换的方法
+* 新建一个svg组件： 位置在components/iconography/cos1.js，这个文件是现实按钮图片的svg
+* 修改iconography文件的index： components/iconography/index.js, iconography下方的所有公式的svg组件，index是做统一导出
+```
+    COS1:require('./cos1')
+```
+* 修改符号注册文件： data/keys.js
+```
+    COS1:'COS1',
+```
+* 定义新符号的属性。修改文件： data/key-configs.js
+```
+    [Keys.COS1]: {
+        type: KeyTypes.OPERATOR,
+        ariaLabel: i18n._('Always-equal cos'),
+    },
+```
+*  修改文件：components/input/math-wrapper.js，math-wrapper.js里面包含了几乎所有符号的LaTeX编码
+    但是不同类型的公式修改地方和方法好事不一样，如cos就做了特殊处理，加了括号，我直接用了cos的代码
+
+* 以上步骤已将将新加的公式符号svg,Latex编码都准备好了，现在需要引入到页面, 
+    渲染公式键盘位置：components/expression-keypad.js, expression-keypad.js修改能替换和添加公式，
+    新增一列就是在page下新增一个大的view，里面5个具体公式，添加一行则需要在page下每个列去添加一个具体公式
+```
+            <TouchableKeypadButton
+                keyConfig={KeyConfigs.COS1}
+                borders={BorderStyles.NONE}
+            />
+```
+
+# 添加多个MANY公式的方法
+    具体修改的文件见： https://github.com/wangchao117/m-i-edit/commit/eae546cf1cc6612a6e462b71ae09681233c8e4d5
+> 此类型公式不是一般公式都能这样做，只有特定类型的能，参照math-wrapper.js（72-81）行

@@ -75,10 +75,16 @@ export default class Whiteboard extends Component {
                 };
 
                 options.body= JSON.stringify(requestSVG);
-                // console.log('recognize', url, options);
-                return fetch(url,options)
-                    .then(response => response.json())
-                    .then(json => {
+
+
+                $.ajax({
+                    url: url,
+                    method: 'POST',
+                    data: JSON.stringify(requestSVG),
+                    headers: {
+                        'Content-Type': 'application/json;charset=UTF-8',
+                    },
+                    success: function(json) {
                         sketcher.clear();
                         // 将latex放入数组
                         // console.log(json.n_best_latex);
@@ -93,9 +99,36 @@ export default class Whiteboard extends Component {
                         _this.mathField1.writeContent(_this.state.latexArr[0]);
                         _this.mathField2.writeContent(_this.state.latexArr[1]);
                         _this.mathField3.writeContent(_this.state.latexArr[2]);
-                    }).catch(error => {
-                        console.log(error);
-                    });
+                    },
+                    fail: function(err) {
+                        console.log(err)
+                    }
+                })
+
+
+                // console.log('recognize', url, options);
+                // return fetch(url,options)
+                //     .then(response => response.json())
+                //     .then(json => {
+                //         sketcher.clear();
+                //         // 将latex放入数组
+                //         // console.log(json.n_best_latex);
+                //         _this.setState(()=>{
+                //             return {
+                //                 latexArr: json.n_best_latex
+                //             }
+                //         })
+                //         console.log(_this.state.latexArr);
+                //         _this.delAllStr();
+                //         // style1.borderRight = '1px solid #e2e2e2';
+                //         _this.mathField1.writeContent(_this.state.latexArr[0]);
+                //         _this.mathField2.writeContent(_this.state.latexArr[1]);
+                //         _this.mathField3.writeContent(_this.state.latexArr[2]);
+                //     }).catch(error => {
+                //         console.log(error);
+                //     });
+
+
             }, 600)
         } else if(type === 'start') {
             clearTimeout(this.timer)
