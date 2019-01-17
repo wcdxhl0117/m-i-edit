@@ -33,8 +33,8 @@ class App extends React.Component {
             <div
                 style={{
                     // marginTop: 10,
-                    marginLeft: 10,
-                    marginRight: 10,
+                    marginLeft: 4,
+                    marginRight: 4,
                     // height: 60,
                     // overflow: 'auto',
                     // marginBottom: 40,
@@ -42,7 +42,7 @@ class App extends React.Component {
                     top: '4',
                     zIndex: '10000',
                     // bottom: '205',
-                    width: '95%'
+                    width: '98%'
                 }}
             >
                 <KeypadInput
