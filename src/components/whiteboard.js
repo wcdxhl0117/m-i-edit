@@ -4,8 +4,19 @@ const ReactDOM = require('react-dom');
 const MathWrapper = require('./input/math-wrapper');
 
 var sketcher = null;
-let wi = screen.width - 4;
+var wi = screen.width - 4;
+var He = 0;
 
+var u = navigator.userAgent;
+if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
+    //安卓手机
+    He = 160
+} else if (u.indexOf('iPhone') > -1) {
+    //苹果手机
+    He = 190
+} else if (u.indexOf('Windows Phone') > -1) {
+    //winphone手机
+}
 
 export default class Whiteboard extends Component {
     constructor(props) {
@@ -62,7 +73,7 @@ export default class Whiteboard extends Component {
 
                 // https://hw.yooshare.cn
                 const url = "http://72.93.93.62:8080/hw/mathreco";
-                // const url = "https://hw.yooshare.cn";
+                // const url = "https://hw.yooshare.cn/hw/mathreco";
                 let options = Object.assign({ method: 'POST' } );
                 options.headers = {
                     // 'Accept': 'application/json',
@@ -208,7 +219,7 @@ export default class Whiteboard extends Component {
             {/* <div style={style3}>仅支持英文、数字、公式</div> */}
             <canvas id="drawing-canvas"
                     width={wi*0.85}
-                    height = '160'
+                    height = {He}
                     ref="canvas"
                     onTouchStart={() => this.generateSVGInk('start')}
                     onTouchEnd={() => this.generateSVGInk('end')}

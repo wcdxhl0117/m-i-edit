@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -41,114 +42,127 @@
             left: 10px;
             right: 10px; */
         }
+
+        /* 禁止长按选择复制 */
+        body {
+            -webkit-touch-callout:none;/*系统默认菜单被禁用*/
+            -webkit-user-select:none;/*webkit浏览器*/
+            -khtml-user-select:none;/*早起浏览器*/
+            -moz-user-select:none;/*火狐浏览器*/
+            -ms-user-select:none;/*IE浏览器*/
+            user-select:none;/*用户是否能够选中文本*/
+        }
+
     </style>
 </head>
+
 <body>
-<!-- 
+    <!-- 
 
     index.html?keypad_type=expression&jump_out_type=dynamic&echo_animation=fade_only&icon_style=fancy&hold_interval_ms=250
     后边的参数决定键盘样式，可以在http://khan.github.io/math-input/custom.html去设置
 
  -->
-<script type="text/javascript">
-    var realAnswer = '';
-    var iptHeight = 0;
-    // 确认按钮点击将latex传给Native
-    function sendAnswer(answer) {
-        var allStr = localStorage.getItem('toLatex');
-        console.log('answer: ' + allStr);
-        try{
-            Android.sendAnswer(allStr);
-        }catch(e){
-            console.log('没有设备');
-        }
-    }
-
-    // 调用手写板
-    function showCanvas() {
-        // Android.Handwrite(); // 安卓定义一个调用native手写板的方法
-        try{
-            Android.Handwrite();
-        }catch(e){
-            console.log('没有设备');
-        }
-    }
-
-    // 显示安卓键盘
-    function showKeyboard(num){
-        console.log('show keyboard');
-        try {
-            Android.showKeyboard(num);
-        }catch(e){
-            console.log('没有设备');
-        }
-    }
-
-    // 输入框内容全部替换的方法
-    function getRealAnswer(realAnswer){
-        initIptHeight();
-        console.log('real answer received: ' + realAnswer);
-        window.appComponent.setState({value:realAnswer});
-        window.inputComponent.mathField.setContent(realAnswer);
-        sumHeight();
-    }
-
-    // 添加字符串到输入框光标处
-    function appendText(text){
-        window.inputComponent.mathField.pressKey(text);
-        console.log("new content: " + window.inputComponent.mathField.getContent());
-        window.appComponent.setState({value:window.inputComponent.mathField.getContent()});
-    }
-
-    // 通知native点击了输入框或者光标
-    function clickBlink() {
-        try {
-            Android.clickBlink();
-        }catch(e){
-            console.log('没有设备');
-        }
-    }
-
-    // 收起键盘
-    function closePaid() {
-        console.log('隐藏webview')
-    }
-
-    // 删除的方法
-    function delContent() {
-        window.inputComponent.mathField.delContent();
-    }
-
-    // 计算输入框高度
-    function sumHeight() {
-        try {
-            if (($('.keypad-input').height() - iptHeight) !== 0) {
-                Android.setWebViewHeight($('.keypad-input').height() - iptHeight);
+    <script type="text/javascript">
+        var realAnswer = '';
+        var iptHeight = 0;
+        // 确认按钮点击将latex传给Native
+        function sendAnswer(answer) {
+            var allStr = localStorage.getItem('toLatex');
+            console.log('answer: ' + allStr);
+            try {
+                Android.sendAnswer(allStr);
+            } catch (e) {
+                console.log('没有设备');
             }
-        }catch(e){
-            console.log('没有设备');
         }
-    }
-    function initIptHeight() {
-        iptHeight = $('.keypad-input').height();
-    }
 
-</script>
+        // 调用手写板
+        function showCanvas() {
+            // Android.Handwrite(); // 安卓定义一个调用native手写板的方法
+            try {
+                Android.Handwrite();
+            } catch (e) {
+                console.log('没有设备');
+            }
+        }
 
-<!-- <button  class="button" type="button" onclick="delContent()">1234565</button> -->
+        // 显示安卓键盘
+        function showKeyboard(num) {
+            console.log('show keyboard');
+            try {
+                Android.showKeyboard(num);
+            } catch (e) {
+                console.log('没有设备');
+            }
+        }
 
-<div id="root"></div>
+        // 输入框内容全部替换的方法
+        function getRealAnswer(realAnswer) {
+            initIptHeight();
+            console.log('real answer received: ' + realAnswer);
+            window.appComponent.setState({ value: realAnswer });
+            window.inputComponent.mathField.setContent(realAnswer);
+            sumHeight();
+        }
 
-<script src="lib/i18n.js"></script>
-<script src="lib/icu-slim.js"></script>
-<script src="lib/katex/katex.js"></script>
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="mathquill/mathquill.js"></script>
-<script src="node_modules/babel-polyfill/browser.js"></script>
-<script src="build/deps.js"></script>
-<script src="build/app.js"></script>
+        // 添加字符串到输入框光标处
+        function appendText(text) {
+            window.inputComponent.mathField.pressKey(text);
+            console.log("new content: " + window.inputComponent.mathField.getContent());
+            window.appComponent.setState({ value: window.inputComponent.mathField.getContent() });
+        }
+
+        // 通知native点击了输入框或者光标
+        function clickBlink() {
+            try {
+                Android.clickBlink();
+            } catch (e) {
+                console.log('没有设备');
+            }
+        }
+
+        // 收起键盘
+        function closePaid() {
+            console.log('隐藏webview')
+        }
+
+        // 删除的方法
+        function delContent() {
+            window.inputComponent.mathField.delContent();
+        }
+
+        // 计算输入框高度
+        function sumHeight() {
+            try {
+                if (($('.keypad-input').height() - iptHeight) !== 0) {
+                    Android.setWebViewHeight($('.keypad-input').height() - iptHeight);
+                }
+            } catch (e) {
+                console.log('没有设备');
+            }
+        }
+        function initIptHeight() {
+            iptHeight = $('.keypad-input').height();
+        }
+
+    </script>
+
+    <!-- <button  class="button" type="button" onclick="delContent()">1234565</button> -->
+
+    <div id="root"></div>
+
+    <script src="lib/i18n.js"></script>
+    <script src="lib/icu-slim.js"></script>
+    <script src="lib/katex/katex.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="mathquill/mathquill.js"></script>
+    <script src="node_modules/babel-polyfill/browser.js"></script>
+    <script src="build/deps.js"></script>
+    <script src="build/app.js"></script>
 
 
 
 </body>
+
 </html>
