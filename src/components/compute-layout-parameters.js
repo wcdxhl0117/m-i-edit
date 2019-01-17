@@ -27,7 +27,7 @@ const {
     innerBorderWidthPx,
 } = require('./common-style');
 
-const minButtonHeight = 52;
+const minButtonHeight = 58;
 // const maxButtonSize = 64;
 // 改变按钮最大高度
 const maxButtonSize = 58;

@@ -53,6 +53,19 @@
             user-select:none;/*用户是否能够选中文本*/
         }
 
+        #tipPop{
+            width: 85%;
+            height: auto;
+            text-align: center;
+            font-size: 16px;
+            color: #666666;
+            position: fixed;
+            bottom: -40px;
+            left: 0;
+            z-index: 100000;
+            opacity: 0;
+        }
+
     </style>
 </head>
 
@@ -151,7 +164,16 @@
     <!-- <button  class="button" type="button" onclick="delContent()">1234565</button> -->
 
     <div id="root"></div>
-
+    <div id="tipPop">识别失败，请注意书写规范！</div>
+    <script>
+    // 书写弹窗逻辑
+    function showTipPop() {
+        $('#tipPop').css('bottom', '60px').animate({'opacity': '1'},500,'linear');
+        setTimeout(function() {
+            $('#tipPop').css('bottom', '-40px').animate({'opacity': '0'},500,'linear');
+        }, 2000)
+    }
+    </script>
     <script src="lib/i18n.js"></script>
     <script src="lib/icu-slim.js"></script>
     <script src="lib/katex/katex.js"></script>
@@ -160,8 +182,6 @@
     <script src="node_modules/babel-polyfill/browser.js"></script>
     <script src="build/deps.js"></script>
     <script src="build/app.js"></script>
-
-
 
 </body>
 

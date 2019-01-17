@@ -10,10 +10,10 @@ var He = 0;
 var u = navigator.userAgent;
 if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
     // 安卓手机
-    He = 160
+    He = 188
 } else if (u.indexOf('iPhone') > -1) {
     // 苹果手机
-    He = 190
+    He = 188
 } else if (u.indexOf('Windows Phone') > -1) {
     //winphone手机
 }
@@ -22,7 +22,8 @@ export default class Whiteboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            latexArr: []
+            latexArr: [],
+            showTipPop: false
         }
     }
     
@@ -72,8 +73,8 @@ export default class Whiteboard extends Component {
                 // console.log('scgInk generated', JSON.stringify(scgInk));
 
                 // https://hw.yooshare.cn
-                const url = "http://72.93.93.62:8080/hw/mathreco";
-                // const url = "https://hw.yooshare.cn/hw/mathreco";
+                // const url = "http://72.93.93.62:8080/hw/mathreco";
+                const url = "https://hw.yooshare.cn/hw/mathreco";
                 let options = Object.assign({ method: 'POST' } );
                 options.headers = {
                     // 'Accept': 'application/json',
@@ -111,8 +112,9 @@ export default class Whiteboard extends Component {
                         _this.mathField2.writeContent(_this.state.latexArr[1]);
                         _this.mathField3.writeContent(_this.state.latexArr[2]);
                     },
-                    fail: function(err) {
-                        console.log(err)
+                    error: function(err) {
+                        window.showTipPop();
+                        sketcher.clear();
                     }
                 })
 
@@ -184,7 +186,7 @@ export default class Whiteboard extends Component {
     render() {
         // 'borderRight': '1px solid #999', 
         return (<div style={{'width': '84%', 'backgroundColor': '#fff', 'position': 'relative'}}>
-            <div style={{'height': '40px', 'overflow': 'auto', 'display': 'flex'}}>
+            <div style={{'height': 40, 'overflow': 'auto', 'display': 'flex'}}>
                 <span style={style1}>
                     <span
                         className='strOne'
@@ -231,18 +233,18 @@ let style1 = {
     border: 'none', 
     display: 'inline-block', 
     // borderRight: '', 
-    margin: '6px 0',
+    margin: '5px 0',
     padding: '0 10px', 
     height: '30px'
 }
 let style2 = {
     border: 'none', 
     display: 'inline-block', 
-    margin: '6px 0', 
+    margin: '5px 0', 
     padding: '0 12px', 
     height: '30px'
 }
-let style3= {
+let style3 = {
     position: 'absolute',
     bottom: '2px',
     left: '0',
