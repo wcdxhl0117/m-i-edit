@@ -139,10 +139,11 @@
         function closePaid() {
             console.log('隐藏webview')
         }
-
+        getContent
         // 删除的方法
         function delContent() {
-            window.inputComponent.mathField.delContent();
+            window.inputComponent.mathField.pressKey('BACKSPACE');
+            window.localStorage.setItem('toLatex', window.inputComponent.mathField.getContent());
         }
 
         // 计算输入框高度
@@ -161,7 +162,7 @@
 
     </script>
 
-    <!-- <button  class="button" type="button" onclick="delContent()">1234565</button> -->
+    <!-- <button style="margin-top: 100px" class="button" type="button" onclick="delContent()">1234565</button> -->
 
     <div id="root"></div>
     <div id="tipPop">识别失败，请注意书写规范！</div>
