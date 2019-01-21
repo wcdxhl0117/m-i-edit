@@ -137,9 +137,13 @@
 
         // 收起键盘
         function closePaid() {
-            console.log('隐藏webview')
+            try {
+                Android.closePaid();
+            } catch (e) {
+                console.log('没有设备');
+            }
         }
-        getContent
+        
         // 删除的方法
         function delContent() {
             window.inputComponent.mathField.pressKey('BACKSPACE');
@@ -158,6 +162,21 @@
         }
         function initIptHeight() {
             iptHeight = $('.keypad-input').height();
+        }
+        
+        // 获取id
+        function toNativeForIds() {
+            try {
+                Android.toNativeForIds();
+            } catch (e) {
+                console.log('没有设备');
+            }
+        }
+
+        // native传ID
+        function toNativeForIds(ids) {
+            // window.whiteboard.setState({ 'aaa': 'aaa' });
+            alert(ids)
         }
 
     </script>

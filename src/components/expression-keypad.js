@@ -689,7 +689,7 @@ class ExpressionKeypad extends React.Component {
         </View>;
 
         const sixPage = <View style={fivePageStyle}>
-            <Whiteboard/>
+            <Whiteboard ref={(whiteboard) => {window.whiteboard = whiteboard}}/>
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
                     keyConfig={KeyConfigs.BACKSPACE}
