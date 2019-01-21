@@ -15,7 +15,7 @@ if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
     // 苹果手机
     He = 188
 } else if (u.indexOf('Windows Phone') > -1) {
-    //winphone手机
+    // winphone手机
 }
 
 export default class Whiteboard extends Component {
@@ -23,6 +23,9 @@ export default class Whiteboard extends Component {
         super(props);
         this.state = {
             latexArr: [],
+            stuId: 0,
+            qId: 0,
+            chooseId: 0,
             showTipPop: false
         }
     }
@@ -82,12 +85,13 @@ export default class Whiteboard extends Component {
                 };
                 const requestSVG = {
                         "id": 0,
+                        "qid": _this.state.qId,
+                        "student_id": _this.state.stuId,
                         "scg_ink":scgInk,
-                        "info": null,
+                        "info": "equation reco",
                 };
 
                 options.body= JSON.stringify(requestSVG);
-
 
                 $.ajax({
                     url: url,
@@ -102,7 +106,8 @@ export default class Whiteboard extends Component {
                         // console.log(json.n_best_latex);
                         _this.setState(()=>{
                             return {
-                                latexArr: json.n_best_latex
+                                latexArr: json.n_best_latex,
+                                chooseId: json.id
                             }
                         })
                         console.log(_this.state.latexArr);
@@ -173,9 +178,9 @@ export default class Whiteboard extends Component {
         this.mathField3.mathField.blur();
     }
 
-    handleClick(str) {
-        console.log(this.state.aaa)
+    handleClick(str, idx) {
         appendText(str);
+        this.chooseIdx(idx);
         this.setState(() => {
             return {
                 latexArr: []
@@ -183,15 +188,35 @@ export default class Whiteboard extends Component {
         });
         this.delAllStr();
     }
-
+    chooseIdx(idx) {
+        let _this = this;
+        $.ajax({
+            // url: 'http://72.93.93.62:8080/hw/select',
+            url: 'http://hw.test1.yooshare.cn/hw/select',
+            method: 'POST',
+            data: {
+                id: _this.state.chooseId,
+                selection: idx
+            },
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8',
+            },
+            success: function(json) {
+                console.log(json)
+            },
+            error: function(err) {
+                sketcher.clear();
+            }
+        })
+    }
     render() {
-        // 'borderRight': '1px solid #999', 
+        // 'borderRight': '1px solid #999',
         return (<div style={{'width': '84%', 'backgroundColor': '#fff', 'position': 'relative'}}>
             <div style={{'height': 40, 'overflow': 'auto', 'display': 'flex'}}>
                 <span style={style1}>
                     <span
                         className='strOne'
-                        onClick={() => this.handleClick(this.state.latexArr[0])}
+                        onClick={() => this.handleClick(this.state.latexArr[0], 1)}
                         style={{border: 'none'}}
                         ref={(node) => {
                             this._mathContainer1 = ReactDOM.findDOMNode(node);
@@ -201,7 +226,7 @@ export default class Whiteboard extends Component {
                 <span style={style1}>
                     <span
                         className='strTwo'
-                        onClick={() => this.handleClick(this.state.latexArr[1])}
+                        onClick={() => this.handleClick(this.state.latexArr[1], 2)}
                         style={{border: 'none'}}
                         ref={(node) => {
                             this._mathContainer2 = ReactDOM.findDOMNode(node);
@@ -211,7 +236,7 @@ export default class Whiteboard extends Component {
                 <span style={style2}>
                     <span
                         className='strThree'
-                        onClick={() => this.handleClick(this.state.latexArr[2])}
+                        onClick={() => this.handleClick(this.state.latexArr[2], 3)}
                         style={{border: 'none'}}
                         ref={(node) => {
                             this._mathContainer3 = ReactDOM.findDOMNode(node);
