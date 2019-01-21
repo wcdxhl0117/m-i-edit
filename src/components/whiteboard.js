@@ -176,6 +176,7 @@ export default class Whiteboard extends Component {
         this.mathField2.mathField.blur();
         this.mathField3.delAll();
         this.mathField3.mathField.blur();
+        sketcher.clear();
     }
 
     handleClick(str, idx) {
@@ -191,8 +192,8 @@ export default class Whiteboard extends Component {
     chooseIdx(idx) {
         let _this = this;
         $.ajax({
-            // url: 'http://72.93.93.62:8080/hw/select',
-            url: 'http://hw.test1.yooshare.cn/hw/select',
+            url: 'http://72.93.93.62:8080/hw/select',
+            // url: 'http://hw.test1.yooshare.cn/hw/select',
             method: 'POST',
             data: {
                 id: _this.state.chooseId,
