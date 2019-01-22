@@ -164,21 +164,13 @@
             iptHeight = $('.keypad-input').height();
         }
         
-        // 获取id
-        function toNativeForIds() {
-            try {
-                Android.toNativeForIds();
-            } catch (e) {
-                console.log('没有设备');
-            }
-        }
-
         // native传ID
         function toNativeForIds(ids) {
-            // window.whiteboard.setState({ 'aaa': 'aaa' });
-            alert(ids)
+            var idStr = JSON.parse(ids);
+            window.whiteboard.setState({ 'stuId': idStr.studentId, 'qId': idStr.qId });
+            
         }
-
+    
     </script>
 
     <!-- <button style="margin-top: 100px" class="button" type="button" onclick="delContent()">1234565</button> -->
