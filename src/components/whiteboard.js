@@ -76,8 +76,8 @@ export default class Whiteboard extends Component {
                 // console.log('scgInk generated', JSON.stringify(scgInk));
 
                 // https://hw.yooshare.cn
-                const url = "http://72.93.93.62:8080/hw/mathreco";
-                // const url = "http://hw.test1.yooshare.cn/hw/mathreco";
+                // const url = "http://72.93.93.62:8080/hw/mathreco";
+                const url = "http://hw.test1.yooshare.cn/hw/mathreco";
                 // const url = "http://hw.yooshare.cn/hw/mathreco";
                 let options = Object.assign({ method: 'POST' } );
                 options.headers = {
@@ -194,8 +194,8 @@ export default class Whiteboard extends Component {
         let _this = this;
         $.ajax({
             // url: 'http://72.93.93.62:8080/hw/select',
-            // url: 'http://hw.test1.yooshare.cn/hw/select',
-            url: 'http://hw.yooshare.cn/hw/select',
+            url: 'http://hw.test1.yooshare.cn/hw/select',
+            // url: 'http://hw.yooshare.cn/hw/select',
             method: 'POST',
             data: {
                 id: _this.state.chooseId,
