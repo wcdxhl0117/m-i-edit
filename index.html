@@ -165,10 +165,8 @@
         }
         
         // native传ID
-        function toNativeForIds(ids) {
-            var idStr = JSON.parse(ids);
+        function toNativeForIds(idStr) {
             window.whiteboard.setState({ 'stuId': idStr.studentId, 'qId': idStr.qId });
-            
         }
     
     </script>

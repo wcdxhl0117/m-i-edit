@@ -5,18 +5,18 @@ const MathWrapper = require('./input/math-wrapper');
 
 var sketcher = null;
 var wi = screen.width - 4;
-var He = 0;
+var He = 188;
 
-var u = navigator.userAgent;
-if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
-    // 安卓手机
-    He = 188
-} else if (u.indexOf('iPhone') > -1) {
-    // 苹果手机
-    He = 188
-} else if (u.indexOf('Windows Phone') > -1) {
-    // winphone手机
-}
+// var u = navigator.userAgent;
+// if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
+//     // 安卓手机
+//     He = 188
+// } else if (u.indexOf('iPhone') > -1) {
+//     // 苹果手机
+//     He = 188
+// } else if (u.indexOf('Windows Phone') > -1) {
+//     // winphone手机
+// }
 
 export default class Whiteboard extends Component {
     constructor(props) {
@@ -35,16 +35,6 @@ export default class Whiteboard extends Component {
         this.mathField1 = new MathWrapper(this._mathContainer1, {}, {});
         this.mathField2 = new MathWrapper(this._mathContainer2, {}, {});
         this.mathField3 = new MathWrapper(this._mathContainer3, {}, {});
-
-        // var can = this.refs.canvas;	
-		// 	var cxt = can.getContext("2d");
-		// 	var imgs = new Image();
-		// 	imgs.src = "http://qnstatic.file.yoomath.com/parent/V1.0.5/kapian1.png";
-		// 	imgs.onload = function (){
-		// 		var bg = cxt.createPattern(imgs,"no-repeat");
-		// 		cxt.fillStyle = bg;
-        //         cxt.fillRect(0,0,can.width,can.height);
-        //     };//图片加载完成再执行
 			
         sketcher = new Sketchable(this.refs.canvas,  {
             graphics: {
@@ -63,10 +53,6 @@ export default class Whiteboard extends Component {
         });
     }
 
-    putIn() {
-        this.mathField1.delAll();
-    }
-
     generateSVGInk = (type) => {
         let _this = this;
         if (type === 'end') {
@@ -79,11 +65,7 @@ export default class Whiteboard extends Component {
                 // const url = "http://72.93.93.62:8080/hw/mathreco";
                 const url = "http://hw.test1.yooshare.cn/hw/mathreco";
                 // const url = "http://hw.yooshare.cn/hw/mathreco";
-                let options = Object.assign({ method: 'POST' } );
-                options.headers = {
-                    // 'Accept': 'application/json',
-                    'Content-Type': 'application/json;charset=UTF-8',
-                };
+                
                 const requestSVG = {
                         "id": 0,
                         "qid": _this.state.qId,
@@ -91,8 +73,6 @@ export default class Whiteboard extends Component {
                         "scg_ink":scgInk,
                         "info": "equation reco",
                 };
-
-                options.body= JSON.stringify(requestSVG);
 
                 $.ajax({
                     url: url,
@@ -123,38 +103,12 @@ export default class Whiteboard extends Component {
                         sketcher.clear();
                     }
                 })
-
-
-                // console.log('recognize', url, options);
-                // return fetch(url,options)
-                //     .then(response => response.json())
-                //     .then(json => {
-                //         sketcher.clear();
-                //         // 将latex放入数组
-                //         // console.log(json.n_best_latex);
-                //         _this.setState(()=>{
-                //             return {
-                //                 latexArr: json.n_best_latex
-                //             }
-                //         })
-                //         console.log(_this.state.latexArr);
-                //         _this.delAllStr();
-                //         // style1.borderRight = '1px solid #e2e2e2';
-                //         _this.mathField1.writeContent(_this.state.latexArr[0]);
-                //         _this.mathField2.writeContent(_this.state.latexArr[1]);
-                //         _this.mathField3.writeContent(_this.state.latexArr[2]);
-                //     }).catch(error => {
-                //         console.log(error);
-                //     });
-
-
             }, 600)
         } else if(type === 'start') {
             clearTimeout(this.timer)
         } else {
             clearTimeout(this.timer)
         }
-        
     };
 
     strokesToScg(strokes) {
