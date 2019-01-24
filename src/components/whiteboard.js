@@ -5,18 +5,19 @@ const MathWrapper = require('./input/math-wrapper');
 
 var sketcher = null;
 var wi = screen.width - 4;
-var He = 188;
+// var He = 188;
+var He = 0;
 
-// var u = navigator.userAgent;
-// if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
-//     // 安卓手机
-//     He = 188
-// } else if (u.indexOf('iPhone') > -1) {
-//     // 苹果手机
-//     He = 188
-// } else if (u.indexOf('Windows Phone') > -1) {
-//     // winphone手机
-// }
+var u = navigator.userAgent;
+if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
+    // 安卓手机
+    He = 188
+} else if (u.indexOf('iPhone') > -1) {
+    // 苹果手机
+    He = 188
+} else if (u.indexOf('Windows Phone') > -1) {
+    // winphone手机
+}
 
 export default class Whiteboard extends Component {
     constructor(props) {
@@ -65,7 +66,7 @@ export default class Whiteboard extends Component {
                 // const url = "http://72.93.93.62:8080/hw/mathreco";
                 const url = "http://hw.test1.yooshare.cn/hw/mathreco";
                 // const url = "http://hw.yooshare.cn/hw/mathreco";
-                alert(url)
+                
                 const requestSVG = {
                         "id": 0,
                         "qid": _this.state.qId,
