@@ -4214,6 +4214,11 @@ LatexCmds.overline = LatexCmds.bar = bind(Style, '\\bar', 'span', 'class="mq-non
 LatexCmds.overrightarrow = bind(Style, '\\overrightarrow', 'span', 'class="mq-non-leaf mq-overarrow mq-arrow-right"');
 LatexCmds.overleftarrow = bind(Style, '\\overleftarrow', 'span', 'class="mq-non-leaf mq-overarrow mq-arrow-left"');
 
+// 王超修改 - 增加估计值
+LatexCmds.hat = bind(Style, '\\hat', 'span', 'class="mq-non-leaf mq-hat"');
+LatexCmds.widehat = bind(Style, '\\widehat', 'span', 'class="mq-non-leaf mq-widehat"');
+/* 王超修改结束 */
+
 // `\textcolor{color}{math}` will apply a color to the given math content, where
 // `color` is any valid CSS Color Value (see [SitePoint docs][] (recommended),
 // [Mozilla docs][], or [W3C spec][]).

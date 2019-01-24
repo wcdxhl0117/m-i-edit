@@ -12,6 +12,30 @@
   src: url(font/Symbola.eot);
   src: local("Symbola Regular"), local("Symbola"), url(font/Symbola.woff2) format("woff2"), url(font/Symbola.woff) format("woff"), url(font/Symbola.ttf) format("truetype"), url(font/Symbola.otf) format("opentype"), url(font/Symbola.svg#Symbola) format("svg");
 }
+
+/* 王超添加--平均值 */
+  .mq-math-mode .mq-hat {
+    position: relative;
+  }
+
+  .mq-math-mode .mq-hat::before {
+    content: '^';
+    position: absolute;
+    display: inline-block;
+    top: -0.25em;
+    left: -.25em;
+    width: 100%;
+    transform: translateX(50%);
+  }
+
+  .mq-math-mode .mq-widehat {
+    padding-top: 5px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='7px'><text x='-1.5' y='15' font-size='20'>^</text></svg>");
+    background-repeat: no-repeat;
+    background-size: 100% .5em;
+  }
+/* 王超修改结束 */
+
 .mq-editable-field {
   display: -moz-inline-box;
   display: inline-block;

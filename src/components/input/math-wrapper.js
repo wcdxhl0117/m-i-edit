@@ -301,7 +301,7 @@ class MathWrapper {
             this.mathField.keystroke('Left');
         } else if(key===Keys.HAT) {
             // 估计值
-            this.mathField.write('');
+            this.mathField.write('\\hat{}');
             this.mathField.keystroke('Left');
         } else if(key===Keys.PARENTHESIS) {
             this.mathField.write('\\left\\{\\right\\}');
