@@ -314,6 +314,43 @@
     The more complicated ones, such as array, require more work and it's case by case.
 ```
 
+* mathquill增加单个{}公式的方法（Larry Zhang）: 
+```
+    It turned out that it's not difficult to add \hat to Mathquill. Note that \hat{a} is supposed to be for only one character, while \widehat{abc} is for multiple characters. I went ahead and added both to Mathquill. Here are the steps to add them to Mathquill:
+    1. Add the following lines to mathquill.js. One good place to put them is under LatexCmds.overleftarrow = bind(...);
+
+    // Symbols added by LanKing
+    LatexCmds.hat = bind(Style, '\\hat', 'span', 'class="mq-non-leaf mq-hat"');
+    LatexCmds.widehat = bind(Style, '\\widehat', 'span', 'class="mq-non-leaf mq-widehat"');
+
+    2. Add the following lines to the end of mathquill.css
+
+    .mq-math-mode .mq-hat {
+        position: relative;
+    }
+
+    .mq-math-mode .mq-hat::before {
+        content: '^';
+        position: absolute;
+        display: inline-block;
+        top: -0.25em;
+        left: -.25em;
+        width: 100%;
+        transform: translateX(50%);
+    }
+
+    .mq-math-mode .mq-widehat {
+        padding-top: 5px;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='7px'><text x='-1.5' y='15' font-size='20'>^</text></svg>");
+        background-repeat: no-repeat;
+        background-size: 100% .5em;
+    }
+
+    That's it. Actually the above methods can be used to add other, similar missing symbols to Mathquill. For example, \tilde{a} and \widetilde{abc} can be added the same way. 
+
+    On the other hand, array is much more difficult to add to Mathquill. I haven't found a quick solution. 
+```
+
 # license
 
 This project is for research and personal interest only and is not intended to be included in any commerical software. Please use Khan's originial project as the base for any commercial release. 
