@@ -5,7 +5,7 @@ const MathWrapper = require('./input/math-wrapper');
 
 var sketcher = null;
 var wi = screen.width - 4;
-// var He = 188;
+var He = 188;
 var He = 0;
 
 var u = navigator.userAgent;
@@ -32,7 +32,6 @@ export default class Whiteboard extends Component {
     }
     
     componentDidMount() {
-        console.log(wi)
         this.mathField1 = new MathWrapper(this._mathContainer1, {}, {});
         this.mathField2 = new MathWrapper(this._mathContainer2, {}, {});
         this.mathField3 = new MathWrapper(this._mathContainer3, {}, {});
@@ -63,8 +62,9 @@ export default class Whiteboard extends Component {
                 // console.log('scgInk generated', JSON.stringify(scgInk));
 
                 // https://hw.yooshare.cn
-                const url = "http://72.93.93.62:8080/hw/mathreco";
+                // const url = "http://72.93.93.62:8080/hw/mathreco";
                 // const url = "http://192.168.66.30:8080/hw/mathreco";
+                const url = "http://192.168.66.30:8080/hw/mathreco";
                 // const url = "http://hw.test1.yooshare.cn/hw/mathreco";
                 // const url = "http://hw.yooshare.cn/hw/mathreco";
                 
@@ -241,5 +241,8 @@ let style3 = {
 }
 let style4 = {
     'borderTop': '1px solid #e2e2e2',
-    // 'background-image': 'url(http://qnstatic.file.yoomath.com/parent/V1.0.5/kapian1.png)'
+    'backgroundImage': 'url(./w22.png)',
+    'backgroundSize': 'contain',
+    'backgroundRepeat': 'no-repeat',
+    'backgroundPosition': 'bottom center'
 }

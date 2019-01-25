@@ -89,17 +89,17 @@ class PagerIndicator extends React.Component {
                 <Text onPress={()=>{ this.props.changeCurrentPage(5) }} style={(currentPage==0) ? styles.titleStyle1: styles.titleStyle2}>公式</Text>
             </View>
 
-            <View style={styles.btnMargin}>
+            <View style={styles.btnMargin1}>
                 {/* <Text onPress={()=>{console.log('pager-indicator:切换画板'); showCanvas()}}>{'手写'}</Text> */}
                 <Text style={(currentPage==0) ? styles.handwritten1: styles.handwritten2} onPress={()=>{ this.props.changeCurrentPage(0) }}>{'手写'}</Text>
             </View>
-            <View style={styles.btnMargin}>
-                <Text onPress={()=>{console.log('pager-indicator:切换中文键盘'); window.showKeyboard(1)}}>{'英文'}</Text>
+            <View style={styles.btnMargin2}>
+                <Text onPress={()=>{console.log('pager-indicator:切换中文键盘'); window.showKeyboard(1)}}>{'中/英文'}</Text>
             </View>
-            <View style={styles.btnMargin}>
+            {/* <View style={styles.btnMargin}>
                 <Text onPress={()=>{console.log('pager-indicator:切换中文键盘'); window.showKeyboard(2)}}>{'中文'}</Text>
-            </View>
-            <View style={styles.btnMargin}>
+            </View> */}
+            <View style={styles.btnMargin3}>
                 <Text style={styles.surebtn} onPress={()=>{console.log('pager-indicator:确认按钮'); window.sendAnswer()}}>{'确认'}</Text> 
             </View>
         </View>;
@@ -120,8 +120,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: 'auto',
-        position: 'relative',
-        marginLeft: '-26px',
+        // position: 'relative',
+        // marginLeft: '-26px',
+        position: 'absolute',
+        bottom: '12px',
+        left: '15px',
     },
     // new
     indicators: {
@@ -142,15 +145,44 @@ const styles = StyleSheet.create({
         left: '16px',
         color: '#51d326',
     },
-    btnMargin: {
+    btnMargin1: {
         width: '40px',
         height: '30px',
         lineHeight: '30px',
         borderRadius: '6px',
         textAlign: 'center',
-        marginLeft: '6px !important',
-        marginRight: '6px !important',
-        color: '#a0a0a0'
+        marginLeft: '0 !important',
+        marginRight: '0 !important',
+        color: '#a0a0a0',
+        position: 'absolute',
+        bottom: '4px',
+        left: '90px',
+    },
+    btnMargin2: {
+        width: '80px',
+        height: '30px',
+        lineHeight: '30px',
+        borderRadius: '6px',
+        textAlign: 'center',
+        marginLeft: '0px !important',
+        marginRight: '0px !important',
+        color: '#a0a0a0',
+        position: 'absolute',
+        bottom: '4px',
+        left: '132px',
+    },
+    btnMargin3: {
+        width: '80px',
+        height: '30px',
+        lineHeight: '30px',
+        borderRadius: '6px',
+        textAlign: 'center',
+        marginLeft: '0px !important',
+        marginRight: '0px !important',
+        color: '#a0a0a0',
+        position: 'absolute',
+        bottom: '4px',
+        right: '16px',
     },
     surebtn: {
         display: 'inline-block',
