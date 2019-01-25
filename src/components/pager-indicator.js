@@ -179,6 +179,8 @@ const mapDispatchProps = (dispatch) => {
 	return {
 		changeCurrentPage(i) {
             console.log(i)
+            // 调用手写板清空方法
+            window.whiteboard.delAllStr();
 			const action = {
 				type: 'changeCurrentPage',
 				value: i

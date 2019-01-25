@@ -137,6 +137,8 @@
 
         // 收起键盘
         function closePaid() {
+            // 调用手写板清空方法
+            window.whiteboard.delAllStr();
             try {
                 Android.closePaid();
             } catch (e) {
