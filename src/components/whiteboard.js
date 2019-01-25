@@ -64,7 +64,8 @@ export default class Whiteboard extends Component {
 
                 // https://hw.yooshare.cn
                 // const url = "http://72.93.93.62:8080/hw/mathreco";
-                const url = "http://hw.test1.yooshare.cn/hw/mathreco";
+                const url = "http://192.168.66.30:8080/hw/mathreco";
+                // const url = "http://hw.test1.yooshare.cn/hw/mathreco";
                 // const url = "http://hw.yooshare.cn/hw/mathreco";
                 
                 const requestSVG = {
