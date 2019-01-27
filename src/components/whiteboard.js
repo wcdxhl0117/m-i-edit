@@ -6,18 +6,18 @@ const MathWrapper = require('./input/math-wrapper');
 var sketcher = null;
 var wi = screen.width - 4;
 var He = 188;
-var He = 0;
+// var He = 0;
 
-var u = navigator.userAgent;
-if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
-    // 安卓手机
-    He = 188
-} else if (u.indexOf('iPhone') > -1) {
-    // 苹果手机
-    He = 188
-} else if (u.indexOf('Windows Phone') > -1) {
-    // winphone手机
-}
+// var u = navigator.userAgent;
+// if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
+//     // 安卓手机
+//     He = 188
+// } else if (u.indexOf('iPhone') > -1) {
+//     // 苹果手机
+//     He = 188
+// } else if (u.indexOf('Windows Phone') > -1) {
+//     // winphone手机
+// }
 
 export default class Whiteboard extends Component {
     constructor(props) {
