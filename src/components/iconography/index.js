@@ -41,6 +41,7 @@ module.exports = {
     THREE: require('./three'),
     SIX: require('./six'),
     SIM: require('./sim'),
+    SIM1: require('./sim1'),
     CONG: require('./cong'),
     THREETERM: require('./threeterm'),
     LG: require('./lg'),

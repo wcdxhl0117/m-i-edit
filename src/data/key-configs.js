@@ -158,6 +158,10 @@ const KeyConfigs = {
         type: KeyTypes.OPERATOR,
         ariaLabel: i18n._('Cosine'),
     },
+    [Keys.SIM1]: {
+        type: KeyTypes.OPERATOR,
+        ariaLabel: i18n._('Cosine'),
+    },
     [Keys.CONG]: {
         type: KeyTypes.OPERATOR,
         ariaLabel: i18n._('Cosine'),

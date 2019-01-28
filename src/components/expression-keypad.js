@@ -576,7 +576,7 @@ class ExpressionKeypad extends React.Component {
             {/* 新增一列 */}
             <View style={[column, oneColumn]}>
                 <TouchableKeypadButton
-                    keyConfig={KeyConfigs.SIM}
+                    keyConfig={KeyConfigs.SIM1}
                     borders={BorderStyles.NONE}
                 />
                 <TouchableKeypadButton

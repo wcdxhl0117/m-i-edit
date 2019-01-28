@@ -44,6 +44,7 @@ const Keys = {
     THREE: 'THREE',
     SIX: 'SIX',
     SIM: 'SIM',
+    SIM1: 'SIM1',
     CONG: 'CONG',
     THREETERM: 'THREETERM',
     LG: 'LG',
