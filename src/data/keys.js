@@ -81,7 +81,7 @@ const Keys = {
     UPSILON: 'UPSILON',
     KONG: 'KONG',
     VARPHI: 'VARPHI',
-    OMEGA: 'OMEGA',
+    OMEGA1: 'OMEGA1',
 
 
 

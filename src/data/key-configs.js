@@ -306,7 +306,7 @@ const KeyConfigs = {
         type: KeyTypes.OPERATOR,
         ariaLabel: i18n._('Cosine'),
     },
-    [Keys.OMEGA]: {
+    [Keys.OMEGA1]: {
         type: KeyTypes.OPERATOR,
         ariaLabel: i18n._('Cosine'),
     },
