@@ -66,7 +66,7 @@ const KeyActions = {
     [Keys.SIX]: {str: '⑥', fn: WRITE},
     [Keys.PI]: {str: '\\pi', fn: WRITE},
     [Keys.SIM]: {str: '\\sim', fn: WRITE},
-    [Keys.SIM1]: {str: '\\sim', fn: WRITE},
+    [Keys.SIM1]: {str: '～', fn: WRITE},
     [Keys.CONG]: {str: '\\cong', fn: WRITE},
     [Keys.LG]: {str: '\\lg', fn: WRITE},
     [Keys.INFTY]: {str: '\\infty', fn: WRITE},
