@@ -151,10 +151,10 @@ export default class Whiteboard extends Component {
             url: 'http://hw.test1.yooshare.cn/hw/select',
             // url: 'http://hw.yooshare.cn/hw/select',
             method: 'POST',
-            data: {
+            data: JSON.stringify({
                 id: _this.state.chooseId,
                 selection: idx
-            },
+            }),
             headers: {
                 'Content-Type': 'application/json;charset=UTF-8',
             },
