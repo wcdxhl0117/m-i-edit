@@ -4130,6 +4130,8 @@ LatexCmds['\u00f7'] = LatexCmds.div = LatexCmds.divide = LatexCmds.divides =
   bind(BinaryOperator,'\\div ','&divide;', '[/]');
 
 CharCmds['~'] = LatexCmds.sim = bind(BinaryOperator, '\\sim ', '~', '~');
+// wnagchao加
+CharCmds['~'] = LatexCmds.backsim = bind(BinaryOperator, '\\backsim ', '~', '~');
 /***************************
  * Commands and Operators.
  **************************/
