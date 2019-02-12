@@ -3638,8 +3638,8 @@ LatexCmds.ang = LatexCmds.angle = bind(VanillaSymbol,'\\angle ','&ang;');
 LatexCmds.measuredangle = bind(VanillaSymbol,'\\measuredangle ','&#8737;');
 
 // 王超新增
-LatexCmds.subsetneqq = bind(BinaryOperator,'\\subsetneqq','&#10955;');
-LatexCmds.supsetneqq = bind(BinaryOperator,'\\supsetneqq','&#10956;');
+LatexCmds.subsetneqq = bind(BinaryOperator,'\\subsetneqq ','&#10955;');
+LatexCmds.supsetneqq = bind(BinaryOperator,'\\supsetneqq ','&#10956;');
 LatexCmds.complement = bind(VanillaSymbol, '\\complement ', '&#8705;');
 // LatexCmds.hat = bind(VanillaSymbol, '\\hat{} ', '&#94;&#10;');
 

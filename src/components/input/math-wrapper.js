@@ -29,9 +29,9 @@ const KeyActions = {
     [Keys.COMMA]: {str: ',', fn: WRITE},
     // [Keys.BRACKETS]: {str: '', fn: WRITE},
     // 事例（两条件）
-    [Keys.TWOTERM]: {str: '', fn: WRITE},
+    [Keys.TWOTERM]: {str: '请使用老键盘输入', fn: WRITE},
     // 事例（三条件）
-    [Keys.THREETERM]: {str: '', fn: WRITE},
+    [Keys.THREETERM]: {str: '请使用老键盘输入', fn: WRITE},
     
     [Keys.ANGLE]: {str: '\\angle', fn: WRITE},
     // [Keys.RIGHTSUB]: {str: '{}_{}', fn: WRITE},
@@ -85,7 +85,7 @@ const KeyActions = {
     [Keys.IN]: {str: '\\in', fn: WRITE},
     [Keys.NOTIN]: {str: '\\notin', fn: WRITE},
     [Keys.SUBSETEQ]: {str: '\\subseteq', fn: WRITE},
-    [Keys.SUBSETNEQQ]: {str: '\\subsetneqq', fn: WRITE},
+    [Keys.SUBSETNEQQ]: {str: '\\subsetneqq ', fn: WRITE},
     [Keys.MU]: {str: '\\mu', fn: WRITE},
     [Keys.RHO]: {str: '\\rho', fn: WRITE},
     [Keys.SUPSETEQ]: {str: '\\supseteq', fn: WRITE},
