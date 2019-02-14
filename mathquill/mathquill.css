@@ -447,3 +447,13 @@
   filter: progid:DXImageTransform.Microsoft.Chroma(color='white');
   margin-top: -0.1em;
 }
+
+/*  解决事例两条件和三条件的hacks */
+.mq-math-mode .mq-cond {
+  vertical-align: middle;
+  text-align: left;
+}
+
+.mq-math-mode .mq-cond > span {
+  display: block;
+}

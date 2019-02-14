@@ -4932,6 +4932,45 @@ var Embed = LatexCmds.embed = P(Symbol, function(_, super_) {
   };
 });
 var MQ1 = getInterface(1);
+
+// 解决事例两条件和三条件的hacks（开始）
+LatexCmds.condtwo = P(P(MathCommand, DelimsMixin), function(_, super_) {
+  _.ctrlSeq = '\\condtwo';
+  _.htmlTemplate =
+      '<span class="mq-non-leaf">'
+    +   '<span class="mq-paren mq-scaled">{</span>'
+    +   '<span class="mq-non-leaf">'
+    +     '<span class="mq-cond mq-non-leaf">'
+    +       '<span>&0</span>'
+    +       '<span>&1</span>'
+    +     '</span>'
+    +   '</span>'
+    +   '<span class="mq-paren mq-scaled"></span>'
+    + '</span>'
+  ;
+  _.textTemplate = ['choose(',',',')'];
+});
+
+LatexCmds.condthree = P(P(MathCommand, DelimsMixin), function(_, super_) {
+  _.ctrlSeq = '\\condthree';
+  _.htmlTemplate =
+      '<span class="mq-non-leaf">'
+    +   '<span class="mq-paren mq-scaled">{</span>'
+    +   '<span class="mq-non-leaf">'
+    +     '<span class="mq-cond mq-non-leaf">'
+    +       '<span>&0</span>'
+    +       '<span>&1</span>'
+    +       '<span>&2</span>'
+    +     '</span>'
+    +   '</span>'
+    +   '<span class="mq-paren mq-scaled"></span>'
+    + '</span>'
+  ;
+  _.textTemplate = ['choose(',',',')'];
+});
+
+// 解决事例两条件和三条件的hacks(结束)
+
 for (var key in MQ1) (function(key, val) {
   if (typeof val === 'function') {
     MathQuill[key] = function() {
