@@ -104,6 +104,21 @@ export default class Whiteboard extends Component {
                         sketcher.clear();
                     }
                 })
+
+
+                // fetch(url, {
+                //     body: JSON.stringify(requestSVG), // must match 'Content-Type' header
+                //     headers: {
+                //       'Content-Type': 'application/json;charset=UTF-8'
+                //     },
+                //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                //   })
+                //   .then(response => response.json()) // parses response to JSON
+                //   .then(response => console.log('Success:', response))
+                //   .catch(error => console.error('Error:', error))
+
+
+
             }, 600)
         } else if(type === 'start') {
             clearTimeout(this.timer)
