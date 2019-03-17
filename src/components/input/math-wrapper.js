@@ -830,9 +830,9 @@ class MathWrapper {
 
     _isNthRoot(node) {
         return node.blocks && node.blocks[0].jQ &&
-            node.blocks[0].jQ.hasClass('mq-nthroot');
+            (node.blocks[0].jQ.hasClass('mq-nthroot')||node.blocks[0].jQ.hasClass('mq-roman'));
     }
-
+    
     _isNthRootIndex(node) {
         return node.jQ && node.jQ.hasClass('mq-nthroot');
     }
