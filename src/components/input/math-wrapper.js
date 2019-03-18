@@ -559,37 +559,48 @@ class MathWrapper {
             const leftNode = cursor[this.MQ.L];
 
             if (this._isFraction(leftNode)) {
+                console.log(1)
                 this._selectNode(leftNode, cursor);
 
             } else if (this._isSquareRoot(leftNode)) {
+                console.log(2)
                 this._selectNode(leftNode, cursor);
 
             } else if (this._isNthRoot(leftNode)) {
+                console.log(3)
                 this._selectNode(leftNode, cursor);
 
             } else if (this._isNthRootIndex(parent)) {
+                console.log(4)
                 this._handleBackspaceInRootIndex(cursor);
 
             } else if (leftNode.ctrlSeq === '\\left(') {
+                console.log(5)
                 this._handleBackspaceOutsideParens(cursor);
 
             } else if (grandparent.ctrlSeq === '\\left(') {
+                console.log(6)
                 this._handleBackspaceInsideParens(cursor);
 
             } else if (this._isInsideLogIndex(cursor)) {
+                console.log(7)
                 this._handleBackspaceInLogIndex(cursor);
 
             } else if (leftNode.ctrlSeq === '\\ge ' ||
                     leftNode.ctrlSeq === '\\le ') {
+                console.log(8)
                 this._handleBackspaceAfterLigaturedSymbol(cursor);
 
             } else if (this._isNthRoot(grandparent) && leftNode === MQ_END) {
+                console.log(9)
                 this._handleBackspaceInNthRoot(cursor);
 
             } else {
+                console.log(10)
                 this.mathField.keystroke('Backspace');
             }
         } else {
+            console.log(11)
             this.mathField.keystroke('Backspace');
         }
     }
