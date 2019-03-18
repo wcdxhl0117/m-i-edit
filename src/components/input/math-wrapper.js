@@ -830,7 +830,11 @@ class MathWrapper {
 
     _isNthRoot(node) {
         return node.blocks && node.blocks[0].jQ &&
-            (node.blocks[0].jQ.hasClass('mq-nthroot')||node.blocks[0].jQ.hasClass('mq-roman'));
+            (node.blocks[0].jQ.hasClass('mq-nthroot')
+            ||node.blocks[0].jQ.hasClass('mq-roman')
+            ||node.blocks[0].jQ.hasClass('mq-supsub')
+            ||node.blocks[0].jQ.hasClass('mq-numerator')
+            );
     }
     
     _isNthRootIndex(node) {
