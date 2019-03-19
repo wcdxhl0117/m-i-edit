@@ -600,9 +600,9 @@ class MathWrapper {
             } else {
                 console.log(leftNode)
                 // 如果是sin,cos,tan,cot,删除全部，这个会不会有误删情况需要验证
-                if (leftNode.ctrlSeq === 'n ' || leftNode.ctrlSeq === 's ' || leftNode.ctrlSeq === 'n ' || leftNode.ctrlSeq === 't ') {
-                    this._handleBackspaceOutsideParens(cursor);
-                }
+                // if (leftNode.ctrlSeq === 'n ' || leftNode.ctrlSeq === 's ' || leftNode.ctrlSeq === 'n ' || leftNode.ctrlSeq === 't ') {
+                //     this._handleBackspaceOutsideParens(cursor);
+                // }
                 // 结束
                 console.log(10)
                 this.mathField.keystroke('Backspace');
