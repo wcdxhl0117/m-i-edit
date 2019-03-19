@@ -575,10 +575,12 @@ class MathWrapper {
                 this._handleBackspaceInRootIndex(cursor);
 
             } else if (leftNode.ctrlSeq === '\\left(') {
+                console.log(leftNode)
                 console.log(5)
                 this._handleBackspaceOutsideParens(cursor);
 
             } else if (grandparent.ctrlSeq === '\\left(') {
+                console.log(grandparent)
                 console.log(6)
                 this._handleBackspaceInsideParens(cursor);
 
@@ -596,6 +598,12 @@ class MathWrapper {
                 this._handleBackspaceInNthRoot(cursor);
 
             } else {
+                console.log(leftNode)
+                // 如果是sin,cos,tan,cot,删除全部，这个会不会有误删情况需要验证
+                if (leftNode.ctrlSeq === 'n ' || leftNode.ctrlSeq === 's ' || leftNode.ctrlSeq === 'n ' || leftNode.ctrlSeq === 't ') {
+                    this._handleBackspaceOutsideParens(cursor);
+                }
+                // 结束
                 console.log(10)
                 this.mathField.keystroke('Backspace');
             }
@@ -871,6 +879,7 @@ class MathWrapper {
     }
 
     _handleBackspaceInRootIndex(cursor) {
+        console.log(cursor)
         if (this._isInsideEmptyNode(cursor)) {
             // When deleting the index in a nthroot, we change from the nthroot
             // to a sqrt, e.g. \sqrt[|]{35x-5} => |\sqrt{35x-5}.  If there's no
