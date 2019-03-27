@@ -112,11 +112,13 @@
 
         // 输入框内容全部替换的方法
         function getRealAnswer(realAnswer) {
-            initIptHeight();
-            console.log('real answer received: ' + realAnswer);
-            window.appComponent.setState({ value: realAnswer });
             window.inputComponent.mathField.setContent(realAnswer);
-            sumHeight();
+            initIptHeight();
+            setTimeout(function() {
+                console.log('real answer received: ' + realAnswer);
+                window.appComponent.setState({ value: realAnswer });
+                sumHeight();
+            },30)
         }
 
         // 添加字符串到输入框光标处
@@ -137,7 +139,6 @@
 
         // 收起键盘
         function closePaid() {
-            // 调用手写板清空方法
             window.whiteboard.delAllStr();
             try {
                 Android.closePaid();
@@ -167,6 +168,7 @@
         }
         
         // native传ID
+        
         function toNativeForIds(idStr) {
             window.whiteboard.setState({ 'stuId': idStr.studentId, 'qId': idStr.qId });
         }
