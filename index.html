@@ -82,6 +82,7 @@
         // 确认按钮点击将latex传给Native
         function sendAnswer(answer) {
             var allStr = localStorage.getItem('toLatex');
+            allStr = allStr.replace('<', '< ');
             console.log('answer: ' + allStr);
             try {
                 Android.sendAnswer(allStr);
