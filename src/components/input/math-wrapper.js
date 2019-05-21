@@ -29,11 +29,11 @@ const KeyActions = {
     [Keys.COMMA]: {str: ',', fn: WRITE},
     // [Keys.BRACKETS]: {str: '', fn: WRITE},
     // 事例（两条件）
-    // [Keys.TWOTERM]: {str: '\\condtwo{}{}', fn: WRITE},
-    [Keys.TWOTERM]: {str: '', fn: WRITE},
+    [Keys.TWOTERM]: {str: '\\condtwo{}{}', fn: WRITE},
+    // [Keys.TWOTERM]: {str: '', fn: WRITE},
     // 事例（三条件）
-    // [Keys.THREETERM]: {str: '\\condthree{}{}{}', fn: WRITE},
-    [Keys.THREETERM]: {str: '', fn: WRITE},
+    [Keys.THREETERM]: {str: '\\condthree{}{}{}', fn: WRITE},
+    // [Keys.THREETERM]: {str: '', fn: WRITE},
     
     [Keys.ANGLE]: {str: '\\angle', fn: WRITE},
     // [Keys.RIGHTSUB]: {str: '{}_{}', fn: WRITE},
