@@ -268,7 +268,12 @@
                     if (!hasSlice) {
                         startString = startString + arr[index]
                     } else {
-                        endString = endString + arr[index]
+                        if (arr.slice(index + 1, index + 10).join('') == 'condthree') {
+                            endString = endString + arr.slice(index+1, len).join('')
+                            index = len
+                        } else {
+                            endString = endString + arr[index]
+                        }
                     }
                 }
                 index = index + 1
@@ -295,7 +300,7 @@
             let tempSecondFlag = 0
 
             while (index < len) {
-                if (arr.slice(index, index + 9).join('') == 'condtwo') {
+                if (arr.slice(index, index + 7).join('') == 'condtwo') {
 
                     let current = 0
                     tempIndex = index + 9
@@ -343,14 +348,19 @@
                     if (!hasSlice) {
                         startString = startString + arr[index]
                     } else {
-                        endString = endString + arr[index]
+                        if (arr.slice(index + 1, index + 8).join('') == 'condtwo') {
+                            endString = endString + arr.slice(index+1, len).join('')
+                            index = len
+                        } else {
+                            endString = endString + arr[index]
+                        }
                     }
                 }
                 index = index + 1
             }
 
             if (tempFirstString || tempSecondString) {
-                return startString +  '\left\{ \begin{array}{l}{' + twoStack(tempFirstString) + '} \\ {' + twoStack(tempSecondString) + '} \end{array} \right.' + endString
+                return startString +  '\\left\{ \\begin{array}{l}{' + twoStack(tempFirstString) + '} \\\\ {' + twoStack(tempSecondString) + '} \\end{array} \\right.' + endString
             } else {
                 return str
             }
