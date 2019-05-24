@@ -186,186 +186,52 @@
         }
 
 
-        function threeStack(str) {
-            let arr = [...str]
-            let index = 0
-            let len = arr.length
-            let hasSlice = false
-            let startString = ''
-            let endString = ''
-            let tempFirstString = ''
-            let tempFirstFlag = 0
-            let tempSecondString = ''
-            let tempSecondFlag = 0
-            let tempThreeString = ''
-            let tempThreeFlag = 0
-
-            while (index < len) {
-                if (arr.slice(index, index + 10).join('') == '\\condthree') {
-
-                    let current = 0
-                    tempIndex = index + 10
-
-                    for (; tempIndex < len; tempIndex++) {
-                        if (current == 0) {
-                            if (arr[tempIndex] == '{') {
-                                if (tempFirstFlag != 0) {
-                                    tempFirstString = tempFirstString + arr[tempIndex]
-                                }
-                                tempFirstFlag = tempFirstFlag + 1
-                            } else if (arr[tempIndex] == '}') {
-                                tempFirstFlag = tempFirstFlag - 1
-                                if (tempFirstFlag != 0) {
-                                    tempFirstString = tempFirstString + arr[tempIndex]
-                                }
-                                if (tempFirstFlag == 0) {
-                                    current = current + 1
-                                }
-                            } else {
-                                tempFirstString = tempFirstString + arr[tempIndex]
-                            }
-                        } else if (current == 1) {
-                            if (arr[tempIndex] == '{') {
-                                if (tempSecondFlag != 0) {
-                                    tempSecondString = tempSecondString + arr[tempIndex]
-                                }
-                                tempSecondFlag = tempSecondFlag + 1
-                            } else if (arr[tempIndex] == '}') {
-                                tempSecondFlag = tempSecondFlag - 1
-                                if (tempSecondFlag != 0) {
-                                    tempSecondString = tempSecondString + arr[tempIndex]
-                                }
-                                if (tempSecondFlag == 0) {
-                                    current = current + 1
-                                }
-                            } else {
-                                tempSecondString = tempSecondString + arr[tempIndex]
-                            }
-                        } else if (current == 2) {
-                            if (arr[tempIndex] == '{') {
-                                if (tempThreeFlag != 0) {
-                                    tempThreeString = tempThreeString + arr[tempIndex]
-                                }
-                                tempThreeFlag = tempThreeFlag + 1
-                            } else if (arr[tempIndex] == '}') {
-                                tempThreeFlag = tempThreeFlag - 1
-                                if (tempThreeFlag != 0) {
-                                    tempThreeString = tempThreeString + arr[tempIndex]
-                                }
-                                if (tempThreeFlag == 0) {
-                                    current = current + 1
-                                    hasSlice = true
-                                    break
-                                }
-                            } else {
-                                tempThreeString = tempThreeString + arr[tempIndex]
-                            }
-                        }
-                    }
-
-                    index = tempIndex
-
-                } else {
-                    if (!hasSlice) {
-                        startString = startString + arr[index]
-                    } else {
-                        if (arr.slice(index + 1, index + 11).join('') == '\\condthree') {
-                            endString = endString + arr.slice(index + 1, len).join('')
-                            index = len
-                        } else {
-                            endString = endString + arr[index]
-                        }
-                    }
-                }
-                index = index + 1
-            }
-            
-            if (tempFirstString || tempSecondString || tempThreeString) {
-                //  \left\{\begin{array}{l}{}\\{}\\{}\end{array}\right.
-                return startString + '\\left\\{\\begin{array}{l}{' + threeStack(tempFirstString) + '}\\\\{' + threeStack(tempSecondString) + '}\\\\{' + threeStack(tempThreeString) + '}\\end{array}\\right.' + threeStack(endString)
-            } else {
-                return str
-            }
+        function threeStack(txt) {
+            txt = txt.replace(/\s/g, '')
+            let txt1 = txt,
+                txt2 = txt,
+                txt3 = txt;
+            let one = ''
+            let two = ''
+            let three = ''
+            // [0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\/]+    ([\s\S]*?)
+            txt1 = txt1.replace(/\\condthree{([\s\S]*?)}{[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\/]+}{[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\/]+}/g, function (match, capture) {
+                one = capture
+            })
+            txt2 = txt2.replace(/\\condthree{[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\/]+}{([\s\S]*?)}{[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\/]+}/g, function (match, capture) {
+                two = capture
+            })
+            txt3 = txt3.replace(/\\condthree{[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\/]+}{[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\/]+}{([\s\S]*?)}/g, function (match, capture) {
+                three = capture
+            })
+            txt = txt.replace(/\\condthree{([\s\S]*?)}{([\s\S]*?)}{([\s\S]*?)}/g, function (match, capture) {
+                capture = '\\left\\{\\begin{array}{l}{'+ one +'}\\\\{'+ two +'}\\\\{'+ three +'}\\end{array}\\right.'
+                return capture
+            })
+            // console.log(txt)
+            return txt
         }
 
-        function twoStack(str) {
-            let arr = [...str]
-            let index = 0
-            let len = arr.length
-            let hasSlice = false
-            let startString = ''
-            let endString = ''
-            let tempFirstString = ''
-            let tempFirstFlag = 0
-            let tempSecondString = ''
-            let tempSecondFlag = 0
-
-            while (index < len) {
-                if (arr.slice(index, index + 8).join('') == '\\condtwo') {
-
-                    let current = 0
-                    tempIndex = index + 8
-
-                    for (; tempIndex < len; tempIndex++) {
-                        if (current == 0) {
-                            if (arr[tempIndex] == '{') {
-                                if (tempFirstFlag != 0) {
-                                    tempFirstString = tempFirstString + arr[tempIndex]
-                                }
-                                tempFirstFlag = tempFirstFlag + 1
-                            } else if (arr[tempIndex] == '}') {
-                                tempFirstFlag = tempFirstFlag - 1
-                                if (tempFirstFlag != 0) {
-                                    tempFirstString = tempFirstString + arr[tempIndex]
-                                }
-                                if (tempFirstFlag == 0) {
-                                    current = current + 1
-                                }
-                            } else {
-                                tempFirstString = tempFirstString + arr[tempIndex]
-                            }
-                        } else if (current == 1) {
-                            if (arr[tempIndex] == '{') {
-                                if (tempSecondFlag != 0) {
-                                    tempSecondString = tempSecondString + arr[tempIndex]
-                                }
-                                tempSecondFlag = tempSecondFlag + 1
-                            } else if (arr[tempIndex] == '}') {
-                                tempSecondFlag = tempSecondFlag - 1
-                                if (tempSecondFlag != 0) {
-                                    tempSecondString = tempSecondString + arr[tempIndex]
-                                }
-                                if (tempSecondFlag == 0) {
-                                    current = current + 1
-                                }
-                            } else {
-                                tempSecondString = tempSecondString + arr[tempIndex]
-                            }
-                        } 
-                    }
-
-                    index = tempIndex
-                } else {
-                    if (!hasSlice) {
-                        startString = startString + arr[index]
-                    } else {
-                        if (arr.slice(index + 1, index + 9).join('') == '\\condtwo') {
-                            endString = endString + arr.slice(index + 1, len).join('')
-                            index = len
-                        } else {
-                            endString = endString + arr[index]
-                        }
-                    }
-                }
-                index = index + 1
-            }
-            
-            if (tempFirstString || tempSecondString) {
-                //   \left\{ \begin{array}{l}{} \\ {} \end{array} \right.    twoStack
-                return startString + '\\left\\{\\begin{array}{l}{'+ twoStack(tempFirstString) +'}\\\\{'+ twoStack(tempSecondString) +'}\\end{array}\\right.' + twoStack(endString)
-            } else {
-                return str
-            }
+        function twoStack(txt) {
+            txt = txt.replace(/\s/g, '')
+            let txt1 = txt,
+                txt2 = txt;
+            let one = ''
+            let two = ''
+            // [0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\/]+    ([\s\S]*?)
+            txt1 = txt1.replace(/\\condtwo{([\s\S]*?)}{[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\/]+}/g, function (match, capture) {
+                one = capture
+            })
+            txt2 = txt2.replace(/\\condtwo{[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\/]+}{([\s\S]*?)}/g, function (match, capture) {
+                two = capture
+            })
+            txt = txt.replace(/\\condtwo{([\s\S]*?)}{([\s\S]*?)}/g, function (match, capture) {
+                capture = '\\left\\{\\begin{array}{l}{'+ one +'}\\\\{'+ two +'}\\end{array}\\right.'
+                return capture
+            })
+            console.log(one)
+            // console.log(txt)
+            return txt
         }
 
 
