@@ -92,7 +92,7 @@
         function sendAnswer(answer) {
             var allStr = localStorage.getItem('toLatex');
             allStr = allStr.replace('<', '< ');
-            allStr = twoStack(threeStack(allStr))
+            // allStr = twoStack(threeStack(allStr))
             // allStr = twoStack(allStr)
             console.log('answer: ' + allStr);
             try {
@@ -281,7 +281,7 @@
 
             if (tempFirstString || tempSecondString || tempThreeString) {
                 //  \left\{\begin{array}{l}{}\\{}\\{}\end{array}\right.
-                return startString + '\left\\{\\begin{array}{l}{' + threeStack(tempFirstString) + '}\\\\{' + threeStack(tempSecondString) + '}\\\\{' + threeStack(tempThreeString) + '}\\end{array}\\right.' + endString
+                return startString + '\left\\{\\begin{array}{l}{' + threeStack(tempFirstString) + '}\\\\{' + threeStack(tempSecondString) + '}\\\\{' + threeStack(tempThreeString) + '}\\end{array}\\right.' + threeStack(endString)
             } else {
                 return str
             }
@@ -303,7 +303,7 @@
                 if (arr.slice(index, index + 7).join('') == 'condtwo') {
 
                     let current = 0
-                    tempIndex = index + 9
+                    tempIndex = index + 7
 
                     for (; tempIndex < len; tempIndex++) {
                         if (current == 0) {
@@ -358,9 +358,9 @@
                 }
                 index = index + 1
             }
-
+            // \left\{ \begin{array}{l}{} \\ {} \end{array} \right.
             if (tempFirstString || tempSecondString) {
-                return startString +  '\\left\{ \\begin{array}{l}{' + twoStack(tempFirstString) + '} \\\\ {' + twoStack(tempSecondString) + '} \\end{array} \\right.' + endString
+                return startString +  '\left\\{\\begin{array}{l}{' + twoStack(tempFirstString) + '}\\\\{' + twoStack(tempSecondString) + '}\\end{array} \\right.' + twoStack(endString)
             } else {
                 return str
             }
