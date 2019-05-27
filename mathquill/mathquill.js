@@ -4935,7 +4935,7 @@ var MQ1 = getInterface(1);
 
 // 解决事例两条件和三条件的hacks（开始）
 LatexCmds.condtwo = P(P(MathCommand, DelimsMixin), function(_, super_) {
-  _.ctrlSeq = '\\condtwo';
+  _.ctrlSeq = ' \\condtwo';
   _.htmlTemplate =
       '<span class="mq-non-leaf">'
     +   '<span class="mq-paren mq-scaled">{</span>'
@@ -4952,7 +4952,7 @@ LatexCmds.condtwo = P(P(MathCommand, DelimsMixin), function(_, super_) {
 });
 
 LatexCmds.condthree = P(P(MathCommand, DelimsMixin), function(_, super_) {
-  _.ctrlSeq = '\\condthree';
+  _.ctrlSeq = ' \\condthree';
   _.htmlTemplate =
       '<span class="mq-non-leaf">'
     +   '<span class="mq-paren mq-scaled">{</span>'

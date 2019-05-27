@@ -187,6 +187,8 @@
 
 
         function threeStack(str) {
+            // console.log(str)
+            str = str.replace('\\condthree','\ \\condthree')
             console.log(str)
             let arr = [...str]
             let index = 0
@@ -203,7 +205,6 @@
 
             while (index < len) {
                 if (arr.slice(index, index + 10).join('') == '\\condthree') {
-
                     let current = 0
                     tempIndex = index + 10
 
