@@ -188,7 +188,6 @@
 
         function threeStack(str) {
             // console.log(str)
-            str = str.replace('\\condthree','\ \\condthree')
             console.log(str)
             let arr = [...str]
             let index = 0
@@ -289,28 +288,86 @@
             }
         }
 
-        function twoStack(txt) {
-            console.log(txt)
-            txt = txt.replace(/\s/g, '')
-            let txt1 = txt,
-                txt2 = txt;
-            let one = ''
-            let two = ''
-            // [0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\/]+    ([\s\S]*?)
-            txt1 = txt1.replace(/\\condtwo{([\s\S]*?)}{[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\/]+}/g, function (match, capture) {
-                one = capture
-            })
-            txt2 = txt2.replace(/\\condtwo{[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\/]+}{([\s\S]*?)}/g, function (match, capture) {
-                two = capture
-            })
-            txt = txt.replace(/\\condtwo{([\s\S]*?)}{([\s\S]*?)}/g, function (match, capture) {
-                capture = '\\left\\{\\begin{array}{l}{' + one + '}\\\\{' + two + '}\\end{array}\\right.'
-                return capture
-            })
-            console.log(one)
-            console.log(two)
-            console.log(txt)
-            return txt
+        function twoStack(str) {
+            console.log(str)
+            let arr = [...str]
+            let index = 0
+            let len = arr.length
+            let hasSlice = false
+            let startString = ''
+            let endString = ''
+            let tempFirstString = ''
+            let tempFirstFlag = 0
+            let tempSecondString = ''
+            let tempSecondFlag = 0
+
+            while (index < len) {
+                if (arr.slice(index, index + 8).join('') == '\\condtwo') {
+                    let current = 0
+                    tempIndex = index + 8
+
+                    for (; tempIndex < len; tempIndex++) {
+                        if (current == 0) {
+                            if (arr[tempIndex] == '{') {
+                                if (tempFirstFlag != 0) {
+                                    tempFirstString = tempFirstString + arr[tempIndex]
+                                }
+                                tempFirstFlag = tempFirstFlag + 1
+                            } else if (arr[tempIndex] == '}') {
+                                tempFirstFlag = tempFirstFlag - 1
+                                if (tempFirstFlag != 0) {
+                                    tempFirstString = tempFirstString + arr[tempIndex]
+                                }
+                                if (tempFirstFlag == 0) {
+                                    current = current + 1
+                                }
+                            } else {
+                                tempFirstString = tempFirstString + arr[tempIndex]
+                            }
+                        } else if (current == 1) {
+                            if (arr[tempIndex] == '{') {
+                                if (tempSecondFlag != 0) {
+                                    tempSecondString = tempSecondString + arr[tempIndex]
+                                }
+                                tempSecondFlag = tempSecondFlag + 1
+                            } else if (arr[tempIndex] == '}') {
+                                tempSecondFlag = tempSecondFlag - 1
+                                if (tempSecondFlag != 0) {
+                                    tempSecondString = tempSecondString + arr[tempIndex]
+                                }
+                                if (tempSecondFlag == 0) {
+                                    current = current + 1
+                                    hasSlice = true
+                                    break
+                                }
+                            } else {
+                                tempSecondString = tempSecondString + arr[tempIndex]
+                            }
+                        } 
+                    }
+
+                    index = tempIndex
+
+                } else {
+                    if (!hasSlice) {
+                        startString = startString + arr[index]
+                    } else {
+                        if (arr.slice(index + 1, index + 9).join('') == '\\condtwo') {
+                            endString = endString + arr.slice(index + 1, len).join('')
+                            index = len
+                        } else {
+                            endString = endString + arr[index]
+                        }
+                    }
+                }
+                index = index + 1
+            }
+
+            if (tempFirstString || tempSecondString) {
+                return startString + '\\left\\{\\begin{array}{l}{' + twoStack(tempFirstString) + '}\\\\{' + twoStack(tempSecondString) + '}\\end{array}\\right.' + twoStack(endString)
+            } else {
+                return str
+            }
         }
 
 
