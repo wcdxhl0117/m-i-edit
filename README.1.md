@@ -351,6 +351,64 @@
     On the other hand, array is much more difficult to add to Mathquill. I haven't found a quick solution. 
 ```
 
+* 事例三条件和两条件问题，用非标准公式解析解决
+```
+    1. In mathquill.js, toward the end, find the line
+    var MQ1 = getInterface(1);
+
+    Right above this line, add the following:
+
+    // Added by Larry
+    // Condition hacks
+    LatexCmds.condtwo = P(P(MathCommand, DelimsMixin), function(_, super_) {
+    _.ctrlSeq = '\\condtwo';
+    _.htmlTemplate =
+        '<span class="mq-non-leaf">'
+        +   '<span class="mq-paren mq-scaled">{</span>'
+        +   '<span class="mq-non-leaf">'
+        +     '<span class="mq-cond mq-non-leaf">'
+        +       '<span>&0</span>'
+        +       '<span>&1</span>'
+        +     '</span>'
+        +   '</span>'
+        +   '<span class="mq-paren mq-scaled"></span>'
+        + '</span>'
+    ;
+    _.textTemplate = ['choose(',',',')'];
+    });
+
+    LatexCmds.condthree = P(P(MathCommand, DelimsMixin), function(_, super_) {
+    _.ctrlSeq = '\\condthree';
+    _.htmlTemplate =
+        '<span class="mq-non-leaf">'
+        +   '<span class="mq-paren mq-scaled">{</span>'
+        +   '<span class="mq-non-leaf">'
+        +     '<span class="mq-cond mq-non-leaf">'
+        +       '<span>&0</span>'
+        +       '<span>&1</span>'
+        +       '<span>&2</span>'
+        +     '</span>'
+        +   '</span>'
+        +   '<span class="mq-paren mq-scaled"></span>'
+        + '</span>'
+    ;
+    _.textTemplate = ['choose(',',',')'];
+    });
+
+    2. In mathquill.css, at the end, add the following:
+
+    .mq-math-mode .mq-cond {
+    vertical-align: middle;
+    text-align: left;
+    }
+
+    .mq-math-mode .mq-cond > span {
+    display: block;
+    }
+
+    That's it. To enter conditions, just type \condtwo or \condthree. These are made-up, non-standard Latex symbols.
+```
+
 # license
 
 This project is for research and personal interest only and is not intended to be included in any commerical software. Please use Khan's originial project as the base for any commercial release. 
