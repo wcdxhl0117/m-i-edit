@@ -343,7 +343,7 @@
                             } else {
                                 tempSecondString = tempSecondString + arr[tempIndex]
                             }
-                        } 
+                        }
                     }
 
                     index = tempIndex
@@ -370,6 +370,80 @@
             }
         }
 
+
+        function thrthr(txt) {
+            txt = txt.replace(/\s/g, '')
+            console.log(txt)
+            var txt1 = txt,
+                txt2 = txt,
+                txt3 = txt;
+            var one = ''
+            var two = ''
+            var three = ''
+            // [0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\=\+\-\'\"\_\/]+    ([\s\S]*?)
+            txt1 = txt1.replace(/\\left\\{\\begin{array}{l}{([\s\S]*?)}\\\\{[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\=\+\-\'\"\_\/]+}\\\\{[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\=\+\-\'\"\_\/]+}\\end{array}\\right./g, function (match, capture) {
+                one = capture
+            })
+            txt2 = txt2.replace(/\\left\\{\\begin{array}{l}{[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\=\+\-\'\"\_\/]+}\\\\{([\s\S]*?)}\\\\{[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\=\+\-\'\"\_\/]+}\\end{array}\\right./g, function (match, capture) {
+                two = capture
+            })
+            txt3 = txt3.replace(/\\left\\{\\begin{array}{l}{[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\=\+\-\'\"\_\/]+}\\\\{[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\=\+\-\'\"\_\/]+}\\\\{([\s\S]*?)}\\end{array}\\right./g, function (match, capture) {
+                three = capture
+            })
+            txt = txt.replace(/\\left\\{\\begin{array}{l}{([\s\S]*?)}\\\\{([\s\S]*?)}\\\\{([\s\S]*?)}\\end{array}\\right./g, function (match, capture) {
+                capture = '\\condthree{' + one + '}{' + two + '}{' + three + '}'
+                return capture
+            })
+
+            txt1 = txt1.replace(/\\left\\{\\begin{array}{l}([\s\S]*?)\\\\[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\=\+\-\'\"\_\/]+\\\\[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\=\+\-\'\"\_\/]+\\end{array}\\right./g, function (match, capture) {
+                one = capture
+            })
+            txt2 = txt2.replace(/\\left\\{\\begin{array}{l}[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\=\+\-\'\"\_\/]+\\\\([\s\S]*?)\\\\[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\=\+\-\'\"\_\/]+\\end{array}\\right./g, function (match, capture) {
+                two = capture
+            })
+            txt3 = txt3.replace(/\\left\\{\\begin{array}{l}[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\=\+\-\'\"\_\/]+\\\\[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\=\+\-\'\"\_\/]+\\\\([\s\S]*?)\\end{array}\\right./g, function (match, capture) {
+                three = capture
+            })
+            txt = txt.replace(/\\left\\{\\begin{array}{l}([\s\S]*?)\\\\([\s\S]*?)\\\\([\s\S]*?)\\end{array}\\right./g, function (match, capture) {
+                capture = '\\condthree{' + one + '}{' + two + '}{' + three + '}'
+                return capture
+            })
+            console.log(txt)
+            return txt
+        }
+        
+        function twotwo(txt) {
+            txt = txt.replace(/\s/g, '')
+            console.log(txt)
+            var txt1 = txt,
+                txt2 = txt;
+            var one = ''
+            var two = ''
+            // [0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\=\+\-\'\"\_\/]+    ([\s\S]*?)
+            txt1 = txt1.replace(/\\left\\{\\begin{array}{l}{([\s\S]*?)}\\\\{[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\=\+\-\'\"\_\/]+}\\end{array}\\right./g, function (match, capture) {
+                one = capture
+            })
+            txt2 = txt2.replace(/\\left\\{\\begin{array}{l}{[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\=\+\-\'\"\_\/]+}\\\\{([\s\S]*?)}\\end{array}\\right./g, function (match, capture) {
+                two = capture
+            })
+            txt = txt.replace(/\\left\\{\\begin{array}{l}{([\s\S]*?)}\\\\{([\s\S]*?)}\\end{array}\\right./g, function (match, capture) {
+                capture = '\\condtwo{' + one + '}{' + two + '}'
+                return capture
+            })
+
+            txt1 = txt1.replace(/\\left\\{\\begin{array}{l}([\s\S]*?)\\\\[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\=\+\-\'\"\_\/]+\\end{array}\\right./g, function (match, capture) {
+                one = capture
+            })
+            txt2 = txt2.replace(/\\left\\{\\begin{array}{l}[0-9a-zA-Z_\{\}\\\ \(\)\[\]\*\&\^\%\$\#\@\!\~\`\,\.\:\;\>\<\?\=\+\-\'\"\_\/]+\\\\([\s\S]*?)\\end{array}\\right./g, function (match, capture) {
+                two = capture
+            })
+            txt = txt.replace(/\\left\\{\\begin{array}{l}([\s\S]*?)\\\\([\s\S]*?)\\end{array}\\right./g, function (match, capture) {
+                capture = '\\condtwo{' + one + '}{' + two + '}'
+                return capture
+            })
+            console.log(txt)
+            return txt
+        }
 
 
     </script>
