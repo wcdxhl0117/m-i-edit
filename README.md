@@ -1,3 +1,4 @@
+![image.png](https://upload-images.jianshu.io/upload_images/4013462-cff05dd93a5f5d1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 # 运行方法
 * npm install
